@@ -14,8 +14,13 @@ public class Player_Movement : MonoBehaviour
     public bool canJump = true; 
     bool isRunning = false;
     public bool tailControl;
-
     public Animator animator;
+
+    public GameObject Player;
+
+    public Player_Health pH;
+    public float timer = 0;
+    public float skillTime = 5;
 
     Rigidbody2D rb;
 
@@ -66,6 +71,10 @@ public class Player_Movement : MonoBehaviour
             isRunning = false;
         }
 
+        HidingMechanic();
+        
+    
+
     }
 
 
@@ -94,7 +103,6 @@ public class Player_Movement : MonoBehaviour
             transform.localScale = ls;
         }
         animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-        animator.SetFloat("yVelocity", rb.velocity.y);
     }
 
 
@@ -114,5 +122,53 @@ public class Player_Movement : MonoBehaviour
             canJump = false;
         }
     }
+
+    private void HidingMechanic()
+    {
+        if(Input.GetKeyDown(KeyCode.LeftControl) && timer < skillTime)
+        {    
+            timer += Time.deltaTime;
+
+            if (timer >= skillTime)
+		    {
+			    pH.isHidden = true;
+		    }
+            
+        }
+        
+        if(Input.GetKeyUp(KeyCode.LeftControl) && timer >= skillTime && pH.isHidden == false)
+        {
+            pH.isHidden = false;
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftControl) && timer >= skillTime)
+        {
+            pH.isHidden = false;
+
+        }
+        if(timer >=5 )
+        {
+            pH.isHidden = false;
+        }
+        if (pH.isHidden == true)
+        {
+            Player.transform.localScale = new Vector3(1.862f, 0.3f , 1.862f);
+        }
+        if(pH.isHidden == false && isFacingRight == false)
+        {
+            
+            Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
+        }
+        else if(pH.isHidden == false && isFacingRight == true)
+        {
+            Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
+        }
+        if(pH.isHidden == false && timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+      
+         
+    }
+   
 
 }
