@@ -12,9 +12,9 @@ public class Player_Health : MonoBehaviour
     public float healthRegenCooldown = 2f; //Time between health gain
     float lastHealTime;
 
-    public bool isDark = false;
+    public bool inLight = false;
 
-    public bool isHidden;
+    public bool isHidden = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,7 @@ public class Player_Health : MonoBehaviour
     public void TakeDamage (float amount)
     {
 
-        if (isDark == false) //Player can't take damage while being hidden
+        if (isHidden == false) //Player can't take damage while being hidden
         {
             health -= amount;
 
@@ -52,12 +52,16 @@ public class Player_Health : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Darkness"))
         {
-            isDark = true;
             isHidden = true;
 
             Healing();
 
             lastHealTime = Time.time;
+        }
+
+        if (collision.gameObject.CompareTag("Light"))
+        {
+            inLight = true;
         }
     }
 
@@ -66,8 +70,11 @@ public class Player_Health : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Darkness"))
         {
-            isDark = false;
             isHidden = false;
+        }
+        if (collision.gameObject.CompareTag("Light"))
+        {
+            inLight = false;
         }
     }
 

@@ -134,6 +134,7 @@ public class Player_Movement : MonoBehaviour
 			    pH.isHidden = true;
 		    }
             
+            Debug.Log("Crouch Hiding");
         }
         
         if(Input.GetKeyUp(KeyCode.LeftControl) && timer >= skillTime && pH.isHidden == false)
