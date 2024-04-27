@@ -8,6 +8,7 @@ public class Moving_Platform : MonoBehaviour
     public Transform posA, posB;
     public float platSpeed = 2f;
     Vector2 targetPos;
+    public bool platIsMove = false;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class Moving_Platform : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (Vector2.Distance(transform.position, posA.position) < 0.1f) 
         {
             targetPos = posB.position;
@@ -28,7 +30,12 @@ public class Moving_Platform : MonoBehaviour
             targetPos = posA.position;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, platSpeed * Time.deltaTime);
+
+        if(platIsMove == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, platSpeed * Time.deltaTime);
+
+        }
     }
 
 /*
