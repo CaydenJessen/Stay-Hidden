@@ -23,28 +23,24 @@ public class LineOfSight : MonoBehaviour
         if (hit.collider.tag == "Player")
         {
             Debug.DrawRay(ray.transform.position, Vector2.left * hit.distance * new Vector2(rayDirection, 0f), Color.red);
-           
-            
             isChasing = true;
             Debug.Log("hit");
             
-          // if (playerHealth.isHidden == false);
-          // {
-          //     playerHealth.TakeDamage(damage);
+            if (playerHealth.isHidden == false);
+            {
+                playerHealth.TakeDamage(damage);
 
-          //     // Note when the player took damage
-          //     lastAttackTime = Time.time;
-          // }
+                // Note when the player took damage
+                lastAttackTime = Time.time;
+            }
         }
-        else /*(hit.collider.tag != "Player")*/
+        if (hit.collider.tag != "Player")
         {
             Debug.DrawRay(ray.transform.position, Vector2.left * hit.distance * new Vector2(rayDirection, 0f), Color.green);
-           // isChasing = false;
-           // lost = true;
+            isChasing = false;
+            lost = true;
             Debug.Log("not hit");
         }
-
-        
 
 
     }

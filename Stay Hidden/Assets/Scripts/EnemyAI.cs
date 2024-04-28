@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
     public LineOfSight lOS;
     public bool isFacingRight = false;
     public bool isFacingLeft = false;
-    public float transformData;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +39,12 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("chase is true");
             Chase();
         }
-     // else if(lOS.lost == true)
-     // {
-     //     lOS.lost = false;
-     //     Debug.Log("target lost");
-     //     StartCoroutine(Confused());
-     // }
+        else if(lOS.lost == true)
+        {
+            lOS.lost = false;
+            Debug.Log("target lost");
+            StartCoroutine(Confused());
+        }
         else
         {
            
@@ -112,18 +112,18 @@ public class EnemyAI : MonoBehaviour
     {
         if (isFacingRight == true)
         {
-            transform.localScale = new Vector3(transformData, transformData, transformData);
+            transform.localScale = new Vector3(-1, 1, 1);
             Debug.Log("flipped to right");
             isFacingRight = false;
-            lOS.rayDirection = -1f;
+            lOS.rayDirection = 1f;
 
         }
         if (isFacingLeft == true)
         {
-            transform.localScale = new Vector3(-transformData, transformData, transformData);
+            transform.localScale = new Vector3(1, 1, 1);
             Debug.Log("flipped to left");
             isFacingLeft = false;
-            lOS.rayDirection = 1f;
+            lOS.rayDirection = -1f;
 
         }
     }
@@ -131,12 +131,12 @@ public class EnemyAI : MonoBehaviour
     {
             if(transform.position.x > player.position.x)
             {
-                transform.localScale = new Vector3(-transformData, transformData, transformData);
+                transform.localScale = new Vector3(1, 1, 1);
                 transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
             }
             if (transform.position.x < player.position.x)
             {
-                transform.localScale = new Vector3(transformData, transformData, transformData);
+                transform.localScale = new Vector3(-1, 1, 1);
                 transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
             }
 
