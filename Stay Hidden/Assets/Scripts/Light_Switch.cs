@@ -7,6 +7,7 @@ public class Light_Switch : MonoBehaviour
     public GameObject Light;
     public bool inRange = false;
     public bool switchOn = false;
+    public GameObject lightSwitch;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,8 @@ public class Light_Switch : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inRange = true;
+            lightSwitch.GetComponent<Renderer>().material.color = Color.green;
+
         }
     }
 
@@ -49,6 +52,7 @@ public class Light_Switch : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inRange = false;
+            lightSwitch.GetComponent<Renderer>().material.color = Color.white;
         }
     }
 }

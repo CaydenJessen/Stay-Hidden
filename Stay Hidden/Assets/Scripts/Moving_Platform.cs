@@ -9,6 +9,7 @@ public class Moving_Platform : MonoBehaviour
     public float platSpeed = 2f;
     Vector2 targetPos;
     public bool platIsMove = false;
+    public float targetSize = 0.5f;
 
     void Start()
     {
@@ -73,48 +74,56 @@ public class Moving_Platform : MonoBehaviour
             collision.transform.SetParent(null);
         }
     }
-/*
-    public float speed;
-    public int startPoint;
-    public Transform[] points;
 
-    private int i;
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnDrawGizmos()
     {
-        transform.position = points[startPoint].position;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(posA.transform.position, targetSize);
+        Gizmos.DrawWireSphere(posB.transform.position, targetSize);
+        Gizmos.DrawLine(posA.transform.position, posB.transform.position);
     }
+    /*
+        public float speed;
+        public int startPoint;
+        public Transform[] points;
 
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (Vector2.Distance(transform.position, points[i].position) < 0.02f)
+        private int i;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            i++;
-
-            if (i == points.Length)
-            {
-                i = 0;
-            }
+            transform.position = points[startPoint].position;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
-    }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (Vector2.Distance(transform.position, points[i].position) < 0.02f)
+            {
+                i++;
+
+                if (i == points.Length)
+                {
+                    i = 0;
+                }
+            }
+
+            transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
+        }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        collision.transform.SetParent(transform);
-    }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            collision.transform.SetParent(transform);
+        }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        collision.transform.SetParent(null);
-    }
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            collision.transform.SetParent(null);
+        }
 
 
-    */
+        */
 
 }
