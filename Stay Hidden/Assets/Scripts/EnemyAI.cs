@@ -39,19 +39,18 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("chase is true");
             Chase();
         }
-     // else if(lOS.lost == true)
-     // {
-     //     lOS.lost = false;
-     //     Debug.Log("target lost");
-     //     StartCoroutine(Confused());
-     // }
-        else
+      else if(lOS.lost == true)
         {
-           
-            Patrol();
-
+            lOS.lost = false;
+            Debug.Log("target lost");
+            targetPoint = pointA.transform;
+            //StartCoroutine(Confused());
         }
        
+       if(lOS.currentState == LineOfSight.enemstate.patrol)
+       {
+            Patrol();
+       }
      
     }
 
@@ -103,6 +102,7 @@ public class EnemyAI : MonoBehaviour
             speed = idleSpeed;
             StartCoroutine(Idle());
             targetPoint = pointB.transform;
+            
  
         }
       

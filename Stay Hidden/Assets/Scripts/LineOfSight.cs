@@ -9,6 +9,11 @@ public class LineOfSight : MonoBehaviour
     public float rayDirection = 1f;
     public float lineOfSightDistance = 2f;
     public GameObject ray;
+    public EnemyAI EA;
+
+    public enum enemstate{patrol, chase};
+    public enemstate currentState;
+
 
 
 
@@ -19,14 +24,15 @@ public class LineOfSight : MonoBehaviour
 
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, Vector2.left * new Vector2(rayDirection, 0f), lineOfSightDistance);
+       
+
+        RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, new Vector2(rayDirection, 0f), lineOfSightDistance);
         if (hit.collider.tag == "Player")
         {
-            Debug.DrawRay(ray.transform.position, Vector2.left * hit.distance * new Vector2(rayDirection, 0f), Color.red);
-           
-            
+            Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(rayDirection, 0f), Color.red);  
             isChasing = true;
             Debug.Log("hit");
+            currentState = enemstate.chase;
             
           // if (playerHealth.isHidden == false);
           // {
@@ -36,12 +42,13 @@ public class LineOfSight : MonoBehaviour
           //     lastAttackTime = Time.time;
           // }
         }
-        else /*(hit.collider.tag != "Player")*/
+        else
         {
-            Debug.DrawRay(ray.transform.position, Vector2.left * hit.distance * new Vector2(rayDirection, 0f), Color.green);
-           // isChasing = false;
-           // lost = true;
+            Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(rayDirection, 0f), Color.green);
+            isChasing = false;
+            lost = true;
             Debug.Log("not hit");
+            currentState = enemstate.patrol;
         }
 
         
