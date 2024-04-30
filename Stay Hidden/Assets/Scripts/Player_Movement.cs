@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -19,8 +20,15 @@ public class Player_Movement : MonoBehaviour
     public GameObject Player;
 
     public Player_Health pH;
-    public float timer = 0;
-    public float skillTime = 5;
+    public float stamina;
+    public float maxStamina;
+    public float skillCost;
+
+    public Image staminaBar;
+
+    public float chargeRate;
+
+    private Coroutine recharge;
 
     Rigidbody2D rb;
 
@@ -73,6 +81,7 @@ public class Player_Movement : MonoBehaviour
 
         HidingMechanic();
         
+          
     
 
     }
@@ -123,53 +132,67 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+
     private void HidingMechanic()
     {
-        if(Input.GetKeyDown(KeyCode.LeftControl) && timer < skillTime)
+       
+        if(Input.GetKey(KeyCode.LeftControl))
         {    
-            timer += Time.deltaTime;
+            Player.transform.localScale = new Vector3(1.862f, 0.3f , 1.862f);
 
-            if (timer >= skillTime)
-		    {
-			    pH.isHidden = true;
-		    }
+            pH.isHidden = true;
+            stamina -= skillCost * Time.deltaTime; 
+            if (stamina < 0)
+            {
+                stamina = 0;
+            }
+            staminaBar.fillAmount = stamina / maxStamina;
+
             
-            Debug.Log("Crouch Hiding");
+            if(recharge != null)
+            {
+                StopCoroutine(recharge);
+            }
+                recharge = StartCoroutine(RechargeStamina());
+            
+
+
+
+
         }
         
-        if(Input.GetKeyUp(KeyCode.LeftControl) && timer >= skillTime && pH.isHidden == false)
+        if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false || stamina == 0 && isFacingRight == false)
         {
             pH.isHidden = false;
-        }
-        else if(Input.GetKeyUp(KeyCode.LeftControl) && timer >= skillTime)
-        {
-            pH.isHidden = false;
+            Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
+
 
         }
-        if(timer >=5 )
+        else if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true || stamina == 0 && isFacingRight == true)
         {
             pH.isHidden = false;
-        }
-        if (pH.isHidden == true)
-        {
-            Player.transform.localScale = new Vector3(1.862f, 0.3f , 1.862f);
-        }
-        if(pH.isHidden == false && isFacingRight == false)
-        {
-            
-            Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
-        }
-        else if(pH.isHidden == false && isFacingRight == true)
-        {
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
+
         }
-        if(pH.isHidden == false && timer > 0)
-        {
-            timer -= Time.deltaTime;
-        }
-      
-         
     }
+
+    private IEnumerator RechargeStamina()
+    {
+        yield return new WaitForSeconds (2f);
+
+        while(stamina < maxStamina)
+        {
+            stamina += chargeRate / 10f;
+        }
+            if(stamina>maxStamina)
+            {
+                stamina = maxStamina;
+                staminaBar.fillAmount = stamina/maxStamina;
+                yield return new WaitForSeconds(0.1f);
+            }
+        
+    }
+
    
 
 }
