@@ -7,14 +7,11 @@ public class Platform_Switch : MonoBehaviour
    
     public bool inRange = false;
     public bool switchOn = false;
-
+    public GameObject lever;
+    public GameObject leverBase;
+    public bool status = false;
     public Moving_Platform MovPlat;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -25,6 +22,8 @@ public class Platform_Switch : MonoBehaviour
             {
                 switchOn = true;
                 MovPlat.platIsMove = true;
+                status = true; 
+                leverBase.transform.Rotate(0.0f, 0.0f, 78.0f);
             }
             else
             {
@@ -32,10 +31,22 @@ public class Platform_Switch : MonoBehaviour
                 {
                     switchOn = false;
                     MovPlat.platIsMove = false;
+                    status = false; 
+                    leverBase.transform.Rotate(0.0f, 0.0f, -78.0f);
+
                 }
             }
-        }
 
+        }
+        if (inRange == true)
+        {
+            lever.GetComponent<Renderer>().material.color = Color.green;
+        }
+        else
+        {
+            lever.GetComponent<Renderer>().material.color = Color.white;
+        }
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)

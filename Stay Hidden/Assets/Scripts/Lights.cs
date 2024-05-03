@@ -9,7 +9,7 @@ public class Lights : MonoBehaviour
     public float lightCooldown = 2f; //Time between health gain
     float lastLight;
 
-    public bool lightOn = false;
+    public bool lightOn = true;
 
     public bool lightSetup = true;
 

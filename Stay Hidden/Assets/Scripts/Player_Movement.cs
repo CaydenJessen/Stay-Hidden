@@ -20,15 +20,17 @@ public class Player_Movement : MonoBehaviour
     public GameObject Player;
 
     public Player_Health pH;
+
     public float stamina;
     public float maxStamina;
     public float skillCost;
-
     public Image staminaBar;
-
     public float chargeRate;
-
     private Coroutine recharge;
+    public bool lit;
+
+    public bool hasItem = false;
+    public int num = -1;
 
     Rigidbody2D rb;
 
@@ -123,6 +125,7 @@ public class Player_Movement : MonoBehaviour
             canJump = true;
         }
 
+
     }
     private void OnCollisionExit2D(Collision2D offGround)
     {
@@ -154,25 +157,37 @@ public class Player_Movement : MonoBehaviour
                 StopCoroutine(recharge);
             }
                 recharge = StartCoroutine(RechargeStamina());
-            
-
-
-
 
         }
         
-        if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false || stamina == 0 && isFacingRight == false)
+        if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false || stamina == 0 && isFacingRight == false || lit == true && isFacingRight == false)
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
 
 
         }
-        else if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true || stamina == 0 && isFacingRight == true)
+        else if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true || stamina == 0 && isFacingRight == true || lit == true && isFacingRight == true)
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
 
+        }
+    }
+    void OntriggerEnter2D(Collider2D inLight)
+    {
+        if ((inLight.gameObject.CompareTag("Light")) || (inLight.gameObject.CompareTag("Light")))
+        {
+            lit = true;
+        }
+
+
+    }
+    void OntriggerExit2D(Collider2D outLight)
+    {
+        if ((outLight.gameObject.CompareTag("Light")) || (outLight.gameObject.CompareTag("Light")))
+        {
+            lit = false;
         }
     }
 
@@ -193,6 +208,14 @@ public class Player_Movement : MonoBehaviour
         
     }
 
-   
-
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Item")
+        {
+            Debug.Log("Item Taken");
+            hasItem = true;
+            num++;
+        }
+    }
 }
+

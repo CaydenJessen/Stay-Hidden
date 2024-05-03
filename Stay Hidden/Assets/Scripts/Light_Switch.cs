@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Light_Switch : MonoBehaviour
 {
-    public GameObject Light;
+    public GameObject[] Light;
     public bool inRange = false;
-    public bool switchOn = false;
+    public bool switchOn = true;
     public GameObject lightSwitch;
+    public int numberOfMechanisms;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        numberOfMechanisms--;
     }
 
     // Update is called once per frame
@@ -22,15 +23,21 @@ public class Light_Switch : MonoBehaviour
         {
             if ((inRange == true) && (switchOn == false))
             {
-                Light.SetActive(false);
-                switchOn = true;
+                for (int i = 0; i < Light.Length; i++)
+                {
+                    Light[i].SetActive(true);
+                    switchOn = true;
+                }
             }
             else
             {
                 if ((inRange == true) && (switchOn == true))
                 {
-                    Light.SetActive(true);
-                    switchOn = false;
+                    for (int i = 0; i < Light.Length; i++)
+                    {
+                        Light[i].SetActive(false);
+                        switchOn = false;
+                    }
                 }
             }
         }
