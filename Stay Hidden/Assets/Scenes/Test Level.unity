@@ -207,6 +207,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &15551581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15551582}
+  m_Layer: 0
+  m_Name: Darkness
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &15551582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15551581}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 44.913044, y: 9.08881, z: -0.9330703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1639032132}
+  - {fileID: 1795363543}
+  - {fileID: 1007755912}
+  m_Father: {fileID: 2000091561}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &29702338
 GameObject:
   m_ObjectHideFlags: 0
@@ -3670,7 +3704,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &284588344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4226,6 +4260,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &298900378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 298900380}
+  - component: {fileID: 298900379}
+  - component: {fileID: 298900381}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &298900379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298900378}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Light: {fileID: 0}
+  playerHealth: {fileID: 0}
+  los: {fileID: 0}
+  lightCooldown: 2
+  lightOn: 1
+  lightSetup: 1
+  isAlternating: 0
+--- !u!4 &298900380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298900378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.740097, y: 0.7446518, z: 0.7989222}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &298900381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298900378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f07a8b1c7aad2499f74dcb97c8eac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Light:
+  - {fileID: 1199895314}
+  - {fileID: 1835812211}
+  - {fileID: 1398350510}
+  - {fileID: 698142349}
+  playerHealth: {fileID: 0}
+  los: {fileID: 0}
+  lightCooldown: 2
+  lightOn: 1
+  lightSetup: 1
+  isAlternating: 0
 --- !u!1 &312296512
 GameObject:
   m_ObjectHideFlags: 0
@@ -4891,7 +5000,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &410989938
 Animator:
   serializedVersion: 4
@@ -6062,6 +6171,7 @@ MonoBehaviour:
   maxHealth: 10
   healthRegeneration: 1
   healthRegenCooldown: 2
+  damageCooldown: 2
   inLight: 0
   isHidden: 0
 --- !u!1 &500032737
@@ -6188,10 +6298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light: {fileID: 500032737}
+  Light: {fileID: 0}
+  playerHealth: {fileID: 0}
+  los: {fileID: 0}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
+  isAlternating: 0
 --- !u!1 &502246207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6802,10 +6915,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light: {fileID: 528905493}
+  Light: {fileID: 0}
+  playerHealth: {fileID: 0}
+  los: {fileID: 0}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
+  isAlternating: 0
 --- !u!1 &533963615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7408,10 +7524,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light: {fileID: 619925616}
+  Light: {fileID: 0}
+  playerHealth: {fileID: 0}
+  los: {fileID: 0}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
+  isAlternating: 0
 --- !u!1 &623146225
 GameObject:
   m_ObjectHideFlags: 0
@@ -7557,7 +7676,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &628917576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8416,7 +8535,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &681989752
 Animator:
   serializedVersion: 4
@@ -8845,10 +8964,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light: {fileID: 698142349}
+  Light: {fileID: 0}
+  playerHealth: {fileID: 0}
+  los: {fileID: 0}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
+  isAlternating: 0
 --- !u!1 &703893641
 GameObject:
   m_ObjectHideFlags: 0
@@ -9140,10 +9262,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light: {fileID: 713550020}
+  Light: {fileID: 0}
+  playerHealth: {fileID: 0}
+  los: {fileID: 0}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
+  isAlternating: 0
 --- !u!1 &719167401
 GameObject:
   m_ObjectHideFlags: 0
@@ -10026,7 +10151,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &811377049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10446,7 +10571,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &831833643
 Animator:
   serializedVersion: 4
@@ -11645,6 +11770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007755912}
   - component: {fileID: 1007755913}
+  - component: {fileID: 1007755914}
   m_Layer: 0
   m_Name: Darkness (2)
   m_TagString: Darkness
@@ -11660,11 +11786,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007755911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.3496, y: 3.7704, z: 0.09862384}
+  m_LocalPosition: {x: -0.56344223, y: -5.31841, z: 1.0316942}
   m_LocalScale: {x: 1.927542, y: 3.7365284, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2000091561}
+  m_Father: {fileID: 15551582}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1007755913
@@ -11719,6 +11845,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1007755914
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007755911}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1009691072
 GameObject:
   m_ObjectHideFlags: 0
@@ -12404,7 +12556,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1031155267
 Animator:
   serializedVersion: 4
@@ -14329,7 +14481,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1198396035
 Animator:
   serializedVersion: 4
@@ -14527,9 +14679,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 1199895314}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1895191372}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
+  isAlternating: 1
 --- !u!1 &1218594112
 GameObject:
   m_ObjectHideFlags: 0
@@ -16506,7 +16661,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1369561886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17198,9 +17353,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 1398350510}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 0}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
+  isAlternating: 0
 --- !u!1 &1403509223
 GameObject:
   m_ObjectHideFlags: 0
@@ -18299,7 +18457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511961697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2352061, y: -0.47999954, z: 0.00030257}
+  m_LocalPosition: {x: 2.62, y: -0.47999954, z: 0.00030257}
   m_LocalScale: {x: 0.53154, y: 0.53154, z: 0.53154}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19210,6 +19368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639032132}
   - component: {fileID: 1639032133}
+  - component: {fileID: 1639032134}
   m_Layer: 0
   m_Name: Darkness
   m_TagString: Darkness
@@ -19225,11 +19384,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639032131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.0017, y: 2.8782, z: 0.09862384}
+  m_LocalPosition: {x: -60.91474, y: -6.21061, z: 1.0316942}
   m_LocalScale: {x: 1.5366803, y: 2.2995427, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2000091561}
+  m_Father: {fileID: 15551582}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1639032133
@@ -19284,6 +19443,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1639032134
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639032131}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1639908406
 GameObject:
   m_ObjectHideFlags: 0
@@ -22013,6 +22198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1795363543}
   - component: {fileID: 1795363544}
+  - component: {fileID: 1795363545}
   m_Layer: 0
   m_Name: Darkness (1)
   m_TagString: Darkness
@@ -22028,11 +22214,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795363542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9842005, y: 3.2910995, z: 0.09862384}
+  m_LocalPosition: {x: -45.897243, y: -5.7977104, z: 1.0316942}
   m_LocalScale: {x: 1.6282666, y: 2.757382, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2000091561}
+  m_Father: {fileID: 15551582}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1795363544
@@ -22087,6 +22273,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1795363545
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795363542}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!198 &1798814322 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3294177114479241116, guid: 8cf9c36a07397a948a48411bba4eab70, type: 3}
@@ -22629,7 +22841,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1826895140
 Animator:
   serializedVersion: 4
@@ -22867,10 +23079,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light: {fileID: 1835812211}
+  Light: {fileID: 0}
+  playerHealth: {fileID: 0}
+  los: {fileID: 0}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
+  isAlternating: 0
 --- !u!1 &1854035740
 GameObject:
   m_ObjectHideFlags: 0
@@ -24142,7 +24357,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1978542208
 Animator:
   serializedVersion: 4
@@ -24440,13 +24655,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1639032132}
-  - {fileID: 1795363543}
+  - {fileID: 15551582}
   - {fileID: 1835159357}
   - {fileID: 690877582}
   - {fileID: 1937226495}
   - {fileID: 1091812160}
-  - {fileID: 1007755912}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25519,7 +25732,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2080882794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26312,7 +26525,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2102676887
 MonoBehaviour:
   m_ObjectHideFlags: 0
