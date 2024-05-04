@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Health : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class Player_Health : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+                StartCoroutine(Death());
             }
 
         }
@@ -98,5 +100,9 @@ public class Player_Health : MonoBehaviour
             health += healthRegeneration;
         }
     }
-
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("Game_Lost");
+    }
 }
