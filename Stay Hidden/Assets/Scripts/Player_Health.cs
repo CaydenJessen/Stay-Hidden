@@ -15,6 +15,7 @@ public class Player_Health : MonoBehaviour
     public bool inLight = false;
 
     public bool isHidden = false;
+    public LineOfSight LOS;
 
     // Start is called before the first frame update
     void Start()
@@ -57,11 +58,14 @@ public class Player_Health : MonoBehaviour
             Healing();
 
             lastHealTime = Time.time;
+
+            LOS.isChasing = false;
         }
 
         if (collision.gameObject.CompareTag("Light"))
         {
             inLight = true;
+            LOS.isChasing = true;
         }
     }
 
