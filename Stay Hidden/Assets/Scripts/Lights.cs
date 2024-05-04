@@ -6,12 +6,18 @@ public class Lights : MonoBehaviour
 {
     public GameObject Light;
 
-    public float lightCooldown = 2f; //Time between health gain
+    public Player_Health playerHealth;
+    public LineOfSight los;
+
+
+    public float lightCooldown = 2f; //Time between lights on and off.
     float lastLight;
 
     public bool lightOn = true;
 
     public bool lightSetup = true;
+
+    public bool isAlternating;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +28,11 @@ public class Lights : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (playerHealth.inLight == true)
+        {
+            //Make a subroutine here so enemy doesnt immediately idle??
+            los.isChasing = true;
+        }
     }
 
     IEnumerator ExampleCoroutine()
@@ -44,7 +54,6 @@ public class Lights : MonoBehaviour
 
             }
         }
-
     }
 
 

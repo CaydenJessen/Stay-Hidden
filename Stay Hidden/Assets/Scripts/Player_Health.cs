@@ -8,9 +8,13 @@ public class Player_Health : MonoBehaviour
     public float health;
     public float maxHealth = 10f;
     public float healthRegeneration = 1f; //Amount of health gained
+    
 
     public float healthRegenCooldown = 2f; //Time between health gain
     float lastHealTime;
+    public float damageCooldown = 2f;
+    float lastDamageTime;
+
 
     public bool inLight = false;
 
@@ -35,7 +39,11 @@ public class Player_Health : MonoBehaviour
 
         if (isHidden == false) //Player can't take damage while being hidden
         {
+            if (Time.time - lastDamageTime < damageCooldown) return;
+
             health -= amount;
+
+            lastDamageTime = Time.time;
 
             if (health <= 0)
             {

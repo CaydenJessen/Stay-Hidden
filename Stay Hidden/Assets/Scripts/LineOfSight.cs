@@ -27,20 +27,16 @@ public class LineOfSight : MonoBehaviour
        
 
         RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, new Vector2(rayDirection, 0f), lineOfSightDistance);
-        if (hit.collider.tag == "Player")
+        if (hit.collider.tag == "Player") //I did this by accident: If only the enemy is in light and player is next to them == chase
+        if ((hit.collider.tag == "Player") || ((hit.collider.tag == "Player") && (hit.collider.tag == "Light")))
         {
             Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(rayDirection, 0f), Color.red);  
             isChasing = true;
             Debug.Log("hit");
             currentState = enemstate.chase;
-            
-          // if (playerHealth.isHidden == false);
-          // {
-          //     playerHealth.TakeDamage(damage);
 
-          //     // Note when the player took damage
-          //     lastAttackTime = Time.time;
-          // }
+            playerHealth.TakeDamage(damage);
+            
         }
         else
         {
