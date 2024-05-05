@@ -33,6 +33,10 @@ public class Lights : MonoBehaviour
             //Make a subroutine here so enemy doesnt immediately idle??
             los.isChasing = true;
         }
+        else
+        {
+            los.isChasing = false;
+        }
     }
 
     IEnumerator ExampleCoroutine()

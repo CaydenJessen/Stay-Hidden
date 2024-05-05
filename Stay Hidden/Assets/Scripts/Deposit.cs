@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Deposite : MonoBehaviour
+public class Deposit : MonoBehaviour
 {
     public ParticleSystem Particles;
     public GameObject[] item;
@@ -14,6 +15,10 @@ public class Deposite : MonoBehaviour
 
     private void Update()
     {
+        if(deposited == 0)
+        {
+            StartCoroutine(Victory());
+        }
         
     }
     void OnTriggerEnter2D(Collider2D col)
@@ -26,5 +31,11 @@ public class Deposite : MonoBehaviour
             count++;
             number.num--;
         }
+    }
+
+    IEnumerator Victory()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("Game_Won");
     }
 }
