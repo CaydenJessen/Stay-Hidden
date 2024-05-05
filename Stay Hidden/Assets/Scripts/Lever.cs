@@ -7,7 +7,7 @@ public class Lever : MonoBehaviour
     public GameObject[] openMechanisms;
     public GameObject[] closeMechanisms;
     public GameObject lever;
-    public GameObject leverControl;
+    public GameObject leverBase;
     public bool inRange = false;
     public bool status = false;
     public int numberOfMechanisms;
@@ -25,7 +25,7 @@ public class Lever : MonoBehaviour
                     closeMechanisms[i].SetActive(true);
                 }
                 
-                leverControl.transform.Rotate(0.0f, 0.0f, -41.0f);
+                leverBase.transform.Rotate(0.0f, 0.0f, 78.0f);
 
                 status = true;
             }
@@ -36,7 +36,7 @@ public class Lever : MonoBehaviour
                     openMechanisms[i].SetActive(true);
                     closeMechanisms[i].SetActive(false);
                 }
-                leverControl.transform.Rotate(0.0f, 0.0f, 41.0f);
+                leverBase.transform.Rotate(0.0f, 0.0f, -78.0f);
                     status = false;
                 }
          
@@ -44,7 +44,7 @@ public class Lever : MonoBehaviour
 
         if(inRange == true)
         {
-            lever.GetComponent<Renderer>().material.color = Color.red;
+            lever.GetComponent<Renderer>().material.color = Color.green;
         }
         else
         {
