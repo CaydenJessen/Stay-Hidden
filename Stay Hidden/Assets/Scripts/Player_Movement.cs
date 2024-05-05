@@ -33,12 +33,6 @@ public class Player_Movement : MonoBehaviour
     public int num = -1;
 
     Rigidbody2D rb;
-    public float colliderX;
-    public float colliderY;
-
-    public bool camResize = false;
-
-    
 
     void Start()
     {
@@ -148,9 +142,6 @@ public class Player_Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftControl))
         {    
             Player.transform.localScale = new Vector3(1.862f, 0.3f , 1.862f);
-            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, 0.05f);
-            canJump = false;
-           
 
             pH.isHidden = true;
             stamina -= skillCost * Time.deltaTime; 
@@ -173,9 +164,6 @@ public class Player_Movement : MonoBehaviour
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
-            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            canJump = true;
-            
 
 
         }
@@ -183,41 +171,23 @@ public class Player_Movement : MonoBehaviour
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
-            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            canJump = true;
-            
 
         }
     }
-    void OnTriggerEnter2D(Collider2D col)
+    void OntriggerEnter2D(Collider2D inLight)
     {
-        if ((col.gameObject.CompareTag("Light")))
+        if ((inLight.gameObject.CompareTag("Light")) || (inLight.gameObject.CompareTag("Light")))
         {
             lit = true;
         }
 
-        if (col.gameObject.tag == "Item")
-        {
-            Debug.Log("Item Taken");
-            hasItem = true;
-            num++;
-        }
-        if (col.gameObject.tag == "Cam Sizer")
-        {
-            camResize = true;
-        }
 
     }
-    void OnTriggerExit2D(Collider2D col)
+    void OntriggerExit2D(Collider2D outLight)
     {
-        if ((col.gameObject.CompareTag("Light")))
+        if ((outLight.gameObject.CompareTag("Light")) || (outLight.gameObject.CompareTag("Light")))
         {
             lit = false;
-        }
-
-        if (col.gameObject.tag == "Cam Sizer")
-        {
-            camResize = false;
         }
     }
 
@@ -238,5 +208,14 @@ public class Player_Movement : MonoBehaviour
         
     }
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Item")
+        {
+            Debug.Log("Item Taken");
+            hasItem = true;
+            num++;
+        }
+    }
 }
 
