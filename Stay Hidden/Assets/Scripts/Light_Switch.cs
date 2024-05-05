@@ -49,7 +49,7 @@ public class Light_Switch : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inRange = true;
-            lightSwitch.GetComponent<Renderer>().material.color = Color.green;
+            lightSwitch.GetComponent<Renderer>().material.color = Color.yellow;
 
         }
     }
