@@ -20,7 +20,7 @@ public class EnemyDamage : MonoBehaviour
         
         if(collision.gameObject.CompareTag("Player")) 
         {
-            if (playerHealth.isHidden == false);
+            if (playerHealth.isHidden == false)
             {
                 playerHealth.TakeDamage(damage);
 

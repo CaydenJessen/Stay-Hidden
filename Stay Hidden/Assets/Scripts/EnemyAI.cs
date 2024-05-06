@@ -21,6 +21,7 @@ public class EnemyAI : MonoBehaviour
     public bool isFacingLeft = false;
     public float transformData;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +43,12 @@ public class EnemyAI : MonoBehaviour
       else if(lOS.lost == true)
         {
             lOS.lost = false;
+            lOS.isChasing = false;
             Debug.Log("target lost");
             targetPoint = pointA.transform;
             //StartCoroutine(Confused());
         }
+       
        
        if(lOS.currentState == LineOfSight.enemstate.patrol)
        {

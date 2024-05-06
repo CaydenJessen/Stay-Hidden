@@ -15,34 +15,30 @@ public class LineOfSight : MonoBehaviour
     public enemstate currentState;
 
 
-
-
-    public Player_Health playerHealth;
     public float damage = 1f;
     public float attackCooldown = 2f;
-    float lastAttackTime;
+
+    public Player_Health pH;
 
     void Update()
     {
        
 
-        RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, new Vector2(rayDirection, 0f), lineOfSightDistance);
+        RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, new Vector2(-rayDirection, 0f), lineOfSightDistance);
         
-        if ((hit.collider.tag == "Player") || ((hit.collider.tag == "Player") && (hit.collider.tag == "Light")))
+        if (hit.collider.tag == "Player" && pH.isHidden == false || pH.inLight == true )
         {
-            Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(rayDirection, 0f), Color.red);  
+            Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(-rayDirection, 0f), Color.red);  
             isChasing = true;
             Debug.Log("hit");
             currentState = enemstate.chase;
 
-            playerHealth.TakeDamage(damage);
             
         }
         else
         {
-            Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(rayDirection, 0f), Color.green);
+            Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(-rayDirection, 0f), Color.green);
             isChasing = false;
-            lost = true;
             Debug.Log("not hit");
             currentState = enemstate.patrol;
         }

@@ -28,6 +28,8 @@ public class Player_Movement : MonoBehaviour
     public float chargeRate;
     private Coroutine recharge;
     public bool lit;
+    public bool canHide = true;
+
 
     public bool hasItem = false;
     public int num = -1;
@@ -129,6 +131,11 @@ public class Player_Movement : MonoBehaviour
         if((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy")))
         {
             canJump = true;
+
+        }
+        if (onGround.gameObject.CompareTag("Moving Platform"))
+        {
+            canHide = false;
         }
 
 
@@ -138,6 +145,11 @@ public class Player_Movement : MonoBehaviour
         if((offGround.gameObject.CompareTag("Ground")) || (offGround.gameObject.CompareTag("Enemy")))
         {
             canJump = false;
+
+        }
+        if (offGround.gameObject.CompareTag("Moving Platform"))
+        {
+            canHide = true;
         }
     }
 
@@ -145,7 +157,7 @@ public class Player_Movement : MonoBehaviour
     private void HidingMechanic()
     {
        
-        if(Input.GetKey(KeyCode.LeftControl))
+        if(Input.GetKey(KeyCode.LeftControl) && canHide == true)
         {    
             Player.transform.localScale = new Vector3(1.862f, 0.3f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, 0.05f);
@@ -169,7 +181,7 @@ public class Player_Movement : MonoBehaviour
 
         }
         
-        if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false || stamina == 0 && isFacingRight == false || lit == true && isFacingRight == false)
+        if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false && canHide == true || stamina == 0 && isFacingRight == false && canHide == true || lit == true && isFacingRight == false && canHide == true)
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
@@ -179,7 +191,7 @@ public class Player_Movement : MonoBehaviour
 
 
         }
-        else if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true || stamina == 0 && isFacingRight == true || lit == true && isFacingRight == true)
+        else if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true)
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
@@ -206,6 +218,7 @@ public class Player_Movement : MonoBehaviour
         {
             camResize = true;
         }
+       
 
     }
     void OnTriggerExit2D(Collider2D col)

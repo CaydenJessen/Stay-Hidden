@@ -1075,6 +1075,12 @@ MonoBehaviour:
   skillCost: 25
   staminaBar: {fileID: 165565764}
   chargeRate: 33
+  lit: 0
+  hasItem: 0
+  num: -1
+  colliderX: 0
+  colliderY: 0
+  camResize: 0
 --- !u!50 &497213364
 Rigidbody2D:
   serializedVersion: 4
@@ -1222,12 +1228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c06959699ff3742a3a0c6433aa903d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 10
-  healthRegeneration: 1
-  healthRegenCooldown: 2
-  inLight: 0
-  isHidden: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1328,11 @@ MonoBehaviour:
   player: {fileID: 497213362}
   offset: 5
   offsetSmoothing: 0.5
+  cameraSize: 0
+  cam: {fileID: 0}
+  pH: {fileID: 0}
+  pM: {fileID: 0}
+  zoomOut: 0
   yOffset: 0
 --- !u!1 &592272043
 GameObject:
@@ -2088,10 +2093,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particles: {fileID: 1798814322}
-  item: {fileID: 1084330522887677427, guid: 2af2093ff62c01f478fe2007c34ccee1, type: 3}
-  depositePosition: {fileID: 1854035741}
-  iTM: {fileID: 1529019912}
-  deposited: 0
+  item:
+  - {fileID: 1084330522887677427, guid: 2af2093ff62c01f478fe2007c34ccee1, type: 3}
+  - {fileID: 1084330522887677427, guid: 2af2093ff62c01f478fe2007c34ccee1, type: 3}
+  - {fileID: 1084330522887677427, guid: 2af2093ff62c01f478fe2007c34ccee1, type: 3}
+  depositePosition:
+  - {fileID: 0}
+  iTM: {fileID: 497213363}
+  number: {fileID: 497213363}
+  deposited: 5
 --- !u!1 &839282167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,8 +2422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d944dfdccb0a63042ad737f616acbdbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechanism: {fileID: 1726692850}
-  lever: {fileID: 996816035}
 --- !u!61 &996816039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3372,10 +3380,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425011bcbcd111b4191a67569f59b341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light: {fileID: 1199895314}
+  Light:
+  - {fileID: 0}
   inRange: 0
   switchOn: 0
   lightSwitch: {fileID: 1312834913}
+  numberOfMechanisms: 0
+  AL: {fileID: 0}
 --- !u!61 &1312834917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3728,7 +3739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2e55685cc9e4b4f818b70db7f817b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasItem: 0
   Particles: {fileID: 1723998874}
   depo: {fileID: 824797030}
 --- !u!4 &1529019913 stripped
@@ -3945,8 +3955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d944dfdccb0a63042ad737f616acbdbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechanism: {fileID: 0}
-  lever: {fileID: 0}
 --- !u!1 &1639032131
 GameObject:
   m_ObjectHideFlags: 0

@@ -260,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 29702338}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.47, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2102676890}
@@ -285,9 +285,9 @@ MonoBehaviour:
   ray: {fileID: 29702338}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &32697583
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +572,7 @@ Transform:
   m_GameObject: {fileID: 51417728}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.47, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1826895136}
@@ -597,9 +597,9 @@ MonoBehaviour:
   ray: {fileID: 51417728}
   EA: {fileID: 1826895137}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &54761799
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 59744115}
   - component: {fileID: 59744116}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light bulb (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3204,7 +3204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191759163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.83525085, y: -0.88, z: 0.00030257}
+  m_LocalPosition: {x: -1.52, y: -0.88, z: 0.00030257}
   m_LocalScale: {x: 0.53154, y: 0.53154, z: 0.53154}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4371,6 +4371,7 @@ GameObject:
   - component: {fileID: 284588344}
   - component: {fileID: 284588343}
   - component: {fileID: 284588342}
+  - component: {fileID: 284588348}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0 (1)
   m_TagString: Enemy
@@ -4536,6 +4537,21 @@ Transform:
   m_Father: {fileID: 226454888}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284588348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284588341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &286881746 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1084330522887677427, guid: 2af2093ff62c01f478fe2007c34ccee1, type: 3}
@@ -4687,7 +4703,7 @@ GameObject:
   - component: {fileID: 294479432}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4971,7 +4987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 319751591}
   - component: {fileID: 319751590}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zoom trigger (3)
   m_TagString: Cam Sizer
   m_Icon: {fileID: 0}
@@ -5291,9 +5307,9 @@ MonoBehaviour:
   ray: {fileID: 353884179}
   EA: {fileID: 811377049}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!4 &353884181
 Transform:
   m_ObjectHideFlags: 0
@@ -5303,7 +5319,7 @@ Transform:
   m_GameObject: {fileID: 353884179}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49925104, y: 0.53, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 811377052}
@@ -5640,6 +5656,7 @@ GameObject:
   - component: {fileID: 410989935}
   - component: {fileID: 410989937}
   - component: {fileID: 410989936}
+  - component: {fileID: 410989940}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
@@ -5805,6 +5822,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &410989940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410989933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &430153876
 GameObject:
   m_ObjectHideFlags: 0
@@ -6451,6 +6483,7 @@ MonoBehaviour:
   staminaBar: {fileID: 1701380846}
   chargeRate: 33
   lit: 0
+  canHide: 1
   hasItem: 0
   num: -1
   colliderX: 0.3812277
@@ -6490,7 +6523,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12127468, y: -0.0035107136}
+  m_Offset: {x: -0.12700775, y: 0.019417167}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6501,7 +6534,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38122767, y: 0.6134833}
+  m_Size: {x: 0.39269382, y: 0.65933895}
   m_EdgeRadius: 0
 --- !u!95 &497213366
 Animator:
@@ -6583,7 +6616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497213362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.71, y: 6.5, z: 0}
+  m_LocalPosition: {x: -57.39, y: -2.93, z: 0}
   m_LocalScale: {x: 1.862, y: 1.862, z: 1.862}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6625,7 +6658,7 @@ GameObject:
   - component: {fileID: 500032740}
   - component: {fileID: 500032739}
   - component: {fileID: 500032741}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light (6)
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -6738,8 +6771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 500032737}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1468012385}
 --- !u!1 &502246207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7404,7 +7437,7 @@ GameObject:
   - component: {fileID: 528905496}
   - component: {fileID: 528905495}
   - component: {fileID: 528905497}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light (7)
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -7517,8 +7550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 528905493}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1468012385}
 --- !u!1 &533963615
 GameObject:
   m_ObjectHideFlags: 0
@@ -8133,7 +8166,7 @@ GameObject:
   - component: {fileID: 619925619}
   - component: {fileID: 619925618}
   - component: {fileID: 619925620}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light (4)
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -8246,8 +8279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 619925616}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1468012385}
 --- !u!1 &623146225
 GameObject:
   m_ObjectHideFlags: 0
@@ -8324,6 +8357,7 @@ GameObject:
   - component: {fileID: 628917576}
   - component: {fileID: 628917575}
   - component: {fileID: 628917574}
+  - component: {fileID: 628917579}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0 (1)
   m_TagString: Enemy
@@ -8489,6 +8523,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &628917579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628917572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &629172413
 GameObject:
   m_ObjectHideFlags: 0
@@ -9201,6 +9250,7 @@ GameObject:
   - component: {fileID: 681989749}
   - component: {fileID: 681989751}
   - component: {fileID: 681989750}
+  - component: {fileID: 681989754}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0 (2)
   m_TagString: Enemy
@@ -9366,6 +9416,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &681989754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681989747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &686614229
 GameObject:
   m_ObjectHideFlags: 0
@@ -9611,7 +9676,7 @@ GameObject:
   - component: {fileID: 698142352}
   - component: {fileID: 698142351}
   - component: {fileID: 698142353}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light (3)
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -9724,8 +9789,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 698142349}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1959714590}
 --- !u!1 &703893641
 GameObject:
   m_ObjectHideFlags: 0
@@ -9905,7 +9970,7 @@ GameObject:
   - component: {fileID: 713550023}
   - component: {fileID: 713550022}
   - component: {fileID: 713550024}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light (5)
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -10018,8 +10083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 713550020}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1468012385}
 --- !u!1 &719167401
 GameObject:
   m_ObjectHideFlags: 0
@@ -10185,7 +10250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 731914677}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Text triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10649,7 +10714,7 @@ GameObject:
   - component: {fileID: 805456704}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10825,6 +10890,7 @@ GameObject:
   - component: {fileID: 811377049}
   - component: {fileID: 811377048}
   - component: {fileID: 811377047}
+  - component: {fileID: 811377053}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0 (2)
   m_TagString: Enemy
@@ -10990,6 +11056,21 @@ Transform:
   m_Father: {fileID: 1649319097}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &811377053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811377046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &820992409
 GameObject:
   m_ObjectHideFlags: 0
@@ -11304,6 +11385,7 @@ GameObject:
   - component: {fileID: 831833640}
   - component: {fileID: 831833642}
   - component: {fileID: 831833641}
+  - component: {fileID: 831833645}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0 (2)
   m_TagString: Enemy
@@ -11469,6 +11551,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &831833645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831833638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &836626746
 GameObject:
   m_ObjectHideFlags: 0
@@ -11673,13 +11770,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849221702}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &849221702
 Transform:
   m_ObjectHideFlags: 0
@@ -12014,7 +12111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871136660}
   - component: {fileID: 871136659}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zoom trigger (2)
   m_TagString: Cam Sizer
   m_Icon: {fileID: 0}
@@ -12055,7 +12152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871136658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.844362, y: 15.976042, z: -0.26826793}
+  m_LocalPosition: {x: 18.844362, y: 14.82, z: -0.26826793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12307,8 +12404,7 @@ GameObject:
   - component: {fileID: 909562655}
   - component: {fileID: 909562658}
   - component: {fileID: 909562657}
-  - component: {fileID: 909562656}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light (8)
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -12330,21 +12426,6 @@ Transform:
   m_Father: {fileID: 1835159357}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &909562656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909562654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Light: {fileID: 909562654}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
 --- !u!61 &909562657
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12979,7 +13060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 950905303}
   - component: {fileID: 950905302}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zoom trigger
   m_TagString: Cam Sizer
   m_Icon: {fileID: 0}
@@ -13185,7 +13266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 993455786}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zoom Triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13672,7 +13753,7 @@ GameObject:
   - component: {fileID: 1014435748}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14377,6 +14458,7 @@ GameObject:
   - component: {fileID: 1031155264}
   - component: {fileID: 1031155266}
   - component: {fileID: 1031155265}
+  - component: {fileID: 1031155269}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
@@ -14542,6 +14624,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1031155269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031155262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &1037119616
 GameObject:
   m_ObjectHideFlags: 0
@@ -16232,7 +16329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1154693547}
   - component: {fileID: 1154693546}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zoom trigger (1)
   m_TagString: Cam Sizer
   m_Icon: {fileID: 0}
@@ -16415,7 +16512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155763260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0412798, y: -0.87999964, z: 0.00030257}
+  m_LocalPosition: {x: 1.52, y: -0.87999964, z: 0.00030257}
   m_LocalScale: {x: 0.53154, y: 0.53154, z: 0.53154}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16644,7 +16741,7 @@ GameObject:
   - component: {fileID: 1180348956}
   - component: {fileID: 1180348958}
   - component: {fileID: 1180348957}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16835,6 +16932,7 @@ GameObject:
   - component: {fileID: 1198396032}
   - component: {fileID: 1198396034}
   - component: {fileID: 1198396033}
+  - component: {fileID: 1198396037}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
@@ -17000,6 +17098,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1198396037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198396030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &1199895314
 GameObject:
   m_ObjectHideFlags: 0
@@ -17011,8 +17124,7 @@ GameObject:
   - component: {fileID: 1199895315}
   - component: {fileID: 1199895316}
   - component: {fileID: 1199895317}
-  - component: {fileID: 1199895318}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -17112,21 +17224,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1199895318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199895314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Light: {fileID: 1199895314}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
 --- !u!1 &1200166332
 GameObject:
   m_ObjectHideFlags: 0
@@ -17275,7 +17372,7 @@ Transform:
   m_GameObject: {fileID: 1231879666}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49925104, y: 0.53, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 831833639}
@@ -17300,9 +17397,9 @@ MonoBehaviour:
   ray: {fileID: 1231879666}
   EA: {fileID: 831833640}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &1233605017
 GameObject:
   m_ObjectHideFlags: 0
@@ -17591,7 +17688,7 @@ GameObject:
   - component: {fileID: 1242870304}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18185,7 +18282,7 @@ GameObject:
   - component: {fileID: 1311404538}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18718,7 +18815,7 @@ Transform:
   m_GameObject: {fileID: 1335166279}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49925104, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2080882791}
@@ -18743,9 +18840,9 @@ MonoBehaviour:
   ray: {fileID: 1335166279}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &1341541028
 GameObject:
   m_ObjectHideFlags: 0
@@ -19633,6 +19730,7 @@ GameObject:
   - component: {fileID: 1369561886}
   - component: {fileID: 1369561885}
   - component: {fileID: 1369561884}
+  - component: {fileID: 1369561889}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0 (1)
   m_TagString: Enemy
@@ -19798,6 +19896,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1369561889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369561882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &1373814049
 GameObject:
   m_ObjectHideFlags: 0
@@ -20356,8 +20469,7 @@ GameObject:
   - component: {fileID: 1398350511}
   - component: {fileID: 1398350513}
   - component: {fileID: 1398350512}
-  - component: {fileID: 1398350514}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light (2)
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -20457,21 +20569,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1398350514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398350510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Light: {fileID: 1398350510}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
 --- !u!1 &1403509223
 GameObject:
   m_ObjectHideFlags: 0
@@ -20676,7 +20773,7 @@ Transform:
   m_GameObject: {fileID: 1436115494}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.47, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 410989934}
@@ -20701,9 +20798,9 @@ MonoBehaviour:
   ray: {fileID: 1436115494}
   EA: {fileID: 410989935}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &1437369855
 GameObject:
   m_ObjectHideFlags: 0
@@ -21057,7 +21154,7 @@ Transform:
   m_GameObject: {fileID: 1468012383}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.47, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1198396031}
@@ -21082,9 +21179,9 @@ MonoBehaviour:
   ray: {fileID: 1468012383}
   EA: {fileID: 1198396032}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &1476187101
 GameObject:
   m_ObjectHideFlags: 0
@@ -21208,7 +21305,7 @@ GameObject:
   - component: {fileID: 1481048573}
   - component: {fileID: 1481048575}
   - component: {fileID: 1481048574}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Darkness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21545,7 +21642,7 @@ GameObject:
   - component: {fileID: 1537847360}
   - component: {fileID: 1537847362}
   - component: {fileID: 1537847361}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21943,7 +22040,7 @@ GameObject:
   - component: {fileID: 1582829476}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22116,7 +22213,7 @@ GameObject:
   - component: {fileID: 1588314974}
   - component: {fileID: 1588314976}
   - component: {fileID: 1588314975}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22753,7 +22850,7 @@ GameObject:
   - component: {fileID: 1641120153}
   - component: {fileID: 1641120155}
   - component: {fileID: 1641120154}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92327,7 +92424,7 @@ Transform:
   m_GameObject: {fileID: 1802702674}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49925104, y: 0.53, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 681989748}
@@ -92352,9 +92449,9 @@ MonoBehaviour:
   ray: {fileID: 1802702674}
   EA: {fileID: 681989749}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &1803712606
 GameObject:
   m_ObjectHideFlags: 0
@@ -92438,7 +92535,7 @@ GameObject:
   - component: {fileID: 1804831582}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92829,6 +92926,7 @@ GameObject:
   - component: {fileID: 1826895137}
   - component: {fileID: 1826895139}
   - component: {fileID: 1826895138}
+  - component: {fileID: 1826895142}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
@@ -92994,6 +93092,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1826895142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826895135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &1835159356
 GameObject:
   m_ObjectHideFlags: 0
@@ -93056,8 +93169,7 @@ GameObject:
   - component: {fileID: 1835812212}
   - component: {fileID: 1835812214}
   - component: {fileID: 1835812213}
-  - component: {fileID: 1835812215}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: light (1)
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -93157,21 +93269,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1835812215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835812211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d372deb8dbc4d84699931e803786fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Light: {fileID: 1835812211}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
 --- !u!1 &1854035740
 GameObject:
   m_ObjectHideFlags: 0
@@ -93578,9 +93675,9 @@ MonoBehaviour:
   ray: {fileID: 1895191371}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!4 &1895191373
 Transform:
   m_ObjectHideFlags: 0
@@ -93590,7 +93687,7 @@ Transform:
   m_GameObject: {fileID: 1895191371}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49925104, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 284588347}
@@ -93612,7 +93709,7 @@ GameObject:
   - component: {fileID: 1907332565}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94152,7 +94249,7 @@ Transform:
   m_GameObject: {fileID: 1959714588}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49925104, y: 0.53, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1978542204}
@@ -94177,9 +94274,9 @@ MonoBehaviour:
   ray: {fileID: 1959714588}
   EA: {fileID: 1978542205}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &1978542203
 GameObject:
   m_ObjectHideFlags: 0
@@ -94194,6 +94291,7 @@ GameObject:
   - component: {fileID: 1978542205}
   - component: {fileID: 1978542207}
   - component: {fileID: 1978542206}
+  - component: {fileID: 1978542210}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0 (2)
   m_TagString: Enemy
@@ -94359,6 +94457,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1978542210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978542203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1 &1991071642
 GameObject:
   m_ObjectHideFlags: 0
@@ -95059,7 +95172,7 @@ GameObject:
   - component: {fileID: 2019660648}
   - component: {fileID: 2019660650}
   - component: {fileID: 2019660649}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95869,6 +95982,7 @@ GameObject:
   - component: {fileID: 2080882794}
   - component: {fileID: 2080882793}
   - component: {fileID: 2080882792}
+  - component: {fileID: 2080882797}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0 (1)
   m_TagString: Enemy
@@ -96034,6 +96148,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2080882797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080882790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!4 &2080990382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3294177114479241118, guid: 8cf9c36a07397a948a48411bba4eab70, type: 3}
@@ -96465,7 +96594,7 @@ GameObject:
   - component: {fileID: 2094836636}
   m_Layer: 0
   m_Name: Platform_1_Object
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96653,7 +96782,7 @@ Transform:
   m_GameObject: {fileID: 2096454398}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49925104, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 628917573}
@@ -96678,9 +96807,9 @@ MonoBehaviour:
   ray: {fileID: 2096454398}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &2102574448
 GameObject:
   m_ObjectHideFlags: 0
@@ -96791,6 +96920,7 @@ GameObject:
   - component: {fileID: 2102676887}
   - component: {fileID: 2102676886}
   - component: {fileID: 2102676885}
+  - component: {fileID: 2102676891}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
@@ -96956,6 +97086,21 @@ Transform:
   m_Father: {fileID: 1037119617}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102676891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102676884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  attackCooldown: 2
 --- !u!1001 &2104637864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97053,7 +97198,7 @@ Transform:
   m_GameObject: {fileID: 2108372063}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49925104, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1369561883}
@@ -97078,9 +97223,9 @@ MonoBehaviour:
   ray: {fileID: 2108372063}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &2125356662
 GameObject:
   m_ObjectHideFlags: 0
@@ -97107,7 +97252,7 @@ Transform:
   m_GameObject: {fileID: 2125356662}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.47, y: 0.5, z: 0.12673187}
-  m_LocalScale: {x: -1.7958671, y: 1.7958671, z: 1.7958671}
+  m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1031155263}
@@ -97132,9 +97277,9 @@ MonoBehaviour:
   ray: {fileID: 2125356662}
   EA: {fileID: 1031155264}
   currentState: 0
-  playerHealth: {fileID: 0}
   damage: 1
   attackCooldown: 2
+  pH: {fileID: 497213369}
 --- !u!1 &2126600986
 GameObject:
   m_ObjectHideFlags: 0
