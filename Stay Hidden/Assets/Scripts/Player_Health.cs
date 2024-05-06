@@ -82,6 +82,7 @@ public class Player_Health : MonoBehaviour
             inLight = true;
             LOS.isChasing = true;
         }
+       
     }
 
     private void OnTriggerExit2D(Collider2D collision) 
@@ -110,4 +111,6 @@ public class Player_Health : MonoBehaviour
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Game_Lost");
     }
+
+
 }

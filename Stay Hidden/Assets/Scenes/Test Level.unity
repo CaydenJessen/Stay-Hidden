@@ -285,9 +285,9 @@ MonoBehaviour:
   ray: {fileID: 29702338}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &32697583
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,9 +597,9 @@ MonoBehaviour:
   ray: {fileID: 51417728}
   EA: {fileID: 1826895137}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &54761799
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,7 +3204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191759163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.83525085, y: -0.88, z: 0.00030257}
+  m_LocalPosition: {x: -1.13, y: -0.88, z: 0.00030257}
   m_LocalScale: {x: 0.53154, y: 0.53154, z: 0.53154}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5291,9 +5291,9 @@ MonoBehaviour:
   ray: {fileID: 353884179}
   EA: {fileID: 811377049}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!4 &353884181
 Transform:
   m_ObjectHideFlags: 0
@@ -6583,7 +6583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497213362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.71, y: 6.5, z: 0}
+  m_LocalPosition: {x: -57.43, y: -3.01, z: 0}
   m_LocalScale: {x: 1.862, y: 1.862, z: 1.862}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6738,8 +6738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 500032737}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1468012385}
 --- !u!1 &502246207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7517,8 +7517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 528905493}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1468012385}
 --- !u!1 &533963615
 GameObject:
   m_ObjectHideFlags: 0
@@ -8246,8 +8246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 619925616}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1468012385}
 --- !u!1 &623146225
 GameObject:
   m_ObjectHideFlags: 0
@@ -9724,8 +9724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 698142349}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1959714590}
 --- !u!1 &703893641
 GameObject:
   m_ObjectHideFlags: 0
@@ -10018,8 +10018,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 713550020}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1468012385}
 --- !u!1 &719167401
 GameObject:
   m_ObjectHideFlags: 0
@@ -12343,8 +12343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 909562654}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1895191372}
 --- !u!61 &909562657
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16415,7 +16415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155763260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0412798, y: -0.87999964, z: 0.00030257}
+  m_LocalPosition: {x: 1.52, y: -0.87999964, z: 0.00030257}
   m_LocalScale: {x: 0.53154, y: 0.53154, z: 0.53154}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17125,8 +17125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 1199895314}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 1895191372}
 --- !u!1 &1200166332
 GameObject:
   m_ObjectHideFlags: 0
@@ -17300,9 +17300,9 @@ MonoBehaviour:
   ray: {fileID: 1231879666}
   EA: {fileID: 831833640}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &1233605017
 GameObject:
   m_ObjectHideFlags: 0
@@ -18743,9 +18743,9 @@ MonoBehaviour:
   ray: {fileID: 1335166279}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &1341541028
 GameObject:
   m_ObjectHideFlags: 0
@@ -20470,8 +20470,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 1398350510}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 2108372065}
 --- !u!1 &1403509223
 GameObject:
   m_ObjectHideFlags: 0
@@ -20701,9 +20701,9 @@ MonoBehaviour:
   ray: {fileID: 1436115494}
   EA: {fileID: 410989935}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &1437369855
 GameObject:
   m_ObjectHideFlags: 0
@@ -21082,9 +21082,9 @@ MonoBehaviour:
   ray: {fileID: 1468012383}
   EA: {fileID: 1198396032}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &1476187101
 GameObject:
   m_ObjectHideFlags: 0
@@ -92352,9 +92352,9 @@ MonoBehaviour:
   ray: {fileID: 1802702674}
   EA: {fileID: 681989749}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &1803712606
 GameObject:
   m_ObjectHideFlags: 0
@@ -93170,8 +93170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Light: {fileID: 1835812211}
-  playerHealth: {fileID: 0}
-  los: {fileID: 0}
+  playerHealth: {fileID: 497213369}
+  los: {fileID: 2108372065}
 --- !u!1 &1854035740
 GameObject:
   m_ObjectHideFlags: 0
@@ -93578,9 +93578,9 @@ MonoBehaviour:
   ray: {fileID: 1895191371}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!4 &1895191373
 Transform:
   m_ObjectHideFlags: 0
@@ -94177,9 +94177,9 @@ MonoBehaviour:
   ray: {fileID: 1959714588}
   EA: {fileID: 1978542205}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &1978542203
 GameObject:
   m_ObjectHideFlags: 0
@@ -96678,9 +96678,9 @@ MonoBehaviour:
   ray: {fileID: 2096454398}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &2102574448
 GameObject:
   m_ObjectHideFlags: 0
@@ -96791,6 +96791,7 @@ GameObject:
   - component: {fileID: 2102676887}
   - component: {fileID: 2102676886}
   - component: {fileID: 2102676885}
+  - component: {fileID: 2102676891}
   m_Layer: 0
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
@@ -96956,6 +96957,22 @@ Transform:
   m_Father: {fileID: 1037119617}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102676891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102676884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d86124af1157094b99cb0ffaee0a438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 497213369}
+  LOS: {fileID: 29702340}
+  attackCooldown: 2
 --- !u!1001 &2104637864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97078,9 +97095,9 @@ MonoBehaviour:
   ray: {fileID: 2108372063}
   EA: {fileID: 2102676887}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &2125356662
 GameObject:
   m_ObjectHideFlags: 0
@@ -97132,9 +97149,9 @@ MonoBehaviour:
   ray: {fileID: 2125356662}
   EA: {fileID: 1031155264}
   currentState: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 497213369}
   damage: 1
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1 &2126600986
 GameObject:
   m_ObjectHideFlags: 0

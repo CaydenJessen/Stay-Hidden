@@ -4244,7 +4244,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5733,7 +5733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497213362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.45, y: 6.4, z: 0}
+  m_LocalPosition: {x: -57.14, y: -2.61, z: 0}
   m_LocalScale: {x: 1.862, y: 1.862, z: 1.862}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5890,10 +5890,6 @@ MonoBehaviour:
   Light: {fileID: 500032737}
   playerHealth: {fileID: 0}
   los: {fileID: 0}
-  lightCooldown: 2
-  lightOn: 1
-  lightSetup: 1
-  isAlternating: 0
 --- !u!1 &502246207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6506,10 +6502,6 @@ MonoBehaviour:
   Light: {fileID: 528905493}
   playerHealth: {fileID: 0}
   los: {fileID: 0}
-  lightCooldown: 2
-  lightOn: 1
-  lightSetup: 1
-  isAlternating: 0
 --- !u!1 &533963615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7525,10 +7517,6 @@ MonoBehaviour:
   Light: {fileID: 619925616}
   playerHealth: {fileID: 0}
   los: {fileID: 0}
-  lightCooldown: 2
-  lightOn: 1
-  lightSetup: 1
-  isAlternating: 0
 --- !u!1 &623146225
 GameObject:
   m_ObjectHideFlags: 0
@@ -8912,10 +8900,6 @@ MonoBehaviour:
   Light: {fileID: 698142349}
   playerHealth: {fileID: 0}
   los: {fileID: 0}
-  lightCooldown: 2
-  lightOn: 1
-  lightSetup: 1
-  isAlternating: 0
 --- !u!1 &703893641
 GameObject:
   m_ObjectHideFlags: 0
@@ -9210,10 +9194,6 @@ MonoBehaviour:
   Light: {fileID: 713550020}
   playerHealth: {fileID: 0}
   los: {fileID: 0}
-  lightCooldown: 2
-  lightOn: 1
-  lightSetup: 1
-  isAlternating: 0
 --- !u!1 &719167401
 GameObject:
   m_ObjectHideFlags: 0
@@ -9559,7 +9539,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -9670,7 +9650,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13901,7 +13881,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -14012,7 +13992,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -14256,7 +14236,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -14943,7 +14923,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.06}
+    oldSize: {x: 0.78125, y: 0.09375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -15580,10 +15560,6 @@ MonoBehaviour:
   Light: {fileID: 1199895314}
   playerHealth: {fileID: 0}
   los: {fileID: 0}
-  lightCooldown: 2
-  lightOn: 1
-  lightSetup: 1
-  isAlternating: 0
 --- !u!114 &1199895319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15596,14 +15572,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f07a8b1c7aad2499f74dcb97c8eac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Light:
-  - {fileID: 1199895314}
+  Lights: []
   playerHealth: {fileID: 0}
-  los: {fileID: 0}
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
-  isAlternating: 0
+  LS: {fileID: 0}
 --- !u!1 &1218594112
 GameObject:
   m_ObjectHideFlags: 0
@@ -16555,7 +16529,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -16901,6 +16875,7 @@ MonoBehaviour:
   switchOn: 0
   lightSwitch: {fileID: 1312834913}
   numberOfMechanisms: 4
+  AL: {fileID: 0}
 --- !u!61 &1312834917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17603,7 +17578,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -18604,10 +18579,6 @@ MonoBehaviour:
   Light: {fileID: 1398350510}
   playerHealth: {fileID: 0}
   los: {fileID: 0}
-  lightCooldown: 2
-  lightOn: 1
-  lightSetup: 1
-  isAlternating: 0
 --- !u!1 &1403509223
 GameObject:
   m_ObjectHideFlags: 0
@@ -19630,7 +19601,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -88674,7 +88645,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -88897,7 +88868,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -90633,10 +90604,6 @@ MonoBehaviour:
   Light: {fileID: 1835812211}
   playerHealth: {fileID: 0}
   los: {fileID: 0}
-  lightCooldown: 2
-  lightOn: 1
-  lightSetup: 1
-  isAlternating: 0
 --- !u!1 &1854035740
 GameObject:
   m_ObjectHideFlags: 0
@@ -90834,7 +90801,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

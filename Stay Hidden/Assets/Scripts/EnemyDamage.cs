@@ -7,6 +7,7 @@ public class EnemyDamage : MonoBehaviour
 {
     public float damage = 1f;
     public Player_Health playerHealth;
+    public LineOfSight LOS;
     public float attackCooldown = 2f;
 
     float lastAttackTime;
@@ -20,7 +21,7 @@ public class EnemyDamage : MonoBehaviour
         
         if(collision.gameObject.CompareTag("Player")) 
         {
-            if (playerHealth.isHidden == false);
+            if (playerHealth.isHidden == false && LOS.isChasing == true)
             {
                 playerHealth.TakeDamage(damage);
 
