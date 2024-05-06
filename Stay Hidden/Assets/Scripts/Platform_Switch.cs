@@ -8,7 +8,7 @@ public class Platform_Switch : MonoBehaviour
     public bool inRange = false;
     public bool switchOn = false;
     public GameObject lever;
-    public GameObject leverControl;
+    public GameObject leverBase;
     public bool status = false;
     public Moving_Platform MovPlat;
 
@@ -23,7 +23,7 @@ public class Platform_Switch : MonoBehaviour
                 switchOn = true;
                 MovPlat.platIsMove = true;
                 status = true; 
-                leverControl.transform.Rotate(0.0f, 0.0f, -41.0f);
+                leverBase.transform.Rotate(0.0f, 0.0f, 78.0f);
             }
             else
             {
@@ -32,7 +32,7 @@ public class Platform_Switch : MonoBehaviour
                     switchOn = false;
                     MovPlat.platIsMove = false;
                     status = false; 
-                    leverControl.transform.Rotate(0.0f, 0.0f, 41.0f);
+                    leverBase.transform.Rotate(0.0f, 0.0f, -78.0f);
 
                 }
             }
@@ -40,7 +40,7 @@ public class Platform_Switch : MonoBehaviour
         }
         if (inRange == true)
         {
-            lever.GetComponent<Renderer>().material.color = Color.red;
+            lever.GetComponent<Renderer>().material.color = Color.green;
         }
         else
         {
