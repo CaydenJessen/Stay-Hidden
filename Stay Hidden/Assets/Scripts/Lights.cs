@@ -4,28 +4,27 @@ using UnityEngine;
 
 public class Lights : MonoBehaviour
 {
-    public GameObject Light;
-
+    public EnemyAI eA;
     public Player_Health playerHealth;
     public LineOfSight los;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerHealth.inLight == true)
+        if(playerHealth.inLight == true)
         {
-            //Make a subroutine here so enemy doesnt immediately idle??
-            los.isChasing = true;
+            eA.chase = true;
         }
         else
         {
-            los.isChasing = false;
+            eA.chase = false;
+            //StartCoroutine(Wait());
         }
     }
+    
+   /* IEnumerator Wait()
+    {
+        eA.speed = 0f;
+        yield return new WaitForSeconds(3);
+        eA.speed = eA.walkSpeed;
+    }*/
 }

@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     public float walkSpeed = 3f;
     public float targetSize = 1f;
     private float idleSpeed = 0f;
-    private float speed;
+    public float speed;
     public float wait = 3.0f;
     public Transform player;
     public float chaseSpeed = 5f;
@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour
     public bool isFacingRight = false;
     public bool isFacingLeft = false;
     public float transformData;
+    public bool chase = false;
 
 
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lOS.isChasing == true)
+        if (lOS.isChasing == true || chase == true)
         {
             lOS.lost = false;
             Debug.Log("chase is true");
@@ -50,7 +51,7 @@ public class EnemyAI : MonoBehaviour
         }
        
        
-       if(lOS.currentState == LineOfSight.enemstate.patrol)
+       if(lOS.isChasing == false)
        {
             Patrol();
        }

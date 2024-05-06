@@ -27,6 +27,8 @@ public class Player_Health : MonoBehaviour
 
     public GameObject playerSprite;
 
+    public GameObject flashRed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,14 +47,15 @@ public class Player_Health : MonoBehaviour
 
         if (isHidden == false) //Player can't take damage while being hidden
         {
-            if (Time.time - lastDamageTime < damageCooldown) return;
+            if (Time.time - lastDamageTime < damageCooldown && health>0) return;
 
             health -= amount;
-
+            StartCoroutine(Hurt());
             lastDamageTime = Time.time;
 
             if (health <= 0)
             {
+                flashRed.SetActive(true);
                 playerSprite.GetComponent<SpriteRenderer>().enabled = false;
                 StartCoroutine(Death());
             }
@@ -107,7 +110,15 @@ public class Player_Health : MonoBehaviour
     }
     IEnumerator Death()
     {
+ 
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Game_Lost");
+    }
+
+    IEnumerator Hurt()
+    {
+        flashRed.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        flashRed.SetActive(false);
     }
 }

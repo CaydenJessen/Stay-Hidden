@@ -136,6 +136,7 @@ public class Player_Movement : MonoBehaviour
         if (onGround.gameObject.CompareTag("Moving Platform"))
         {
             canHide = false;
+            canJump = true;
         }
 
 
@@ -150,6 +151,8 @@ public class Player_Movement : MonoBehaviour
         if (offGround.gameObject.CompareTag("Moving Platform"))
         {
             canHide = true;
+            canJump = false;
+
         }
     }
 
