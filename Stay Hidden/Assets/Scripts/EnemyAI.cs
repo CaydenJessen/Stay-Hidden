@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D enemy;
+    private Animator anim;
     private Transform targetPoint;
     public float walkSpeed = 3f;
     public float targetSize = 1f;
@@ -25,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     {
         speed = walkSpeed;
         enemy = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         targetPoint = pointB.transform;
     }
 
@@ -43,7 +45,6 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("target lost");
             targetPoint = pointA.transform;
             //StartCoroutine(Confused());
-
         }
        
        if(lOS.currentState == LineOfSight.enemstate.patrol)
