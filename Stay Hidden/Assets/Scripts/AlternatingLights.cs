@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class AlternatingLights : MonoBehaviour
 {
-    public GameObject[] Light;
+    public GameObject[] Lights;
 
     public Player_Health playerHealth;
-    public LineOfSight los;
-
-
+    
     public float lightCooldown = 2f; //Time between lights on and off.
-    float lastLight;
 
     public bool lightOn = true;
 
     public bool lightSetup = true;
 
-    public bool isAlternating;
+    public Light_Switch LS;
 
     // Start is called before the first frame update
     void Start()
@@ -27,37 +24,44 @@ public class AlternatingLights : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //if (playerHealth.inLight == true)
-        //{
-        //    los.isChasing = true;
-        //}
+    { 
+        if(LS.switchOn == true)
+        {
+            lightSetup = false;
+        }
+
+        if (lightSetup == false)
+        {
+            foreach (GameObject i in Lights)
+            {
+                i.SetActive(false);
+            }
+        }
     }
 
     IEnumerator ExampleCoroutine()
     {
-        for (int i = 0; i < Light.Length; i++)
+        while (lightSetup == true)
         {
-            while (lightSetup == true)
+            if (lightSetup == true)
             {
-                if (lightOn == false)
+                foreach (GameObject i in Lights)
                 {
-                    Light[i].SetActive(false);
-                    yield return new WaitForSeconds(lightCooldown);
-                    lightOn = true;
-                }
+                    if (lightOn == false)
+                    {
+                        i.SetActive(false);
+                        lightOn = true;
+                        yield return new WaitForSeconds(lightCooldown);
+                    }
 
-                if (lightOn == true)
-                {
-                    Light[i].SetActive(true);
-                    yield return new WaitForSeconds(lightCooldown);
-                    lightOn = false;
-
+                    if (lightOn == true)
+                    {
+                        i.SetActive(true);
+                        lightOn = false;
+                        yield return new WaitForSeconds(lightCooldown);
+                    }
                 }
             }
         }
-
     }
-
-
 }

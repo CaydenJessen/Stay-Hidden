@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class Player_Health : MonoBehaviour
     public bool isHidden = false;
     public LineOfSight LOS;
 
+    public Image healthBar;
+
+    public GameObject playerSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +36,7 @@ public class Player_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        healthBar.fillAmount = health / maxHealth;
     }
 
 
@@ -48,7 +53,7 @@ public class Player_Health : MonoBehaviour
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                playerSprite.GetComponent<SpriteRenderer>().enabled = false;
                 StartCoroutine(Death());
             }
 
