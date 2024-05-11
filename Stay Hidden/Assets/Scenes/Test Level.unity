@@ -92072,7 +92072,7 @@ MonoBehaviour:
   lightCooldown: 2
   lightOn: 1
   lightSetup: 1
-  LS: {fileID: 1275611645}
+  LS: {fileID: 0}
 --- !u!1 &1732770216
 GameObject:
   m_ObjectHideFlags: 0

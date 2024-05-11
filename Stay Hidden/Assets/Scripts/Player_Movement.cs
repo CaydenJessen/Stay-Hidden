@@ -28,7 +28,7 @@ public class Player_Movement : MonoBehaviour
     public float chargeRate;
     private Coroutine recharge;
     public bool lit;
-    public bool canHide = true;
+    public bool canHide = false;
 
 
     public bool hasItem = false;
@@ -72,7 +72,7 @@ public class Player_Movement : MonoBehaviour
         if(Input.GetButtonDown("Jump") && canJump)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
-            isRunning = false; //Player stops running when they jump / stops momentum
+            //isRunning = false; //Player stops running when they jump / stops momentum
         }
 
 
@@ -90,10 +90,6 @@ public class Player_Movement : MonoBehaviour
         }
 
         HidingMechanic();
-        
-          
-    
-
     }
 
 
@@ -131,7 +127,12 @@ public class Player_Movement : MonoBehaviour
         if((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy")))
         {
             canJump = true;
-
+            canHide = true;
+        }
+        else
+        {
+            canHide = false;
+            canJump = false;
         }
         if (onGround.gameObject.CompareTag("Moving Platform"))
         {
@@ -184,6 +185,8 @@ public class Player_Movement : MonoBehaviour
 
         }
         
+
+        //--------------PLAYER IS ABLE TO JUMP INFINITELY BUG---------------
         if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false && canHide == true || stamina == 0 && isFacingRight == false && canHide == true || lit == true && isFacingRight == false && canHide == true)
         {
             pH.isHidden = false;
