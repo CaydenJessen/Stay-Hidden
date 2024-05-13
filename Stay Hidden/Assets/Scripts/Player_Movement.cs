@@ -12,8 +12,8 @@ public class Player_Movement : MonoBehaviour
     public float currentSpeed;
 
     public bool isFacingRight = false;
-    public bool canJump = true;
-    public bool onground = true;
+    public bool canJump = false;
+    public bool touchGround = false;
     bool isRunning = false;
     public bool tailControl;
     public Animator animator;
@@ -41,7 +41,6 @@ public class Player_Movement : MonoBehaviour
 
     public bool camResize = false;
 
-    
 
     void Start()
     {
@@ -80,7 +79,7 @@ public class Player_Movement : MonoBehaviour
         //Sprint detection
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (onground == true) //Player cant run mid air after jumping
+            if (touchGround == true) //Player cant run mid air after jumping
             {
                 isRunning = true;
             }
@@ -129,7 +128,7 @@ public class Player_Movement : MonoBehaviour
         {
             canJump = true;
             canHide = true;
-            onground = true;
+            touchGround = true;
         }
         else
         {
@@ -137,13 +136,13 @@ public class Player_Movement : MonoBehaviour
             {
                 canHide = false;
                 canJump = true;
-                onground = true;
+                touchGround = true;
             }
             else
             {
                 canHide = false;
                 canJump = false;
-                onground = false;
+                touchGround = false;
             }
         }
 
@@ -153,7 +152,7 @@ public class Player_Movement : MonoBehaviour
         {
             canHide = false;
             canJump = true;
-            onground = true;
+            touchGround = true;
         }
 
 
@@ -163,14 +162,14 @@ public class Player_Movement : MonoBehaviour
         if((offGround.gameObject.CompareTag("Ground")) || (offGround.gameObject.CompareTag("Enemy")))
         {
             canJump = false;
-            onground = false;
+            touchGround = false;
 
         }
         if (offGround.gameObject.CompareTag("Moving Platform"))
         {
             canHide = true;
             canJump = false;
-            onground = false;
+            touchGround = false;
 
         }
     }
@@ -211,7 +210,7 @@ public class Player_Movement : MonoBehaviour
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             
-            if(onground)
+            if(touchGround)
             {
                 canJump = true;
             }
@@ -226,7 +225,7 @@ public class Player_Movement : MonoBehaviour
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             
-            if(onground)
+            if(touchGround)
             {
                 canJump = true;
             }
