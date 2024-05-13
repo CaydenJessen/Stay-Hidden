@@ -12,7 +12,8 @@ public class Player_Movement : MonoBehaviour
     public float currentSpeed;
 
     public bool isFacingRight = false;
-    public bool canJump = true; 
+    public bool canJump = true;
+    public bool onground = true;
     bool isRunning = false;
     public bool tailControl;
     public Animator animator;
@@ -79,7 +80,7 @@ public class Player_Movement : MonoBehaviour
         //Sprint detection
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (canJump == true) //Player cant run mid air after jumping
+            if (onground == true) //Player cant run mid air after jumping
             {
                 isRunning = true;
             }
@@ -128,16 +129,31 @@ public class Player_Movement : MonoBehaviour
         {
             canJump = true;
             canHide = true;
+            onground = true;
         }
         else
         {
-            canHide = false;
-            canJump = false;
+            if (onGround.gameObject.CompareTag("Moving Platform"))
+            {
+                canHide = false;
+                canJump = true;
+                onground = true;
+            }
+            else
+            {
+                canHide = false;
+                canJump = false;
+                onground = false;
+            }
         }
+
+
+
         if (onGround.gameObject.CompareTag("Moving Platform"))
         {
             canHide = false;
             canJump = true;
+            onground = true;
         }
 
 
@@ -147,12 +163,14 @@ public class Player_Movement : MonoBehaviour
         if((offGround.gameObject.CompareTag("Ground")) || (offGround.gameObject.CompareTag("Enemy")))
         {
             canJump = false;
+            onground = false;
 
         }
         if (offGround.gameObject.CompareTag("Moving Platform"))
         {
             canHide = true;
             canJump = false;
+            onground = false;
 
         }
     }
@@ -192,7 +210,12 @@ public class Player_Movement : MonoBehaviour
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            canJump = true;
+            
+            if(onground)
+            {
+                canJump = true;
+            }
+            
             
 
 
@@ -202,9 +225,11 @@ public class Player_Movement : MonoBehaviour
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            canJump = true;
             
-
+            if(onground)
+            {
+                canJump = true;
+            }
         }
     }
     void OnTriggerEnter2D(Collider2D col)
