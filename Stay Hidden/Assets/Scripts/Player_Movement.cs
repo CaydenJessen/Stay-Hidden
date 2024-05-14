@@ -154,10 +154,7 @@ public class Player_Movement : MonoBehaviour
     
 
 
-
-
-
-    // //Check if player is colliding with ground == Jump allowed
+    // //Ground Check Using Collision
     // private void OnCollisionEnter2D(Collision2D onGround)
     // {
     //     if((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy")))
@@ -208,16 +205,6 @@ public class Player_Movement : MonoBehaviour
     //         touchGround = false;
     //     }
     // }
-
-
-
-
-
-
-
-
-
-
 
 
 
