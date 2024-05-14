@@ -5202,7 +5202,7 @@ GameObject:
   - component: {fileID: 410989937}
   - component: {fileID: 410989936}
   - component: {fileID: 410989940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -7922,7 +7922,7 @@ GameObject:
   - component: {fileID: 628917575}
   - component: {fileID: 628917574}
   - component: {fileID: 628917579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -8703,7 +8703,7 @@ GameObject:
   - component: {fileID: 681989751}
   - component: {fileID: 681989750}
   - component: {fileID: 681989754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0 (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -10373,7 +10373,7 @@ GameObject:
   - component: {fileID: 811377048}
   - component: {fileID: 811377047}
   - component: {fileID: 811377053}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0 (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -10870,7 +10870,7 @@ GameObject:
   - component: {fileID: 831833642}
   - component: {fileID: 831833641}
   - component: {fileID: 831833645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0 (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -14021,7 +14021,7 @@ GameObject:
   - component: {fileID: 1031155266}
   - component: {fileID: 1031155265}
   - component: {fileID: 1031155269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -16286,7 +16286,7 @@ GameObject:
   - component: {fileID: 1198396034}
   - component: {fileID: 1198396033}
   - component: {fileID: 1198396037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -18627,7 +18627,7 @@ GameObject:
   - component: {fileID: 1369561885}
   - component: {fileID: 1369561884}
   - component: {fileID: 1369561889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -91542,7 +91542,7 @@ GameObject:
   - component: {fileID: 1826895139}
   - component: {fileID: 1826895138}
   - component: {fileID: 1826895142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -92945,7 +92945,7 @@ GameObject:
   - component: {fileID: 1978542207}
   - component: {fileID: 1978542206}
   - component: {fileID: 1978542210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0 (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -94304,7 +94304,7 @@ GameObject:
   - component: {fileID: 2080882793}
   - component: {fileID: 2080882792}
   - component: {fileID: 2080882797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -95243,7 +95243,7 @@ GameObject:
   - component: {fileID: 2102676886}
   - component: {fileID: 2102676885}
   - component: {fileID: 2102676891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Bev_Walk_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
