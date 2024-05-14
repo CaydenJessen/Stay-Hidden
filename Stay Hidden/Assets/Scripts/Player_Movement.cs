@@ -41,6 +41,10 @@ public class Player_Movement : MonoBehaviour
 
     public bool camResize = false;
 
+    public Vector2 boxSize;
+    public float castDistance;
+    public LayerMask groundLayer;
+
 
     void Start()
     {
@@ -68,8 +72,15 @@ public class Player_Movement : MonoBehaviour
         FlipSprite();
 
 
-        //Jump
-        if(Input.GetButtonDown("Jump") && canJump)
+        //Jump using Collision
+        // if(Input.GetButtonDown("Jump") && canJump)
+        // {
+        //     rb.velocity = new Vector2(rb.velocity.x, jump);
+        //     //isRunning = false; //Player stops running when they jump / stops momentum
+        // }
+
+        //Jump using Raycasting
+        if(Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
             //isRunning = false; //Player stops running when they jump / stops momentum
@@ -79,7 +90,7 @@ public class Player_Movement : MonoBehaviour
         //Sprint detection
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (touchGround == true) //Player cant run mid air after jumping
+            if (isGrounded()) //Player cant run mid air after jumping
             {
                 isRunning = true;
             }
@@ -121,58 +132,94 @@ public class Player_Movement : MonoBehaviour
     }
 
 
-    //Check if player is colliding with ground == Jump allowed
-    private void OnCollisionEnter2D(Collision2D onGround)
+    //Ground Check using Raycasting
+    public bool isGrounded()
     {
-        if((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy")))
+        if(Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
         {
-            canJump = true;
-            canHide = true;
-            touchGround = true;
+            return true;
         }
         else
         {
-            if (onGround.gameObject.CompareTag("Moving Platform"))
-            {
-                canHide = false;
-                canJump = true;
-                touchGround = true;
-            }
-            else
-            {
-                canHide = false;
-                canJump = false;
-                touchGround = false;
-            }
+            return false;
         }
-
-
-
-        if (onGround.gameObject.CompareTag("Moving Platform"))
-        {
-            canHide = false;
-            canJump = true;
-            touchGround = true;
-        }
-
-
     }
-    private void OnCollisionExit2D(Collision2D offGround)
+
+    public void OnDrawGizmos()
     {
-        if((offGround.gameObject.CompareTag("Ground")) || (offGround.gameObject.CompareTag("Enemy")))
-        {
-            canJump = false;
-            touchGround = false;
+        Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
 
-        }
-        if (offGround.gameObject.CompareTag("Moving Platform"))
-        {
-            canHide = true;
-            canJump = false;
-            touchGround = false;
-
-        }
     }
+
+    
+
+
+
+
+
+    // //Check if player is colliding with ground == Jump allowed
+    // private void OnCollisionEnter2D(Collision2D onGround)
+    // {
+    //     if((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy")))
+    //     {
+    //         canJump = true;
+    //         canHide = true;
+    //         touchGround = true;
+    //     }
+    //     else
+    //     {
+    //         if (onGround.gameObject.CompareTag("Moving Platform"))
+    //         {
+    //             canHide = false;
+    //             canJump = true;
+    //             touchGround = true;
+    //         }
+    //         else
+    //         {
+    //             canHide = false;
+    //             canJump = false;
+    //             touchGround = false;
+    //         }
+    //     }
+
+
+
+    //     if (onGround.gameObject.CompareTag("Moving Platform"))
+    //     {
+    //         canHide = false;
+    //         canJump = true;
+    //         touchGround = true;
+    //     }
+
+
+    // }
+    // private void OnCollisionExit2D(Collision2D offGround)
+    // {
+    //     if((offGround.gameObject.CompareTag("Ground")) || (offGround.gameObject.CompareTag("Enemy")))
+    //     {
+    //         canJump = false;
+    //         touchGround = false;
+
+    //     }
+    //     if (offGround.gameObject.CompareTag("Moving Platform"))
+    //     {
+    //         canHide = true;
+    //         canJump = false;
+    //         touchGround = false;
+    //     }
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     private void HidingMechanic()
@@ -203,6 +250,8 @@ public class Player_Movement : MonoBehaviour
         }
         
 
+
+
         //--------------PLAYER IS ABLE TO JUMP INFINITELY BUG---------------
         if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false && canHide == true || stamina == 0 && isFacingRight == false && canHide == true || lit == true && isFacingRight == false && canHide == true)
         {
@@ -214,10 +263,6 @@ public class Player_Movement : MonoBehaviour
             {
                 canJump = true;
             }
-            
-            
-
-
         }
         else if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true)
         {
@@ -272,13 +317,12 @@ public class Player_Movement : MonoBehaviour
         {
             stamina += chargeRate / 10f;
         }
-            if(stamina>maxStamina)
-            {
-                stamina = maxStamina;
-                staminaBar.fillAmount = stamina/maxStamina;
-                yield return new WaitForSeconds(0.1f);
-            }
-        
+        if(stamina>maxStamina)
+        {
+            stamina = maxStamina;
+            staminaBar.fillAmount = stamina/maxStamina;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
 }
