@@ -223,6 +223,7 @@ public class Player_Movement : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, 0.05f);
             canJump = false;
            
+            isRunning = false;
 
             pH.isHidden = true;
             stamina -= skillCost * Time.deltaTime; 
