@@ -29,6 +29,8 @@ public class Player_Health : MonoBehaviour
 
     public GameObject flashRed;
 
+    public bool isAlive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,7 @@ public class Player_Health : MonoBehaviour
 
             if (health <= 0)
             {
+                isAlive = false;
                 flashRed.SetActive(true);
                 playerSprite.GetComponent<SpriteRenderer>().enabled = false;
                 StartCoroutine(Death());

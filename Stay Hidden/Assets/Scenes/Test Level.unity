@@ -6284,6 +6284,7 @@ MonoBehaviour:
   healthBar: {fileID: 803705393}
   playerSprite: {fileID: 497213362}
   flashRed: {fileID: 442941416}
+  isAlive: 1
 --- !u!114 &497213370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89347,7 +89348,7 @@ GameObject:
   - component: {fileID: 1714211952}
   - component: {fileID: 1714211951}
   - component: {fileID: 1714211950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}

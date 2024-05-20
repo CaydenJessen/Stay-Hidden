@@ -80,7 +80,7 @@ public class Player_Movement : MonoBehaviour
         // }
 
         //Jump using Raycasting
-        if(Input.GetButtonDown("Jump") && isGrounded())
+        if(Input.GetButtonDown("Jump") && isGrounded() && pH.isAlive == true)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
             //isRunning = false; //Player stops running when they jump / stops momentum
@@ -88,7 +88,7 @@ public class Player_Movement : MonoBehaviour
 
 
         //Sprint detection
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && pH.isAlive == true)
         {
             if (isGrounded()) //Player cant run mid air after jumping
             {
@@ -106,11 +106,16 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (pH.isAlive == true)
+        {
+            rb.velocity = new Vector2(horizontal * currentSpeed, rb.velocity.y);
+
+        }
         //Player walk movement
-        rb.velocity = new Vector2(horizontal * currentSpeed, rb.velocity.y);
+        //rb.velocity = new Vector2(horizontal * currentSpeed, rb.velocity.y);
 
         //Increase player speed if they run / press shift
-        if (isRunning && tailControl == false)
+        if ((isRunning && tailControl == false) && (pH.isAlive == true))
         {
             animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
             rb.velocity = new Vector2(horizontal * (speed * runSpeedMultiplier), rb.velocity.y);
