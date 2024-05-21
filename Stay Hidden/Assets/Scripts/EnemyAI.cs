@@ -22,6 +22,8 @@ public class EnemyAI : MonoBehaviour
     public float transformData;
     public bool chase = false;
 
+    public bool lost = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,13 +39,13 @@ public class EnemyAI : MonoBehaviour
     {
         if (lOS.isChasing == true || chase == true)
         {
-            lOS.lost = false;
+            lost = false;
             Debug.Log("chase is true");
             Chase();
         }
-      else if(lOS.lost == true)
+      else if(lost == true)
         {
-            lOS.lost = false;
+            lost = false;
             lOS.isChasing = false;
             Debug.Log("target lost");
             targetPoint = pointA.transform;
@@ -179,7 +181,7 @@ public class EnemyAI : MonoBehaviour
         flip();
         yield return new WaitForSeconds(1);
         flip();
-        lOS.lost = false;
+        lost = false;
         speed = walkSpeed;
         targetPoint = pointA.transform;
         Debug.Log("back to patrol");

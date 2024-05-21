@@ -31,6 +31,8 @@ public class Player_Health : MonoBehaviour
 
     public bool isAlive = true;
 
+    public bool inDarkness = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +77,7 @@ public class Player_Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Darkness"))
         {
             isHidden = true;
+            inDarkness = true;
 
             Healing();
 
@@ -96,6 +99,7 @@ public class Player_Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Darkness"))
         {
             isHidden = false;
+            inDarkness = false;
         }
         if (collision.gameObject.CompareTag("Light"))
         {
