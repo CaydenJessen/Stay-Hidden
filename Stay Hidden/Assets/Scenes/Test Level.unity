@@ -279,7 +279,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 29702338}
@@ -480,7 +479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 51417728}
@@ -4696,7 +4694,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 353884179}
@@ -6754,11 +6751,12 @@ MonoBehaviour:
   player: {fileID: 497213362}
   offset: 3
   offsetSmoothing: 1.69
-  cameraSize: 0
   cam: {fileID: 519420031}
   pH: {fileID: 497213369}
   pM: {fileID: 497213363}
   zoomOut: 10
+  zoomIn: 3
+  zoomSpeed: 4
   yOffset: 0
 --- !u!1 &522174697
 GameObject:
@@ -16465,7 +16463,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 1231879666}
@@ -17743,7 +17740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 1335166279}
@@ -19380,7 +19376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 1436115494}
@@ -19728,7 +19723,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 1468012383}
@@ -91159,7 +91153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 1802702674}
@@ -92425,7 +92418,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 1
   ray: {fileID: 1895191371}
@@ -93023,7 +93015,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 1959714588}
@@ -95264,7 +95255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 2096454398}
@@ -95587,7 +95577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 2108372063}
@@ -95776,7 +95765,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChasing: 0
-  lost: 0
   rayDirection: 1
   lineOfSightDistance: 2
   ray: {fileID: 2125356662}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LineOfSight : MonoBehaviour
 {
     public bool isChasing = false;
-    public bool lost = false;
+    //public bool lost = false;
     public float rayDirection = 1f;
     public float lineOfSightDistance = 2f;
     public GameObject ray;

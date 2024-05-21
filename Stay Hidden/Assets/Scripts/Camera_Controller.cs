@@ -10,11 +10,12 @@ public class Camera_Controller : MonoBehaviour
     public float offset;
     public float offsetSmoothing;
     private Vector3 playerPosition;
-    public float cameraSize;
     public Camera cam;
     public Player_Health pH;
     public Player_Movement pM;
     public float zoomOut;
+    public float zoomIn;
+    public float zoomSpeed = 4f;
 
     public float yOffset; //Camera Height
     private void Start()
@@ -31,16 +32,46 @@ public class Camera_Controller : MonoBehaviour
             //transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
             if(pH.isHidden == true)
             {
-                cam.orthographicSize = 3f;
+               
+                 if(cam.orthographicSize >= zoomIn + 0.1f)
+                {
+                    cam.orthographicSize -= zoomSpeed* Time.deltaTime;
+                }
+                else
+                {
+                    cam.orthographicSize = zoomIn;
+                }
+               
             }
-            else if(pM.camResize == true)
+            else if(pM.camResize == true )
             {
-                cam.orthographicSize = zoomOut;
+                
+                 if(cam.orthographicSize <= zoomOut - 0.1f)
+                {
+                    cam.orthographicSize += zoomSpeed* Time.deltaTime;
+                }
+                else
+                {
+                    cam.orthographicSize = zoomOut;
+                }
             }
             else
             {
-                cam.orthographicSize = 5f;
+                if(cam.orthographicSize > 5.1f)
+                {
+                    cam.orthographicSize -= zoomSpeed* Time.deltaTime;
+                }
+                else if(cam.orthographicSize < 4.9f)
+                {
+                    cam.orthographicSize += zoomSpeed* Time.deltaTime;
+                }
+                else
+                {
+                    cam.orthographicSize = 5f;
 
+                }
+
+                
             }
 
 
