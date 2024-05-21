@@ -43,8 +43,18 @@ public class Player_Health : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = health / maxHealth;
+
+        
     }
 
+
+    void FixedUpdate()
+    {
+        if(inDarkness == true)
+        {
+            isHidden = true;
+        }
+    }
 
     public void TakeDamage (float amount)
     {

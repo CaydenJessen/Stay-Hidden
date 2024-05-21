@@ -121,6 +121,7 @@ public class Player_Movement : MonoBehaviour
             rb.velocity = new Vector2(horizontal * (speed * runSpeedMultiplier), rb.velocity.y);
         }
 
+
     }
 
     //Flip sprite so it faces direction it is running
@@ -239,7 +240,7 @@ public class Player_Movement : MonoBehaviour
             {
                 StopCoroutine(recharge);
             }
-                recharge = StartCoroutine(RechargeStamina());
+            recharge = StartCoroutine(RechargeStamina());
 
         }
         
