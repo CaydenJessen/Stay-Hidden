@@ -33,6 +33,8 @@ public class Player_Health : MonoBehaviour
 
     public bool inDarkness = false;
 
+    public GameObject alertIcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,8 @@ public class Player_Health : MonoBehaviour
         {
             isHidden = true;
         }
+
+        Spotted();
     }
 
     public void TakeDamage (float amount)
@@ -137,5 +141,21 @@ public class Player_Health : MonoBehaviour
         flashRed.SetActive(true);
         yield return new WaitForSeconds(0.25f);
         flashRed.SetActive(false);
+    }
+
+    public void Spotted()
+    {
+        if(((inLight == true) || (LOS.isChasing == true)) && isHidden == false && inDarkness == false)
+        {
+            alertIcon.SetActive(true);
+        }
+        else
+        {
+            alertIcon.SetActive(false);
+        }
+
+
+
+
     }
 }
