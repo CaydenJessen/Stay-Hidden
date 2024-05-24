@@ -2479,6 +2479,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &173750813 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2425729182408340848, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+  m_PrefabInstance: {fileID: 2425729181102393826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &176297575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1084330522887677427, guid: 2af2093ff62c01f478fe2007c34ccee1, type: 3}
@@ -141461,6 +141466,30 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 803705393}
+    - target: {fileID: 2425729182408340849, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 2425729182408340849, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+      propertyPath: tailParent
+      value: 
+      objectReference: {fileID: 173750813}
+    - target: {fileID: 2425729182408340849, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+      propertyPath: worldAnchor
+      value: 
+      objectReference: {fileID: 173750813}
+    - target: {fileID: 2425729182408340849, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+      propertyPath: initialScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425729182408340849, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+      propertyPath: initialScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425729182408340849, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+      propertyPath: initialScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
