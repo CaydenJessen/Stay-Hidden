@@ -17,7 +17,7 @@ public class TailMechanic : MonoBehaviour
     }
     void Update()
     {
-      
+
         if (Input.GetMouseButton(0))
         {
             tail.SetActive(true);
@@ -28,32 +28,31 @@ public class TailMechanic : MonoBehaviour
             Vector3 MouseScreenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
             Vector3 MouseWorldPosition = mainCam.ScreenToWorldPoint(MouseScreenPosition);
             float distance = Vector3.Distance(tailParent.position, MouseWorldPosition);
-            transform.localScale = new Vector3(distance /2f, initialScale.y, initialScale.z);
-            
-            if(transform.localScale.x >1f)
+            transform.localScale = new Vector3(distance / 2f, initialScale.y, initialScale.z);
+
+            if (pM.isFacingRight == false)
+            {
+                transform.localScale = new Vector3(distance / 2f, initialScale.y, initialScale.z);
+
+            }
+            else
+            {
+                transform.localScale = new Vector3(-distance / 2f, initialScale.y, initialScale.z);
+            }
+
+            if (transform.localScale.x > 1f)
             {
                 transform.localScale = new Vector3(1, initialScale.y, initialScale.z);
-
+            }
+            else if(transform.localScale.x < -1)
+            {
+                transform.localScale = new Vector3(-1, initialScale.y, initialScale.z);
             }
         }
         else
         {
             tail.SetActive(false);
         }
-        //Flip();
     }
-
-    /*void Flip()
-    {
-        if(pM.isFacingRight == false)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-
-        }
-        else
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-    }*/
 
 }

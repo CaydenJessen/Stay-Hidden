@@ -59,11 +59,13 @@ public class Player_Movement : MonoBehaviour
         {
             currentSpeed = 0f;
             tailControl = true;
+            animator.SetBool("Tail", true);
         }
         else
         {
             currentSpeed = speed;
             tailControl = false;
+            animator.SetBool("Tail", false);
         }
         //Store horizontal value
         horizontal = Input.GetAxis("Horizontal");
@@ -84,11 +86,31 @@ public class Player_Movement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
             //isRunning = false; //Player stops running when they jump / stops momentum
+            animator.SetFloat("yVelocity", Mathf.Abs(rb.velocity.y));
+            
         }
 
+        if(isGrounded())
+        {
+            animator.SetBool("Jump", false);
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            animator.SetBool("Jump", true);
+        }
+
+        if(pH.isHidden == true)
+        {
+            animator.SetBool("Hiding", true);
+        }
+        else if(pH.isHidden == false)
+        {
+            animator.SetBool("Hiding", false);
+        }
 
         //Sprint detection
-        if (Input.GetKeyDown(KeyCode.LeftShift) && pH.isAlive == true)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && pH.isAlive == true)
         {
             if (isGrounded()) //Player cant run mid air after jumping
             {
@@ -143,7 +165,9 @@ public class Player_Movement : MonoBehaviour
     {
         if(Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
         {
+            
             return true;
+            
         }
         else
         {
@@ -220,8 +244,8 @@ public class Player_Movement : MonoBehaviour
        
         if(Input.GetKey(KeyCode.LeftControl) && canHide == true && pH.inDarkness == false)
         {    
-            Player.transform.localScale = new Vector3(1.862f, 0.3f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, 0.05f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, -0.30f);
             canJump = false;
            
             isRunning = false;
@@ -253,8 +277,9 @@ public class Player_Movement : MonoBehaviour
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            
-            if(touchGround)
+            GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, 0.01941717f);
+
+            if (touchGround)
             {
                 canJump = true;
             }
@@ -264,8 +289,9 @@ public class Player_Movement : MonoBehaviour
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            
-            if(touchGround)
+            GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, 0.01941717f);
+
+            if (touchGround)
             {
                 canJump = true;
             }

@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour
 
     public bool lost = false;
 
+    public Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("Speed", speed);
         if (lOS.isChasing == true || chase == true)
         {
             lost = false;
