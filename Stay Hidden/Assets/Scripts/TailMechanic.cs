@@ -28,8 +28,13 @@ public class TailMechanic : MonoBehaviour
             Vector3 MouseScreenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
             Vector3 MouseWorldPosition = mainCam.ScreenToWorldPoint(MouseScreenPosition);
             float distance = Vector3.Distance(tailParent.position, MouseWorldPosition);
-            transform.localScale = new Vector3(distance / 2f, initialScale.y, initialScale.z);
-            //tail.transform.localScale = new Vector3(Input.mousePosition.x + Input.mousePosition.y, 1f, 1f);
+            transform.localScale = new Vector3(distance /2f, initialScale.y, initialScale.z);
+            
+            if(transform.localScale.x >1f)
+            {
+                transform.localScale = new Vector3(1, initialScale.y, initialScale.z);
+
+            }
         }
         else
         {
