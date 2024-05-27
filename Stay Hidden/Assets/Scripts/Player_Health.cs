@@ -58,6 +58,21 @@ public class Player_Health : MonoBehaviour
         }
 
         Spotted();
+
+        if (health <= 0)
+        {
+            isAlive = false;
+            flashRed.SetActive(true);
+            playerSprite.GetComponent<SpriteRenderer>().enabled = false;
+            StartCoroutine(Death());
+        }
+        else
+        {
+            isAlive = true;
+        }
+
+
+
     }
 
     public void TakeDamage (float amount)
@@ -77,6 +92,10 @@ public class Player_Health : MonoBehaviour
                 flashRed.SetActive(true);
                 playerSprite.GetComponent<SpriteRenderer>().enabled = false;
                 StartCoroutine(Death());
+            }
+            else
+            {
+                isAlive = true;
             }
 
         }
@@ -145,7 +164,7 @@ public class Player_Health : MonoBehaviour
 
     public void Spotted()
     {
-        if(((inLight == true) || (LOS.isChasing == true)) && isHidden == false && inDarkness == false)
+        if((inLight == true)  && isHidden == false && inDarkness == false)
         {
             alertIcon.SetActive(true);
         }
