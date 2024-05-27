@@ -153,9 +153,36 @@ public class Player_Health : MonoBehaviour
         {
             alertIcon.SetActive(false);
         }
-
-
-
-
     }
+
+
+
+    //----------------TEMPORARY FIX AS EnemyDamage.cs IS NOT WORKING---------------////
+    //----------------DELETE THIS FIX IF IT IS EnemyDamage.cs IS FIXED---------------////
+    public float damage = 1f;
+    public float attackCooldown = 2f;
+
+    float lastAttackTime;
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Check if we took damage recently
+        if (Time.time - lastAttackTime < attackCooldown) return;
+
+
+        if(collision.gameObject.CompareTag("Enemy")) 
+        {
+            if (isHidden == false)
+            {
+                TakeDamage(damage);
+
+                // Note when the player took damage
+                lastAttackTime = Time.time;
+            }
+
+        }
+    }
+
+//----------------END OF FIX---------------////
+
 }

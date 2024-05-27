@@ -100,7 +100,7 @@ public class Player_Movement : MonoBehaviour
             animator.SetBool("Jump", true);
         }
 
-        if(pH.isHidden == true)
+        if((pH.isHidden == true) && (pH.inDarkness == false))
         {
             animator.SetBool("Hiding", true);
         }
