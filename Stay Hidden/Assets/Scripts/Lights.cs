@@ -6,7 +6,8 @@ public class Lights : MonoBehaviour
 {
     public EnemyAI eA;
     public Player_Health playerHealth;
-    public LineOfSight los;
+    // //public LineOfSight los;
+
 
     private void Update()
     {
@@ -20,11 +21,20 @@ public class Lights : MonoBehaviour
             //StartCoroutine(Wait());
         }
     }
-    
+
+
+
    /* IEnumerator Wait()
     {
         eA.speed = 0f;
         yield return new WaitForSeconds(3);
         eA.speed = eA.walkSpeed;
     }*/
+
+
+
+
+
+
+
 }

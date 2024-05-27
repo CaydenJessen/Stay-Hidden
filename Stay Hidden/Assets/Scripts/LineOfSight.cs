@@ -14,7 +14,6 @@ public class LineOfSight : MonoBehaviour
     public enum enemstate{patrol, chase};
     public enemstate currentState;
 
-
     public float damage = 1f;
     public float attackCooldown = 2f;
 

@@ -22,6 +22,7 @@ public class Player_Health : MonoBehaviour
 
     public bool isHidden = false;
     public LineOfSight LOS;
+    public EnemyAI ea;
 
     public Image healthBar;
 
