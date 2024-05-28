@@ -244,7 +244,7 @@ public class Player_Movement : MonoBehaviour
        
         if(Input.GetKey(KeyCode.LeftControl) && canHide == true && pH.inDarkness == false)
         {    
-            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, 0.05f);
+            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, 0.01f);
             GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, -0.30f);
             canJump = false;
            
