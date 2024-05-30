@@ -120,11 +120,6 @@ public class Player_Health : MonoBehaviour
             LOS.isChasing = false;
         }
 
-        if (collision.gameObject.CompareTag("Light"))
-        {
-            inLight = true;
-            LOS.isChasing = true;
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) 
@@ -134,10 +129,6 @@ public class Player_Health : MonoBehaviour
         {
             isHidden = false;
             inDarkness = false;
-        }
-        if (collision.gameObject.CompareTag("Light"))
-        {
-            inLight = false;
         }
     }
 

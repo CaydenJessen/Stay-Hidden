@@ -13,15 +13,7 @@ public class Lights : MonoBehaviour
 
     private void Update()
     {
-        // if(playerHealth.inLight == true)
-        // {
-        //     eA.chase = true;
-        // }
-        // else
-        // {
-        //     eA.chase = false;
-        //     //StartCoroutine(Wait());
-        // }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision) 
