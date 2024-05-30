@@ -8,21 +8,39 @@ public class Lights : MonoBehaviour
     public Player_Health playerHealth;
     // //public LineOfSight los;
 
+    public bool ligthCollide = false;
+
 
     private void Update()
     {
-        if(playerHealth.inLight == true)
+        // if(playerHealth.inLight == true)
+        // {
+        //     eA.chase = true;
+        // }
+        // else
+        // {
+        //     eA.chase = false;
+        //     //StartCoroutine(Wait());
+        // }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) 
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
             eA.chase = true;
-        }
-        else
-        {
-            eA.chase = false;
-            //StartCoroutine(Wait());
+            ligthCollide = true;
         }
     }
 
-
+    private void OnTriggerExit2D(Collider2D collision) 
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            eA.chase = false;
+            ligthCollide = false;
+        }
+    }
 
    /* IEnumerator Wait()
     {
