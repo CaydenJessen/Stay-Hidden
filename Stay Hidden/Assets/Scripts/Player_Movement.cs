@@ -317,14 +317,25 @@ public class Player_Movement : MonoBehaviour
         {
             camResize = true;
         }
-       
+    }
+
+
+    private void OnTriggerStay2D(Collider2D collision) 
+    {
+        if ((collision.gameObject.CompareTag("Light")))
+        {
+            pH.inLight = true;
+        }
 
     }
+
+
     void OnTriggerExit2D(Collider2D col)
     {
         if ((col.gameObject.CompareTag("Light")))
         {
             lit = false;
+            pH.inLight = false;
         }
 
         if (col.gameObject.tag == "Cam Sizer")
