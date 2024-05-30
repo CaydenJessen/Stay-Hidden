@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747441687197579144}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.14, y: 25.85, z: 0.26123676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,7 +32,7 @@ Transform:
   - {fileID: 6747441687697902804}
   - {fileID: 6747441687232442385}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6747441687232442390
 GameObject:
@@ -162,7 +162,7 @@ MonoBehaviour:
   targetSize: 0.5
   speed: 0
   wait: 1
-  player: {fileID: 2425729181041727066, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+  player: {fileID: 0}
   chaseSpeed: 5
   lOS: {fileID: 6747441687247062899}
   isFacingRight: 0
