@@ -351,12 +351,16 @@ public class Player_Movement : MonoBehaviour
         while(stamina < maxStamina)
         {
             stamina += chargeRate / 10f;
+            staminaBar.fillAmount = stamina / maxStamina;
+            yield return new WaitForSeconds (0.1f);
+            
+
         }
-        if(stamina>maxStamina)
+
+       if (stamina > maxStamina)
         {
             stamina = maxStamina;
             staminaBar.fillAmount = stamina/maxStamina;
-            yield return new WaitForSeconds(0.1f);
         }
     }
 
