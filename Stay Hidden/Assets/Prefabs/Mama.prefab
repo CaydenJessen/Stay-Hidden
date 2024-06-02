@@ -159,7 +159,7 @@ MonoBehaviour:
   targetSize: 0.5
   speed: 0
   wait: 1
-  player: {fileID: 2425729181041727066, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+  player: {fileID: 0}
   chaseSpeed: 5
   lOS: {fileID: 4716159897358647137}
   isFacingRight: 0
@@ -253,7 +253,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4716159896556332447}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.47, y: 23.03, z: 0.26123676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -262,7 +262,7 @@ Transform:
   - {fileID: 4716159896577147991}
   - {fileID: 4716159896281966145}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4716159896577147988
 GameObject:
@@ -288,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4716159896577147988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.99, y: -0.9299996, z: 0.00030257}
+  m_LocalPosition: {x: 5.46, y: -0.9299996, z: 0.00030257}
   m_LocalScale: {x: 0.53154, y: 0.53154, z: 0.53154}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -320,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4716159897358647143}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34, y: 0.35, z: 0.12673187}
+  m_LocalPosition: {x: 0.34, y: 0.16, z: 0.12673187}
   m_LocalScale: {x: 1.795867, y: 1.7958671, z: 1.7958671}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -48,9 +48,6 @@ AnimatorStateMachine:
     m_State: {fileID: -2175961524305120025}
     m_Position: {x: 478.80252, y: 273.3432, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -7735004144222725265}
-    m_Position: {x: 513.8025, y: 338.3432, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -2542230800029617057}
     m_Position: {x: 665.7683, y: 9.7234955, z: 0}
   m_ChildStateMachines: []
@@ -88,32 +85,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-7735004144222725265
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Hiding_Animation
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6fed2df61671278438b392f336ad8899, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &-6295330122479670885
 AnimatorState:
   serializedVersion: 6
