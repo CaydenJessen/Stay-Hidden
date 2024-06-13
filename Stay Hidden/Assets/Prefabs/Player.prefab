@@ -109,11 +109,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102639582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.8247566, y: -0.77493656, z: -1.2096895}
+  m_LocalPosition: {x: -5.824756, y: -0.77493656, z: -1.209689}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1155555454}
+  m_Father: {fileID: 4078136212201478050}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1102639584
@@ -196,9 +196,41 @@ Transform:
   m_LocalScale: {x: 0.7411923, y: 0.7411923, z: 0.7411923}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1102639583}
+  - {fileID: 4078136212201478050}
   - {fileID: 448769923}
   m_Father: {fileID: 2425729181041727066}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &400104422408421031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4078136212201478050}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4078136212201478050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400104422408421031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1102639583}
+  m_Father: {fileID: 1155555454}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2425729180822951249
@@ -372,7 +404,7 @@ Transform:
   - {fileID: 2425729182408340848}
   - {fileID: 1155555454}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2425729181041727061
 SpriteRenderer:
@@ -553,12 +585,15 @@ MonoBehaviour:
   inLight: 0
   isHidden: 0
   LOS: {fileID: 0}
+  ea: {fileID: 0}
   healthBar: {fileID: 0}
   playerSprite: {fileID: 2425729181041727056}
   flashRed: {fileID: 0}
   isAlive: 1
   inDarkness: 0
   alertIcon: {fileID: 1155555453}
+  damage: 1
+  attackCooldown: 2
 --- !u!114 &2425729181041727064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  isPaused: 0
 --- !u!1 &2425729182408340851
 GameObject:
   m_ObjectHideFlags: 0

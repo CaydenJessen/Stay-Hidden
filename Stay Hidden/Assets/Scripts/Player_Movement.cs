@@ -45,6 +45,9 @@ public class Player_Movement : MonoBehaviour
     public float castDistance;
     public LayerMask groundLayer;
 
+    public Rigidbody2D playerRigid;  
+    public float FallingThreshold = -10f;  
+    public bool Falling = false; 
 
     void Start()
     {
@@ -72,7 +75,16 @@ public class Player_Movement : MonoBehaviour
 
         //Flip Spite when changing direction
         FlipSprite();
-
+        if (playerRigid.velocity.y < FallingThreshold)
+        {
+            Falling = true;
+            animator.SetBool("Falling", true);
+        }
+        else
+        {
+            Falling = false;
+            animator.SetBool("Falling", false);
+        }
 
         //Jump using Collision
         // if(Input.GetButtonDown("Jump") && canJump)
@@ -82,7 +94,7 @@ public class Player_Movement : MonoBehaviour
         // }
 
         //Jump using Raycasting
-        if(Input.GetButtonDown("Jump") && isGrounded() && pH.isAlive == true)
+        if (Input.GetButtonDown("Jump") && isGrounded() && pH.isAlive == true)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
             //isRunning = false; //Player stops running when they jump / stops momentum

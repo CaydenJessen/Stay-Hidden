@@ -10,7 +10,7 @@ public class Player_Health : MonoBehaviour
     public float health;
     public float maxHealth = 10f;
     public float healthRegeneration = 1f; //Amount of health gained
-    
+    public Player_Movement pM;
 
     public float healthRegenCooldown = 2f; //Time between health gain
     float lastHealTime;
@@ -35,6 +35,8 @@ public class Player_Health : MonoBehaviour
     public bool inDarkness = false;
 
     public GameObject alertIcon;
+    public GameObject pupil;
+    public Transform enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -155,11 +157,25 @@ public class Player_Health : MonoBehaviour
     }
 
     public void Spotted()
-    {
-        if((inLight == true)  && isHidden == false && inDarkness == false)
+    {   
+        if(pM.isFacingRight == true)
+            {
+                pupil.transform.localScale = new Vector3(1, 1, 1);
+            }
+        else
+        {
+            pupil.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (inLight == true && isHidden == false && inDarkness == false)
         {
             alertIcon.SetActive(true);
+            Vector3 difference = enemy.position - transform.position;
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            pupil.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+           
         }
+
+
         else
         {
             alertIcon.SetActive(false);

@@ -16,8 +16,10 @@ public class Camera_Controller : MonoBehaviour
     public float zoomOut;
     public float zoomIn;
     public float zoomSpeed = 4f;
+    public float zoomDown = 4;
 
     public float yOffset; //Camera Height
+
     private void Start()
     {
         cam.orthographicSize = 5f;
@@ -72,18 +74,23 @@ public class Camera_Controller : MonoBehaviour
                 }
 
                 
+            } 
+            playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+
+            if(Input.GetKey(KeyCode.S))
+            {
+                playerPosition = new Vector3(playerPosition.x, playerPosition.y - zoomDown, -10);               
             }
-
-
+           
 
             //Camera movement with offset
-            playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+           
         
-            if(player.transform.localScale.x > 0f)
+            if(player.transform.localScale.x > 0f && Input.GetKey(KeyCode.S) == false)
             {
                 playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y + 2 + yOffset, playerPosition.z);
             }
-            else
+            else if (player.transform.localScale.x < 0f && Input.GetKey(KeyCode.S) == false)
             {
                 playerPosition = new Vector3(playerPosition.x + offset, playerPosition.y + 2 + yOffset, playerPosition.z);
             }
