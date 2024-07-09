@@ -5554,6 +5554,7 @@ GameObject:
   - component: {fileID: 500032740}
   - component: {fileID: 500032739}
   - component: {fileID: 500032741}
+  - component: {fileID: 500032742}
   m_Layer: 2
   m_Name: light (6)
   m_TagString: Light
@@ -5583,7 +5584,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500032737}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -5669,6 +5670,42 @@ MonoBehaviour:
   eA: {fileID: 761747473}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &500032742
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500032737}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &502246207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6361,6 +6398,7 @@ GameObject:
   - component: {fileID: 528905496}
   - component: {fileID: 528905495}
   - component: {fileID: 528905497}
+  - component: {fileID: 528905498}
   m_Layer: 2
   m_Name: light (7)
   m_TagString: Light
@@ -6390,7 +6428,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528905493}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -6476,6 +6514,42 @@ MonoBehaviour:
   eA: {fileID: 761747473}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &528905498
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528905493}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &546792771
 GameObject:
   m_ObjectHideFlags: 0
@@ -18569,6 +18643,7 @@ GameObject:
   - component: {fileID: 619925619}
   - component: {fileID: 619925618}
   - component: {fileID: 619925620}
+  - component: {fileID: 619925621}
   m_Layer: 2
   m_Name: light (4)
   m_TagString: Light
@@ -18598,7 +18673,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619925616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -18684,6 +18759,42 @@ MonoBehaviour:
   eA: {fileID: 761747473}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &619925621
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619925616}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &628023534
 GameObject:
   m_ObjectHideFlags: 0
@@ -19672,6 +19783,7 @@ GameObject:
   - component: {fileID: 698142352}
   - component: {fileID: 698142351}
   - component: {fileID: 698142353}
+  - component: {fileID: 698142354}
   m_Layer: 2
   m_Name: light (3)
   m_TagString: Light
@@ -19701,7 +19813,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698142349}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -19787,6 +19899,42 @@ MonoBehaviour:
   eA: {fileID: 718342614}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &698142354
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698142349}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &703893641
 GameObject:
   m_ObjectHideFlags: 0
@@ -19966,6 +20114,7 @@ GameObject:
   - component: {fileID: 713550023}
   - component: {fileID: 713550022}
   - component: {fileID: 713550024}
+  - component: {fileID: 713550025}
   m_Layer: 2
   m_Name: light (5)
   m_TagString: Light
@@ -19995,7 +20144,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713550020}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -20081,6 +20230,42 @@ MonoBehaviour:
   eA: {fileID: 761747473}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &713550025
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713550020}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &716726879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22780,6 +22965,7 @@ GameObject:
   - component: {fileID: 909562658}
   - component: {fileID: 909562657}
   - component: {fileID: 909562659}
+  - component: {fileID: 909562660}
   m_Layer: 2
   m_Name: light (8)
   m_TagString: Light
@@ -22809,7 +22995,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909562654}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -22895,6 +23081,42 @@ MonoBehaviour:
   eA: {fileID: 1440583642}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &909562660
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909562654}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &915200586
 GameObject:
   m_ObjectHideFlags: 0
@@ -26974,6 +27196,7 @@ GameObject:
   - component: {fileID: 1199895316}
   - component: {fileID: 1199895317}
   - component: {fileID: 1199895318}
+  - component: {fileID: 1199895319}
   m_Layer: 2
   m_Name: light
   m_TagString: Light
@@ -27055,13 +27278,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199895314}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000032782555, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -27072,7 +27295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7260875, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1199895318
 MonoBehaviour:
@@ -27089,6 +27312,42 @@ MonoBehaviour:
   eA: {fileID: 1440583642}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &1199895319
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199895314}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1200166332
 GameObject:
   m_ObjectHideFlags: 0
@@ -67595,6 +67854,7 @@ GameObject:
   - component: {fileID: 1398350513}
   - component: {fileID: 1398350512}
   - component: {fileID: 1398350514}
+  - component: {fileID: 1398350515}
   m_Layer: 2
   m_Name: light (2)
   m_TagString: Light
@@ -67624,7 +67884,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398350510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -67710,6 +67970,42 @@ MonoBehaviour:
   eA: {fileID: 1389017599}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &1398350515
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398350510}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1403509223
 GameObject:
   m_ObjectHideFlags: 0
@@ -68250,6 +68546,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 497213368}
+    - target: {fileID: 7164654290274338907, guid: 1a7a8c67a8d4f3b4986e07fd60a1dda2, type: 3}
+      propertyPath: pointLight
+      value: 
+      objectReference: {fileID: 909562654}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a7a8c67a8d4f3b4986e07fd60a1dda2, type: 3}
@@ -140286,6 +140586,7 @@ GameObject:
   - component: {fileID: 1835812214}
   - component: {fileID: 1835812213}
   - component: {fileID: 1835812215}
+  - component: {fileID: 1835812216}
   m_Layer: 2
   m_Name: light (1)
   m_TagString: Light
@@ -140315,7 +140616,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835812211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -140401,6 +140702,42 @@ MonoBehaviour:
   eA: {fileID: 1389017599}
   playerHealth: {fileID: 497213369}
   ligthCollide: 0
+--- !u!60 &1835812216
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835812211}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26054242, y: 0.060898207}
+      - {x: 0.15625, y: 0.5}
+      - {x: -0.125, y: 0.5}
+      - {x: -0.1875, y: 0.28125}
+      - {x: -0.3125, y: -0.171875}
+      - {x: -0.38387483, y: -0.45479825}
+      - {x: -0.390625, y: -0.5}
+      - {x: 0.390625, y: -0.5}
+      - {x: 0.36991802, y: -0.4109482}
+      - {x: 0.34754226, y: -0.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1840763387
 GameObject:
   m_ObjectHideFlags: 0
