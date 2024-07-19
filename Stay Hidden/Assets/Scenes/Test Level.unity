@@ -22785,7 +22785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6591444141692847911, guid: 5afb707c4f1d7ac48940f96791e4708c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6591444141692847911, guid: 5afb707c4f1d7ac48940f96791e4708c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68540,6 +68540,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7164654290098641931, guid: 1a7a8c67a8d4f3b4986e07fd60a1dda2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164654290274338900, guid: 1a7a8c67a8d4f3b4986e07fd60a1dda2, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164654290274338900, guid: 1a7a8c67a8d4f3b4986e07fd60a1dda2, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164654290274338901, guid: 1a7a8c67a8d4f3b4986e07fd60a1dda2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164654290274338901, guid: 1a7a8c67a8d4f3b4986e07fd60a1dda2, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7164654290274338907, guid: 1a7a8c67a8d4f3b4986e07fd60a1dda2, type: 3}
@@ -144927,7 +144943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2425729181041727061, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2425729181041727063, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

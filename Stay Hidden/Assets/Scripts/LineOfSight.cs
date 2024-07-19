@@ -42,8 +42,6 @@ public class LineOfSight : MonoBehaviour
             currentState = enemstate.patrol;
         }
 
-        
-
 
     }
 }

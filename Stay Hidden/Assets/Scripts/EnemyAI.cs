@@ -25,6 +25,8 @@ public class EnemyAI : MonoBehaviour
 
     public Animator animator;
 
+    public bool canWalk = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,28 +40,31 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Speed", speed);
-        if (lOS.isChasing == true || chase == true)
+        if(canWalk == true)
         {
-            lost = false;
-            Debug.Log("chase is true");
-            Chase();
+            animator.SetFloat("Speed", speed);
+            if (lOS.isChasing == true || chase == true)
+            {
+                lost = false;
+                Debug.Log("chase is true");
+                Chase();
+            }
+
+            else if(lost == true)
+            {
+                lost = false;
+                lOS.isChasing = false;
+                Debug.Log("target lost");
+                targetPoint = pointA.transform;
+                //StartCoroutine(Confused());
+            }
+            
+            
+            if(lOS.isChasing == false)
+            {
+                    Patrol();
+            }
         }
-      else if(lost == true)
-        {
-            lost = false;
-            lOS.isChasing = false;
-            Debug.Log("target lost");
-            targetPoint = pointA.transform;
-            //StartCoroutine(Confused());
-        }
-       
-       
-       if(lOS.isChasing == false)
-       {
-            Patrol();
-       }
-     
     }
 
     void Patrol()
@@ -184,4 +189,22 @@ public class EnemyAI : MonoBehaviour
         targetPoint = pointA.transform;
         Debug.Log("back to patrol");
     }
+
+    private void OnCollisionEnter2D(Collision2D touchPlayer)
+    {
+        if((touchPlayer.gameObject.CompareTag("Player")))
+        {
+            canWalk = false;
+        }
+    }
+
+
+    private void OnCollisionExit2D(Collision2D notouchPlayer)
+    {
+        if((notouchPlayer.gameObject.CompareTag("Player")))
+        {
+            canWalk = true;
+        }
+    }
+
 }
