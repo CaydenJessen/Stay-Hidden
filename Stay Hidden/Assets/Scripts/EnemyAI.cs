@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     public Animator animator;
 
     public bool canWalk = true;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -67,13 +67,15 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+
+
+
+
     void Patrol()
     {
         Vector2 point = targetPoint.position - transform.position;
         if (targetPoint == pointB.transform)
         {
-            
-
             var step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
             if(transform.position.x < pointB.transform.position.x)
@@ -86,7 +88,6 @@ public class EnemyAI : MonoBehaviour
             {
                 isFacingRight = false;
             }
-
         }
         else if (targetPoint == pointA.transform)
         {
@@ -115,10 +116,7 @@ public class EnemyAI : MonoBehaviour
             speed = idleSpeed;
             StartCoroutine(Idle());
             targetPoint = pointB.transform;
-            
- 
         }
-      
     }
 
     void Direction()
@@ -128,14 +126,12 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("flipped to right");
             isFacingRight = false;
             lOS.rayDirection = -1f;
-
         }
         if (isFacingLeft == true)
         {
             Debug.Log("flipped to left");
             isFacingLeft = false;
             lOS.rayDirection = 1f;
-
         }
     }
     void Chase()
@@ -148,7 +144,6 @@ public class EnemyAI : MonoBehaviour
             {
                 transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
             }
-
     }
 
 
@@ -208,3 +203,8 @@ public class EnemyAI : MonoBehaviour
     }
 
 }
+
+
+
+
+

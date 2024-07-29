@@ -301,7 +301,8 @@ public class Player_Movement : MonoBehaviour
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, 0.01941717f);
+            //GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, 0.01941717f);
+
 
             if (touchGround)
             {
