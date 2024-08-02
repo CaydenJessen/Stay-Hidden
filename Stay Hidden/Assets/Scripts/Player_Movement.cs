@@ -38,6 +38,12 @@ public class Player_Movement : MonoBehaviour
     Rigidbody2D rb;
     public float colliderX;
     public float colliderY;
+    public float offsetX;
+    public float offsetY;
+    public float originalColliderX;
+    public float originalColliderY;
+    public float originalOffsetX;
+    public float originalOffsetY;
 
     public bool camResize = false;
 
@@ -261,8 +267,8 @@ public class Player_Movement : MonoBehaviour
        
         if(Input.GetKey(KeyCode.LeftControl) && canHide == true && pH.inDarkness == false)
         {    
-            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, 0.01f);
-            GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, -0.30f);
+            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
+            GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
             canJump = false;
            
             isRunning = false;
@@ -293,8 +299,8 @@ public class Player_Movement : MonoBehaviour
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
-            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, 0.01941717f);
+            GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
+            GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
 
             if (touchGround)
             {
@@ -305,8 +311,8 @@ public class Player_Movement : MonoBehaviour
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
-            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-            //GetComponent<BoxCollider2D>().offset = new Vector2(-0.1270078f, 0.01941717f);
+            GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
+            GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
 
 
             if (touchGround)
