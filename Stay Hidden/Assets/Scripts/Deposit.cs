@@ -12,6 +12,7 @@ public class Deposit : MonoBehaviour
     public Player_Movement number;
     public int deposited = 5;
     private int count = 0;
+    public bool inRange = false;
 
     private void Update()
     {
@@ -19,20 +20,50 @@ public class Deposit : MonoBehaviour
         {
             StartCoroutine(Victory());
         }
-        
-    }
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Player" && iTM.hasItem == true && deposited>0 && number.num >= 0)
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (inRange == true)
+            {
+                if (iTM.hasItem == true && deposited > 0 && number.num >= 0)
+                {
+                    Particles.Play();
+                    Instantiate(item[count], depositePosition[count].position, depositePosition[count].rotation);
+                    deposited--;
+                    count++;
+                    number.num--;
+                }
+            }
+
+        }
+
+        if (inRange == true)
         {
             Particles.Play();
-            Instantiate(item[count], depositePosition[count].position, depositePosition[count].rotation);
-            deposited--;
-            count++;
-            number.num--;
+        }
+        else
+        {
+            Particles.Stop();
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            inRange = true;
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            inRange = false;
+        }
+
+    }
     IEnumerator Victory()
     {
         yield return new WaitForSeconds(3);

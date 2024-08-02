@@ -105,6 +105,8 @@ public class Player_Movement : MonoBehaviour
         if(isGrounded())
         {
             animator.SetBool("Jump", false);
+
+            animator.SetBool("Land", false);
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -121,8 +123,19 @@ public class Player_Movement : MonoBehaviour
             animator.SetBool("Hiding", false);
         }
 
+        if (Input.GetKey(KeyCode.S))
+        {
+            currentSpeed = 0f;
+            animator.SetBool("Crouch", true);
+        }
+        else
+        {
+            currentSpeed = speed;
+            animator.SetBool("Crouch", false);
+        }
+
         //Sprint detection
-            if (Input.GetKeyDown(KeyCode.LeftShift) && pH.isAlive == true)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && pH.isAlive == true)
         {
             if (isGrounded()) //Player cant run mid air after jumping
             {
@@ -193,35 +206,27 @@ public class Player_Movement : MonoBehaviour
 
     }
 
-    
 
 
-    // //Ground Check Using Collision
-    // private void OnCollisionEnter2D(Collision2D onGround)
-    // {
-    //     if((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy")))
-    //     {
-    //         canJump = true;
-    //         canHide = true;
-    //         touchGround = true;
-    //     }
-    //     else
-    //     {
-    //         if (onGround.gameObject.CompareTag("Moving Platform"))
-    //         {
-    //             canHide = false;
-    //             canJump = true;
-    //             touchGround = true;
-    //         }
-    //         else
-    //         {
-    //             canHide = false;
-    //             canJump = false;
-    //             touchGround = false;
-    //         }
-    //     }
 
+    // Animation
+    private void OnCollisionEnter2D(Collision2D onGround)
+    {
+        if ((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy")))
+        {
+            animator.SetBool("Land", true);
+        }
+        else if (onGround.gameObject.CompareTag("Moving Platform"))
+        {
+            animator.SetBool("Land", true);
+        }
+        else
+        {
 
+            animator.SetBool("Land", false);
+        }
+
+    }
 
     //     if (onGround.gameObject.CompareTag("Moving Platform"))
     //     {
