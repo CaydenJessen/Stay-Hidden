@@ -38,6 +38,11 @@ public class Player_Health : MonoBehaviour
     public GameObject pupil;
     public Transform enemy;
 
+    public float lightDamage = 2f;
+    public float lightCooldown = 1f;
+    float lastLightTime;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,6 +113,7 @@ public class Player_Health : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision) 
     {
+        //Darkness Regeneration//
         if (Time.time - lastHealTime < healthRegenCooldown) return;
 
         if (collision.gameObject.CompareTag("Darkness"))
@@ -120,6 +126,22 @@ public class Player_Health : MonoBehaviour
             lastHealTime = Time.time;
 
             LOS.isChasing = false;
+        }
+        
+        //Death Pit//
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            health = 0;
+        }
+
+        //Damaging Light//
+        if (Time.time - lastLightTime < lightCooldown) return;
+
+        if (collision.gameObject.CompareTag("DamageLight"))
+        {
+            health = health - lightDamage;
+
+            lastLightTime = Time.time;
         }
 
     }
@@ -144,7 +166,6 @@ public class Player_Health : MonoBehaviour
     }
     IEnumerator Death()
     {
- 
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Game_Lost");
     }
