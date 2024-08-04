@@ -27,6 +27,11 @@ public class EnemyAI : MonoBehaviour
 
     public bool canWalk = true;
     
+    public float distance;
+    private bool movingRight = true;
+    public Transform groundDetection;
+    [SerializeField] Transform wallDetection;
+    [SerializeField] LayerMask wallLayerMask;
 
     // Start is called before the first frame update
     void Start()
@@ -73,51 +78,101 @@ public class EnemyAI : MonoBehaviour
 
     void Patrol()
     {
-        Vector2 point = targetPoint.position - transform.position;
-        if (targetPoint == pointB.transform)
-        {
-            var step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
-            if(transform.position.x < pointB.transform.position.x)
-            {
-                isFacingRight = true;
-                Debug.Log("going right");
-                isFacingLeft = false;
-            }
-            else
-            {
-                isFacingRight = false;
-            }
-        }
-        else if (targetPoint == pointA.transform)
-        {
-            var step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
-            if (transform.position.x > pointA.transform.position.x)
-            {
-                isFacingLeft = true;
-                Debug.Log("going left");
-                isFacingRight = false;
-            }
-            else
-            {
-                isFacingLeft = false;
-            }
-        }
-        if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
-        {
-            speed = idleSpeed;
-            StartCoroutine(Idle());
-            targetPoint = pointA.transform;
+        //----------OLD PATROL BETWEEN 2 PPOINTS-------------//
 
-        }
-        if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
+        // Vector2 point = targetPoint.position - transform.position;
+        // if (targetPoint == pointB.transform)
+        // {
+        //     var step = speed * Time.deltaTime;
+        //     transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
+        //     if(transform.position.x < pointB.transform.position.x)
+        //     {
+        //         isFacingRight = true;
+        //         Debug.Log("going right");
+        //         isFacingLeft = false;
+        //     }
+        //     else
+        //     {
+        //         isFacingRight = false;
+        //     }
+        // }
+        // else if (targetPoint == pointA.transform)
+        // {
+        //     var step = speed * Time.deltaTime;
+        //     transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
+        //     if (transform.position.x > pointA.transform.position.x)
+        //     {
+        //         isFacingLeft = true;
+        //         Debug.Log("going left");
+        //         isFacingRight = false;
+        //     }
+        //     else
+        //     {
+        //         isFacingLeft = false;
+        //     }
+        // }
+        // if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
+        // {
+        //     speed = idleSpeed;
+        //     StartCoroutine(Idle());
+        //     targetPoint = pointA.transform;
+
+        // }
+        // if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
+        // {
+        //     speed = idleSpeed;
+        //     StartCoroutine(Idle());
+        //     targetPoint = pointB.transform;
+        // }
+
+        //END OF OLD PATROL//
+
+
+
+
+
+
+        //-------------NEW PATROL----------//
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
+
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
+        if (groundInfo.collider == false)
         {
-            speed = idleSpeed;
-            StartCoroutine(Idle());
-            targetPoint = pointB.transform;
+          if( movingRight==true )
+            {
+                Vector3 origin = wallDetection.position;
+                Vector3 dir = Vector2.right;
+                RaycastHit2D hit = Physics2D.Raycast( origin , dir , distance , wallLayerMask );
+                if( hit.collider!=null )
+                {
+                    movingRight = false;
+                    Debug.DrawLine( origin , hit.point , Color.red );
+                }
+                else Debug.DrawLine( origin , origin + dir*distance , Color.white , 0.01f );
+            }
+            else
+            {
+                Vector3 origin = wallDetection.position;
+                Vector3 dir = -Vector2.right;
+                RaycastHit2D hit = Physics2D.Raycast( origin , dir , distance , wallLayerMask );
+                if( hit.collider!=null )
+                {
+                    movingRight = true;
+                    Debug.DrawLine( origin , hit.point , Color.red );
+                }
+                else Debug.DrawLine( origin , origin + dir*distance , Color.white , 0.01f );
+            }
         }
+        
     }
+
+
+
+
+
+
+
+
 
     void Direction()
     {
@@ -191,7 +246,46 @@ public class EnemyAI : MonoBehaviour
         {
             canWalk = false;
         }
+
+        if ((touchPlayer.gameObject.tag == "Wall") || (touchPlayer.gameObject.tag == "Darkness"))
+        {
+            Debug.Log("E");
+            if (movingRight == true)
+            {
+                transform.eulerAngles = new Vector3(0, -180, 0);
+                movingRight = false;
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                movingRight = true;
+            }
+
+        }
     }
+
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if ((col.gameObject.CompareTag("Wall")))
+        {
+            Debug.Log("E");
+            if (movingRight == true)
+            {
+                transform.eulerAngles = new Vector3(0, -180, 0);
+                movingRight = false;
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                movingRight = true;
+            }
+        }
+    }
+
+
+
 
 
     private void OnCollisionExit2D(Collision2D notouchPlayer)
