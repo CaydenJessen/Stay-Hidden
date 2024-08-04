@@ -247,7 +247,7 @@ public class EnemyAI : MonoBehaviour
             canWalk = false;
         }
 
-        if ((touchPlayer.gameObject.tag == "Wall") || (touchPlayer.gameObject.tag == "Darkness"))
+        if (touchPlayer.gameObject.tag == "Wall")
         {
             Debug.Log("E");
             if (movingRight == true)
@@ -268,7 +268,7 @@ public class EnemyAI : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if ((col.gameObject.CompareTag("Wall")))
+        if ((col.gameObject.CompareTag("Wall")) || (col.gameObject.tag == "Darkness"))
         {
             Debug.Log("E");
             if (movingRight == true)
