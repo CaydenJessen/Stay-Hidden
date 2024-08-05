@@ -100,7 +100,7 @@ public class Player_Movement : MonoBehaviour
         // }
 
         //Jump using Raycasting
-        if (Input.GetButtonDown("Jump") && isGrounded() && pH.isAlive == true)
+        if ((Input.GetButtonDown("Jump") && isGrounded() && pH.isAlive == true) && (canJump == true))
         {
             rb.velocity = new Vector2(rb.velocity.x, jump);
             //isRunning = false; //Player stops running when they jump / stops momentum
@@ -133,11 +133,14 @@ public class Player_Movement : MonoBehaviour
         {
             currentSpeed = 0f;
             animator.SetBool("Crouch", true);
+            canJump = false;
+
         }
         else
         {
             currentSpeed = speed;
             animator.SetBool("Crouch", false);
+            canJump = true;
         }
 
         //Sprint detection
@@ -171,7 +174,7 @@ public class Player_Movement : MonoBehaviour
         if ((isRunning && tailControl == false) && (pH.isAlive == true))
         {
             animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-            rb.velocity = new Vector2(horizontal * (speed * runSpeedMultiplier), rb.velocity.y);
+            rb.velocity = new Vector2(horizontal * (currentSpeed * runSpeedMultiplier), rb.velocity.y);
         }
 
 
@@ -389,4 +392,3 @@ public class Player_Movement : MonoBehaviour
     }
 
 }
-
