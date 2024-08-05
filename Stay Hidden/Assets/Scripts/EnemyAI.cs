@@ -33,6 +33,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform wallDetection;
     [SerializeField] LayerMask wallLayerMask;
 
+    public bool pointController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,92 +80,89 @@ public class EnemyAI : MonoBehaviour
 
     void Patrol()
     {
-        //----------OLD PATROL BETWEEN 2 PPOINTS-------------//
-
-        // Vector2 point = targetPoint.position - transform.position;
-        // if (targetPoint == pointB.transform)
-        // {
-        //     var step = speed * Time.deltaTime;
-        //     transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
-        //     if(transform.position.x < pointB.transform.position.x)
-        //     {
-        //         isFacingRight = true;
-        //         Debug.Log("going right");
-        //         isFacingLeft = false;
-        //     }
-        //     else
-        //     {
-        //         isFacingRight = false;
-        //     }
-        // }
-        // else if (targetPoint == pointA.transform)
-        // {
-        //     var step = speed * Time.deltaTime;
-        //     transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
-        //     if (transform.position.x > pointA.transform.position.x)
-        //     {
-        //         isFacingLeft = true;
-        //         Debug.Log("going left");
-        //         isFacingRight = false;
-        //     }
-        //     else
-        //     {
-        //         isFacingLeft = false;
-        //     }
-        // }
-        // if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
-        // {
-        //     speed = idleSpeed;
-        //     StartCoroutine(Idle());
-        //     targetPoint = pointA.transform;
-
-        // }
-        // if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
-        // {
-        //     speed = idleSpeed;
-        //     StartCoroutine(Idle());
-        //     targetPoint = pointB.transform;
-        // }
-
-        //END OF OLD PATROL//
-
-
-
-
-
-
-        //-------------NEW PATROL----------//
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
-
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
-        if (groundInfo.collider == false)
+        //----------PATROL BETWEEN 2 PPOINTS-------------//
+        if(pointController == true)
         {
-          if( movingRight==true )
+            Vector2 point = targetPoint.position - transform.position;
+            if (targetPoint == pointB.transform)
             {
-                Vector3 origin = wallDetection.position;
-                Vector3 dir = Vector2.right;
-                RaycastHit2D hit = Physics2D.Raycast( origin , dir , distance , wallLayerMask );
-                if( hit.collider!=null )
+                var step = speed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
+                if(transform.position.x < pointB.transform.position.x)
                 {
-                    movingRight = false;
-                    Debug.DrawLine( origin , hit.point , Color.red );
+                    isFacingRight = true;
+                    Debug.Log("going right");
+                    isFacingLeft = false;
                 }
-                else Debug.DrawLine( origin , origin + dir*distance , Color.white , 0.01f );
+                else
+                {
+                    isFacingRight = false;
+                }
             }
-            else
+            else if (targetPoint == pointA.transform)
             {
-                Vector3 origin = wallDetection.position;
-                Vector3 dir = -Vector2.right;
-                RaycastHit2D hit = Physics2D.Raycast( origin , dir , distance , wallLayerMask );
-                if( hit.collider!=null )
+                var step = speed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
+                if (transform.position.x > pointA.transform.position.x)
                 {
-                    movingRight = true;
-                    Debug.DrawLine( origin , hit.point , Color.red );
+                    isFacingLeft = true;
+                    Debug.Log("going left");
+                    isFacingRight = false;
                 }
-                else Debug.DrawLine( origin , origin + dir*distance , Color.white , 0.01f );
+                else
+                {
+                    isFacingLeft = false;
+                }
+            }
+            if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
+            {
+                speed = idleSpeed;
+                StartCoroutine(Idle());
+                targetPoint = pointA.transform;
+
+            }
+            if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
+            {
+                speed = idleSpeed;
+                StartCoroutine(Idle());
+                targetPoint = pointB.transform;
             }
         }
-        
+        //END OF OLD PATROL//
+        else
+        {
+            //-------------NEW PATROL----------//
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+
+            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
+            if (groundInfo.collider == false)
+            {
+            if( movingRight==true )
+                {
+                    Vector3 origin = wallDetection.position;
+                    Vector3 dir = Vector2.right;
+                    RaycastHit2D hit = Physics2D.Raycast( origin , dir , distance , wallLayerMask );
+                    if( hit.collider!=null )
+                    {
+                        movingRight = false;
+                        Debug.DrawLine( origin , hit.point , Color.red );
+                    }
+                    else Debug.DrawLine( origin , origin + dir*distance , Color.white , 0.01f );
+                }
+                else
+                {
+                    Vector3 origin = wallDetection.position;
+                    Vector3 dir = -Vector2.right;
+                    RaycastHit2D hit = Physics2D.Raycast( origin , dir , distance , wallLayerMask );
+                    if( hit.collider!=null )
+                    {
+                        movingRight = true;
+                        Debug.DrawLine( origin , hit.point , Color.red );
+                    }
+                    else Debug.DrawLine( origin , origin + dir*distance , Color.white , 0.01f );
+                }
+            }
+        }
     }
 
 
@@ -247,7 +246,7 @@ public class EnemyAI : MonoBehaviour
             canWalk = false;
         }
 
-        if (touchPlayer.gameObject.tag == "Wall")
+        if ((touchPlayer.gameObject.tag == "Wall") || (touchPlayer.gameObject.tag == "Enemy"))
         {
             Debug.Log("E");
             if (movingRight == true)
@@ -260,7 +259,6 @@ public class EnemyAI : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
             }
-
         }
     }
 

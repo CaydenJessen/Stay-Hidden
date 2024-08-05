@@ -139,9 +139,12 @@ public class Player_Health : MonoBehaviour
 
         if (collision.gameObject.CompareTag("DamageLight"))
         {
-            health = health - lightDamage;
+            if(isHidden == false) // Player doesn't take damage if they are hiding
+            {
+                health = health - lightDamage;
 
-            lastLightTime = Time.time;
+                lastLightTime = Time.time;
+            }
         }
 
     }
