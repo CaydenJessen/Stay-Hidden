@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 487d3d7406bfd6d48af7395e564951dd
+guid: 8f49cc68d80bcbb48b821bb5bc03ae39
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Demon jump-Sheet_0
+      name: Demon jump-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -120,14 +120,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65b857ba4383f684aa272a124c96ff66
-      internalID: -1479751188
+      spriteID: c2f364a328638c94dbb0647e1a38f4a5
+      internalID: -85409154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon jump-Sheet_1
+      name: Demon jump-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 128
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eac388b8c22add241a1b96a9160ad15f
-      internalID: -1901882346
+      spriteID: 960e57ff87cf73146b54dafdc7ab1ff8
+      internalID: 1141632015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon jump-Sheet_2
+      name: Demon jump-Sheet 1_2
       rect:
         serializedVersion: 2
         x: 256
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bbe2aa2662955f468a87fb3a7eb56a8
-      internalID: 1259260506
+      spriteID: 60e4dd3cc2d65f141a862757ae0c8680
+      internalID: -689134859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon jump-Sheet_3
+      name: Demon jump-Sheet 1_3
       rect:
         serializedVersion: 2
         x: 384
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b086ddba4bcfd1439e827d8d3913bf2
-      internalID: -1364279088
+      spriteID: 63561f6450410cc4d8bbdeeefbaf2aca
+      internalID: 580147317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon jump-Sheet_4
+      name: Demon jump-Sheet 1_4
       rect:
         serializedVersion: 2
         x: 512
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61ccba1012d74264fa5af84055fba268
-      internalID: -2066887879
+      spriteID: 18fb8570e177aef4b87c1e1371af6232
+      internalID: 379295451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon jump-Sheet_5
+      name: Demon jump-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 640
@@ -225,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d70fd78e6e5c64b408619790b6f08e9a
-      internalID: -1224029828
+      spriteID: dafca4f518509644e832ec975f81b288
+      internalID: -344491877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon jump-Sheet_6
+      name: Demon jump-Sheet 1_6
       rect:
         serializedVersion: 2
         x: 768
@@ -246,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 869df5511b9b59244a5c328f97b97bd4
-      internalID: -1919499404
+      spriteID: fca952b256d15bf4daacc9c76c9dbde2
+      internalID: -983037727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon jump-Sheet_7
+      name: Demon jump-Sheet 1_7
       rect:
         serializedVersion: 2
         x: 896
@@ -267,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c453bc5ef6c77124b99ae02268dc4caf
-      internalID: -1356102374
+      spriteID: d04e761ed77d5b0488a38c73876f6e3b
+      internalID: -662484700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon jump-Sheet_8
+      name: Demon jump-Sheet 1_8
       rect:
         serializedVersion: 2
         x: 1024
@@ -288,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ab954f2fde68a34a859ebc0c44780a8
-      internalID: -257438649
+      spriteID: 6634b4fa90fc35c4bad37e7f7de404ac
+      internalID: -698554553
       vertices: []
       indices: 
       edges: []
@@ -305,15 +305,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Demon jump-Sheet_8: -257438649
-      Demon jump-Sheet_1: -1901882346
-      Demon jump-Sheet_6: -1919499404
-      Demon jump-Sheet_5: -1224029828
-      Demon jump-Sheet_7: -1356102374
-      Demon jump-Sheet_4: -2066887879
-      Demon jump-Sheet_0: -1479751188
-      Demon jump-Sheet_2: 1259260506
-      Demon jump-Sheet_3: -1364279088
+      Demon jump-Sheet 1_6: -983037727
+      Demon jump-Sheet 1_3: 580147317
+      Demon jump-Sheet 1_5: -344491877
+      Demon jump-Sheet 1_1: 1141632015
+      Demon jump-Sheet 1_7: -662484700
+      Demon jump-Sheet 1_0: -85409154
+      Demon jump-Sheet 1_2: -689134859
+      Demon jump-Sheet 1_4: 379295451
+      Demon jump-Sheet 1_8: -698554553
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
