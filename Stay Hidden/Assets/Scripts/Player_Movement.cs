@@ -54,6 +54,10 @@ public class Player_Movement : MonoBehaviour
     public Rigidbody2D playerRigid;  
     public float FallingThreshold = -10f;  
     public bool Falling = false; 
+    public Pause pause;
+
+    public bool viewing;
+    public GameObject view;
 
     void Start()
     {
@@ -76,6 +80,21 @@ public class Player_Movement : MonoBehaviour
             tailControl = false;
             animator.SetBool("Tail", false);
         }
+        if (pause.isPaused == true)
+        {
+            tailControl = false;
+        }
+
+        if (viewing == true)
+        {
+            view.SetActive(true);
+        }
+        else
+        {
+            view.SetActive(false);
+        }
+
+
         //Store horizontal value
         horizontal = Input.GetAxis("Horizontal");
 
@@ -206,6 +225,7 @@ public class Player_Movement : MonoBehaviour
         else
         {
             return false;
+            
         }
     }
 
@@ -221,11 +241,7 @@ public class Player_Movement : MonoBehaviour
     // Animation
     private void OnCollisionEnter2D(Collision2D onGround)
     {
-        if ((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy")))
-        {
-            animator.SetBool("Land", true);
-        }
-        else if (onGround.gameObject.CompareTag("Moving Platform"))
+        if ((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy"))||(onGround.gameObject.CompareTag("Moving Platform")))
         {
             animator.SetBool("Land", true);
         }

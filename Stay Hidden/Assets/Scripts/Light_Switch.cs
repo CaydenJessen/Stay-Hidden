@@ -11,6 +11,7 @@ public class Light_Switch : MonoBehaviour
     public int numberOfMechanisms;
 
     public AlternatingLights AL;
+    public Player_Movement pM;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,14 @@ public class Light_Switch : MonoBehaviour
                 }
             }
         }
+          if(inRange == true)
+         {
+            pM.viewing = true;
+         }
+         else
+         {
+             pM.viewing = false;
+         }
 
     }
 
