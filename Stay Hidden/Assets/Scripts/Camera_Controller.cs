@@ -17,6 +17,7 @@ public class Camera_Controller : MonoBehaviour
     public float zoomIn;
     public float zoomSpeed = 4f;
     public float zoomDown = 4;
+    public float camSize = 5f;
 
     public float yOffset; //Camera Height
 
@@ -59,17 +60,17 @@ public class Camera_Controller : MonoBehaviour
             }
             else
             {
-                if(cam.orthographicSize > 5.1f)
+                if(cam.orthographicSize > camSize + 0.1f)
                 {
                     cam.orthographicSize -= zoomSpeed* Time.deltaTime;
                 }
-                else if(cam.orthographicSize < 4.9f)
+                else if(cam.orthographicSize < camSize - 0.1f)
                 {
                     cam.orthographicSize += zoomSpeed* Time.deltaTime;
                 }
                 else
                 {
-                    cam.orthographicSize = 5f;
+                    cam.orthographicSize = camSize;
 
                 }
 
