@@ -284,7 +284,7 @@ public class Player_Movement : MonoBehaviour
     private void HidingMechanic()
     {
        
-        if(Input.GetKey(KeyCode.LeftControl) && canHide == true && pH.inDarkness == false)
+        if(Input.GetKey(KeyCode.LeftControl) && canHide == true)
         {    
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);

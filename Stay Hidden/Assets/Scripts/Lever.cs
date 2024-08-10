@@ -11,7 +11,7 @@ public class Lever : MonoBehaviour
     public bool inRange = false;
     public bool status = false;
     public int numberOfMechanisms;
-
+    public Player_Movement pM;
 
     void Update()
     {
@@ -45,10 +45,12 @@ public class Lever : MonoBehaviour
         if(inRange == true)
         {
             lever.GetComponent<Renderer>().material.color = Color.red;
+            pM.viewing = true;
         }
         else
         {
             lever.GetComponent<Renderer>().material.color = Color.white;
+            pM.viewing = false;
         }
 
     }
