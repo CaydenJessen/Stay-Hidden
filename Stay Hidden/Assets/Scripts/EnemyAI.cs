@@ -248,6 +248,7 @@ public class EnemyAI : MonoBehaviour
 
         if ((touchPlayer.gameObject.tag == "Wall") || (touchPlayer.gameObject.tag == "Enemy"))
         {
+            
             Debug.Log("E");
             if (movingRight == true)
             {
@@ -263,11 +264,19 @@ public class EnemyAI : MonoBehaviour
     }
 
 
+    IEnumerator WaitTrigger()
+    {
+        yield return new WaitForSeconds(wait);
+        speed = walkSpeed;
+    }
+
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if ((col.gameObject.CompareTag("Wall")) || (col.gameObject.tag == "Darkness"))
         {
+            speed = idleSpeed;
+            StartCoroutine(WaitTrigger());
             Debug.Log("E");
             if (movingRight == true)
             {
