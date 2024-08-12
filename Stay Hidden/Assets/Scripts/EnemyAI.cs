@@ -248,8 +248,9 @@ public class EnemyAI : MonoBehaviour
 
         if ((touchPlayer.gameObject.tag == "Wall") || (touchPlayer.gameObject.tag == "Enemy"))
         {
-            
-            Debug.Log("E");
+            lOS.isChasing = false;
+            Patrol();
+            Debug.Log("HIT THE WALLL!!!!");
             if (movingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
@@ -264,19 +265,12 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    IEnumerator WaitTrigger()
-    {
-        yield return new WaitForSeconds(wait);
-        speed = walkSpeed;
-    }
-
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if ((col.gameObject.CompareTag("Wall")) || (col.gameObject.tag == "Darkness"))
         {
             speed = idleSpeed;
-            StartCoroutine(WaitTrigger());
+            StartCoroutine(Idle());
             Debug.Log("E");
             if (movingRight == true)
             {
