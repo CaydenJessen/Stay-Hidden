@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5725757772529414952
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
-  m_Name: Tonemapping
-  m_EditorClassIdentifier: 
-  active: 1
-  mode:
-    m_OverrideState: 1
-    m_Value: 0
 --- !u!114 &-5013772117660152961
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -59,7 +43,7 @@ MonoBehaviour:
     m_Value: 8
   intensity:
     m_OverrideState: 1
-    m_Value: 0.683
+    m_Value: 0.551
   response:
     m_OverrideState: 1
     m_Value: 0.544
@@ -84,10 +68,10 @@ MonoBehaviour:
     m_Value: 0.48
   intensity:
     m_OverrideState: 1
-    m_Value: 0.24
+    m_Value: 1.1
   scatter:
     m_OverrideState: 1
-    m_Value: 0.478
+    m_Value: 0.396
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -127,7 +111,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.307
+    m_Value: 0.267
   smoothness:
     m_OverrideState: 1
     m_Value: 0.334
@@ -147,7 +131,6 @@ MonoBehaviour:
   m_Name: Global Volume Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -5725757772529414952}
   - {fileID: -32830486017509491}
   - {fileID: -2736672351452771294}
   - {fileID: -5013772117660152961}
@@ -168,7 +151,7 @@ MonoBehaviour:
   active: 1
   distance:
     m_OverrideState: 1
-    m_Value: 0.022
+    m_Value: 0.027
   cropToFit:
     m_OverrideState: 0
     m_Value: 0
