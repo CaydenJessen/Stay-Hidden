@@ -28,7 +28,7 @@ public class EnemyAI : MonoBehaviour
     public bool canWalk = true;
     
     public float distance;
-    private bool movingRight = true;
+    public bool movingRight = true;
     public Transform groundDetection;
     [SerializeField] Transform wallDetection;
     [SerializeField] LayerMask wallLayerMask;
@@ -137,7 +137,7 @@ public class EnemyAI : MonoBehaviour
             RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
             if (groundInfo.collider == false)
             {
-            if( movingRight==true )
+            if(movingRight==true)
                 {
                     Vector3 origin = wallDetection.position;
                     Vector3 dir = Vector2.right;
@@ -175,13 +175,13 @@ public class EnemyAI : MonoBehaviour
 
     void Direction()
     {
-        if (isFacingRight == true)
+        if ((isFacingRight == true) || (movingRight == true))
         {
             Debug.Log("flipped to right");
             isFacingRight = false;
             lOS.rayDirection = -1f;
         }
-        if (isFacingLeft == true)
+        if ((isFacingLeft == true) || (movingRight == false))
         {
             Debug.Log("flipped to left");
             isFacingLeft = false;
@@ -250,7 +250,7 @@ public class EnemyAI : MonoBehaviour
         {
             lOS.isChasing = false;
             Patrol();
-            Debug.Log("HIT THE WALLL!!!!");
+            //Debug.Log("HIT THE WALLL!!!!");
             if (movingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
