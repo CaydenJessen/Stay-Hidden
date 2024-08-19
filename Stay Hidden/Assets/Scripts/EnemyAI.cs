@@ -117,6 +117,7 @@ public class EnemyAI : MonoBehaviour
             if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
             {
                 speed = idleSpeed;
+                flip();
                 StartCoroutine(Idle());
                 targetPoint = pointA.transform;
 
@@ -124,6 +125,7 @@ public class EnemyAI : MonoBehaviour
             if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
             {
                 speed = idleSpeed;
+                flip();
                 StartCoroutine(Idle());
                 targetPoint = pointB.transform;
             }

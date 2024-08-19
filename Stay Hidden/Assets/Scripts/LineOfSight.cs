@@ -31,8 +31,6 @@ public class LineOfSight : MonoBehaviour
             isChasing = true;
             Debug.Log("hit");
             currentState = enemstate.chase;
-
-            
         }
         else
         {
