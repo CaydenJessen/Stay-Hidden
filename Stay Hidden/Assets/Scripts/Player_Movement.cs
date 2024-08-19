@@ -162,6 +162,17 @@ public class Player_Movement : MonoBehaviour
             canJump = true;
         }
 
+        if(Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            animator.SetBool("stopHide", true);
+
+        }
+        else
+        {
+            animator.SetBool("stopHide", false);
+        }
+        
+
         //Sprint detection
         if (Input.GetKeyDown(KeyCode.LeftShift) && pH.isAlive == true)
         {
