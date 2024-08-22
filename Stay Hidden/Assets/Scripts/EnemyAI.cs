@@ -108,10 +108,12 @@ public class EnemyAI : MonoBehaviour
                     isFacingLeft = true;
                     Debug.Log("going left");
                     isFacingRight = false;
+                    movingRight = false;
                 }
                 else
                 {
                     isFacingLeft = false;
+                    movingRight = true;
                 }
             }
             if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
@@ -183,11 +185,14 @@ public class EnemyAI : MonoBehaviour
             isFacingRight = false;
             lOS.rayDirection = -1f;
         }
-        if ((isFacingLeft == true) || (movingRight == false))
+        else
         {
-            Debug.Log("flipped to left");
-            isFacingLeft = false;
-            lOS.rayDirection = 1f;
+            if ((isFacingLeft == true) || (movingRight == false))
+            {
+                Debug.Log("flipped to left");
+                isFacingLeft = false;
+                lOS.rayDirection = 1f;
+            }
         }
     }
     void Chase()
