@@ -35,6 +35,13 @@ public class EnemyAI : MonoBehaviour
 
     public bool pointController;
 
+    public float oldPos;
+    public float newPos;
+
+
+    public bool OMGMOVINGLEFT = false;
+    public bool OMGMOVINGRIGHT = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +49,13 @@ public class EnemyAI : MonoBehaviour
         enemy = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         targetPoint = pointB.transform;
+        oldPos = transform.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if(canWalk == true)
         {
             animator.SetFloat("Speed", speed);
@@ -69,12 +78,33 @@ public class EnemyAI : MonoBehaviour
             
             if(lOS.isChasing == false)
             {
-                    Patrol();
+                Patrol();
             }
         }
+
+        CheckPosition();
     }
 
 
+
+//CHECK IF MOVING LEFT OR RIGHT BASED ON X POSITION
+    void CheckPosition()
+    {
+        newPos = transform.position.x;
+
+        if(newPos < oldPos)
+        {
+            OMGMOVINGLEFT = true;
+            OMGMOVINGRIGHT = false;
+        }
+        if(newPos > oldPos)
+        {
+            OMGMOVINGLEFT = false;
+            OMGMOVINGRIGHT = true;
+        }
+
+        oldPos = newPos;
+    }
 
 
 
