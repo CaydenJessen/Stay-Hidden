@@ -59,6 +59,11 @@ public class Player_Movement : MonoBehaviour
     public bool viewing;
     public GameObject view;
 
+  //  public class walk_loop {};
+   // void Play();
+ //  walk_loop audioData;
+  // public walk_loop AudioData { get => audioData; set => audioData = value; }
+   
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -187,6 +192,14 @@ public class Player_Movement : MonoBehaviour
         }
 
         HidingMechanic();
+
+       if (Input.GetKeyDown(KeyCode.D))
+       {
+            Debug.Log("footstep");
+       //     audioData = GetComponent<walk_loop>();
+       //     global::System.Object value = audioData.Play(4);
+            
+        }
     }
 
 
