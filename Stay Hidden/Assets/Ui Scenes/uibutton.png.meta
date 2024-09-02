@@ -142,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui button_0
+      name: uibutton_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 13
+        y: 16
+        width: 38
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bb5999a5c0a58f4c976e6bcc114c25d
-      internalID: -588577573
+      spriteID: 0853e87f61107a740ad80b6bc5564638
+      internalID: -219305350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui button_1
+      name: uibutton_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 77
+        y: 17
+        width: 38
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ab9fe93415a424d917acaa8d9c085e
-      internalID: 873542421
+      spriteID: 77050662cd5cb064a9db03e847f0afb0
+      internalID: -1109027255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui button_2
+      name: uibutton_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 141
+        y: 17
+        width: 38
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70d37fd5827c28943956b67130251fe8
-      internalID: -1581716361
+      spriteID: 388ddc6c297e89d4ab7bd9074fab399a
+      internalID: -1281520901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui button_3
+      name: uibutton_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 205
+        y: 17
+        width: 38
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c1d2716620131445aa38dad5dba2f27
-      internalID: -453556713
+      spriteID: 70ce376f5908cab438068339e11e3907
+      internalID: -249085329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui button_4
+      name: uibutton_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 269
+        y: 18
+        width: 38
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62f236441eda35e45aea4564f4c98e44
-      internalID: -580131359
+      spriteID: 805b09655a3c396479b98a85b5408ce8
+      internalID: -1722900675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui button_5
+      name: uibutton_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 333
+        y: 18
+        width: 38
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 401be6341f099c84f827dccee18d7456
-      internalID: -2069364824
+      spriteID: d6372786bd4d10841a075302e3e0ee3e
+      internalID: 1617737777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui button_6
+      name: uibutton_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 397
+        y: 16
+        width: 38
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce284517de5c0f8489f34b579392318f
-      internalID: 687352248
+      spriteID: d9ef5516a392497409abe5396e19d1ac
+      internalID: -708439955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui button_7
+      name: uibutton_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 461
+        y: 16
+        width: 38
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,8 +303,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13e1ad64e10568f4bae850396dcff8ec
-      internalID: -964366998
+      spriteID: 3cc29a7f8c53e55408b5ba042a39d8d5
+      internalID: 1181570725
       vertices: []
       indices: 
       edges: []
@@ -320,14 +320,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ui button_1: 873542421
-      ui button_0: -588577573
-      ui button_2: -1581716361
-      ui button_7: -964366998
-      ui button_6: 687352248
-      ui button_3: -453556713
-      ui button_4: -580131359
-      ui button_5: -2069364824
+      uibutton_5: 1617737777
+      uibutton_0: -219305350
+      uibutton_6: -708439955
+      uibutton_1: -1109027255
+      uibutton_7: 1181570725
+      uibutton_4: -1722900675
+      uibutton_3: -249085329
+      uibutton_2: -1281520901
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
