@@ -11,11 +11,11 @@ public class UIbuttonAnimation : MonoBehaviour
 	public bool destroyOnEnd = false;
 
 	private int index = 0;
-	private uibutton_0 image;
+	private Image image;
 	private int frame = 0;
 
 	void Awake() {
-		image = GetComponent<uibutton_0> ();
+		image = GetComponent<Image> ();
 	}
 
 	void Update () {

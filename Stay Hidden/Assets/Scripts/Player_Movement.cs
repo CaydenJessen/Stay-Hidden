@@ -59,6 +59,8 @@ public class Player_Movement : MonoBehaviour
     public bool viewing;
     public GameObject view;
 
+    public bool Squeezing = false;
+
   //  public class walk_loop {};
    // void Play();
  //  walk_loop audioData;
@@ -158,7 +160,6 @@ public class Player_Movement : MonoBehaviour
             currentSpeed = 0f;
             animator.SetBool("Crouch", true);
             canJump = false;
-
         }
         else
         {
@@ -307,8 +308,7 @@ public class Player_Movement : MonoBehaviour
 
     private void HidingMechanic()
     {
-       
-        if(Input.GetKey(KeyCode.LeftControl) && canHide == true)
+        if((Input.GetKey(KeyCode.LeftControl) && canHide == true) && Squeezing == false)
         {    
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
@@ -338,7 +338,7 @@ public class Player_Movement : MonoBehaviour
 
 
         //--------------PLAYER IS ABLE TO JUMP INFINITELY BUG---------------
-        if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false && canHide == true || stamina == 0 && isFacingRight == false && canHide == true || lit == true && isFacingRight == false && canHide == true && (pH.inDarkness == false))
+        if((Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false && canHide == true || stamina == 0 && isFacingRight == false && canHide == true || lit == true && isFacingRight == false && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
@@ -350,7 +350,7 @@ public class Player_Movement : MonoBehaviour
                 canJump = true;
             }
         }
-        else if(Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true && (pH.inDarkness == false))
+        else if((Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
@@ -366,7 +366,9 @@ public class Player_Movement : MonoBehaviour
     }
 
 
-    
+
+
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if ((col.gameObject.CompareTag("Light")))
@@ -393,7 +395,12 @@ public class Player_Movement : MonoBehaviour
         {
             pH.inLight = true;
         }
-
+        if ((collision.gameObject.CompareTag("Squeeze")))
+        {
+            Squeezing = true;
+            GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
+            GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
+        }
     }
 
 
@@ -408,6 +415,12 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Cam Sizer")
         {
             camResize = false;
+        }
+        if ((col.gameObject.CompareTag("Squeeze")))
+        {
+            Squeezing = false;
+            GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
+            GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
         }
     }
 
