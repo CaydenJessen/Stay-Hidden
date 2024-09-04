@@ -5,8 +5,6 @@ using UnityEngine;
 public class AlternatingLights : MonoBehaviour
 {
     public GameObject[] Lights;
-
-    public Player_Health playerHealth;
     
     public float lightCooldown = 2f; //Time between lights on and off.
 

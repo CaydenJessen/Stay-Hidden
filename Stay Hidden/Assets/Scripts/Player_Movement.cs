@@ -419,6 +419,7 @@ public class Player_Movement : MonoBehaviour
         if ((col.gameObject.CompareTag("Squeeze")))
         {
             Squeezing = false;
+            pH.isHidden = false;
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
         }
