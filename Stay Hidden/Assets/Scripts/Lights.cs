@@ -20,7 +20,7 @@ public class Lights : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            eA.chase = true;
+            eA.lightAlert = true;
             ligthCollide = true;
         }
     }
@@ -29,7 +29,7 @@ public class Lights : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            eA.chase = false;
+            eA.lightAlert = false;
             ligthCollide = false;
         }
     }

@@ -21,7 +21,6 @@ public class LineOfSight : MonoBehaviour
 
     void Update()
     {
-       
 
         RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, new Vector2(-rayDirection, 0f), lineOfSightDistance);
         
@@ -39,7 +38,5 @@ public class LineOfSight : MonoBehaviour
             Debug.Log("not hit");
             currentState = enemstate.patrol;
         }
-
-
     }
 }

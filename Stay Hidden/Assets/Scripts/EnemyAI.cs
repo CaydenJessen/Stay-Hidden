@@ -9,25 +9,25 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody2D enemy;
     private Animator anim;
     private Transform targetPoint;
+    public Transform player;
+    public LineOfSight lOS;
+    public Animator animator;
+
+    public float speed;
     public float walkSpeed = 3f;
     public float targetSize = 1f;
     private float idleSpeed = 0f;
-    public float speed;
-    public float wait = 3.0f;
-    public Transform player;
     public float chaseSpeed = 5f;
-    public LineOfSight lOS;
+
     public bool isFacingRight = false;
-    public bool chase = false;
-    public bool lost = false;
-    public Animator animator;
-    public bool canWalk = true;
-    public float distance;
     public bool movingRight = true;
-    public Transform groundDetection;
-    [SerializeField] Transform wallDetection;
-    [SerializeField] LayerMask wallLayerMask;
+    
+    public float wait = 3.0f;
+    public bool lost = true;
+    public bool lightAlert = false;
+    public bool canWalk = true;
     public bool pointController;
+
     public float oldPos;
     public float newPos;
 
@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
         if(canWalk == true)
         {
             animator.SetFloat("Speed", speed);
-            if (lOS.isChasing == true || chase == true)
+            if (lOS.isChasing == true || lightAlert == true)
             {
                 lost = false;
                 Debug.Log("chase is true");
@@ -84,15 +84,29 @@ public class EnemyAI : MonoBehaviour
 
         if(newPos < oldPos)
         {
-            //isFacingRight = false;
-            //movingRight = false;
+            isFacingRight = false;
+            movingRight = false;
+            //flip();
+
+            Vector3 localScale = transform.localScale;
+            localScale.x = -1;
+            transform.localScale = localScale;
+            
         }
         if(newPos > oldPos)
         {
-            //isFacingRight = true;
-            //movingRight = true;
+            isFacingRight = true;
+            movingRight = true;
+            //flip();
+
+            Vector3 localScale = transform.localScale;
+            localScale.x = 1;
+            transform.localScale = localScale;
+            
         }
         oldPos = newPos;
+        
+        Direction();
     }
 
 
@@ -107,35 +121,15 @@ public class EnemyAI : MonoBehaviour
             {
                 var step = speed * Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
-                if(transform.position.x < pointB.transform.position.x)
-                {
-                    isFacingRight = true;
-                    Debug.Log("going right");
-                }
-                else
-                {
-                    isFacingRight = false;
-                }
             }
             else if (targetPoint == pointA.transform)
             {
                 var step = speed * Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
-                if (transform.position.x > pointA.transform.position.x)
-                {
-                    Debug.Log("going left");
-                    isFacingRight = false;
-                    movingRight = false;
-                }
-                else
-                {
-                    movingRight = true;
-                }
             }
             if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
             {
                 speed = idleSpeed;
-                flip();
                 StartCoroutine(Idle());
                 targetPoint = pointA.transform;
 
@@ -143,7 +137,6 @@ public class EnemyAI : MonoBehaviour
             if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
             {
                 speed = idleSpeed;
-                flip();
                 StartCoroutine(Idle());
                 targetPoint = pointB.transform;
             }
@@ -152,36 +145,17 @@ public class EnemyAI : MonoBehaviour
         else
         {
             //-------------TYPE 2: PATROL MOVING LEFT TO RIGHT ----------//
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-
-            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
-            if (groundInfo.collider == false)
+            
+            if(movingRight = true)
             {
-            if(movingRight==true)
-                {
-                    Vector3 origin = wallDetection.position;
-                    Vector3 dir = Vector2.right;
-                    RaycastHit2D hit = Physics2D.Raycast( origin , dir , distance , wallLayerMask );
-                    if( hit.collider!=null )
-                    {
-                        movingRight = false;
-                        Debug.DrawLine( origin , hit.point , Color.red );
-                    }
-                    else Debug.DrawLine( origin , origin + dir*distance , Color.white , 0.01f );
-                }
-                else
-                {
-                    Vector3 origin = wallDetection.position;
-                    Vector3 dir = -Vector2.right;
-                    RaycastHit2D hit = Physics2D.Raycast( origin , dir , distance , wallLayerMask );
-                    if( hit.collider!=null )
-                    {
-                        movingRight = true;
-                        Debug.DrawLine( origin , hit.point , Color.red );
-                    }
-                    else Debug.DrawLine( origin , origin + dir*distance , Color.white , 0.01f );
-                }
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
             }
+            else
+            {
+                transform.Translate(Vector2.left* speed * Time.deltaTime);
+            }
+            
+
             //-------------END OF TYPE 2: PATROL MOVING LEFT TO RIGHT ----------//
         }
     }
@@ -193,7 +167,6 @@ public class EnemyAI : MonoBehaviour
         if ((isFacingRight == true) || (movingRight == true))
         {
             Debug.Log("flipped to right");
-            isFacingRight = false;
             lOS.rayDirection = -1f;
         }
         else
@@ -201,7 +174,6 @@ public class EnemyAI : MonoBehaviour
             if ((isFacingRight == false) || (movingRight == false))
             {
                 Debug.Log("flipped to left");
-                isFacingRight = true;
                 lOS.rayDirection = 1f;
             }
         }
@@ -209,7 +181,7 @@ public class EnemyAI : MonoBehaviour
 
 
 
-    void Chase()
+    void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
         if(transform.position.x > player.position.x)
         {
@@ -222,14 +194,6 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    private void flip() //FLIPS THE ENEMY SPRITE FOR TYPE 1 PATROL
-    {
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale;
-    }
-
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -238,7 +202,8 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawLine(pointA.transform.position, pointB.transform.position);
     }
    
-    IEnumerator Idle()
+
+    IEnumerator Idle() //Set when the enemy is not chasing
     {
         Debug.Log("Idle");
         yield return new WaitForSeconds(wait);
@@ -247,20 +212,28 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    IEnumerator Confused()
+    // IEnumerator Confused()
+    // {
+    //     speed = idleSpeed;
+    //     yield return new WaitForSeconds(2);
+    //     flip();
+    //     yield return new WaitForSeconds(1);
+    //     flip();
+    //     yield return new WaitForSeconds(1);
+    //     flip();
+    //     lost = false;
+    //     speed = walkSpeed;
+    //     targetPoint = pointA.transform;
+    //     Debug.Log("back to patrol");
+    // }
+
+    private void flip() //FLIPS THE ENEMY SPRITE FOR TYPE 1 PATROL
     {
-        speed = idleSpeed;
-        yield return new WaitForSeconds(2);
-        flip();
-        yield return new WaitForSeconds(1);
-        flip();
-        yield return new WaitForSeconds(1);
-        flip();
-        lost = false;
-        speed = walkSpeed;
-        targetPoint = pointA.transform;
-        Debug.Log("back to patrol");
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
+
 
 
     private void OnCollisionEnter2D(Collision2D touchPlayer)
@@ -274,16 +247,19 @@ public class EnemyAI : MonoBehaviour
         {
             lOS.isChasing = false;
             Patrol();
-            if (movingRight == true)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
-            }
+
+            flip();
+
+            // if (movingRight == true)
+            // {
+            //     //transform.eulerAngles = new Vector3(0, -180, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
+            //     movingRight = false;
+            // }
+            // else
+            // {
+            //     //transform.eulerAngles = new Vector3(0, 0, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
+            //     movingRight = true;
+            // }
         }
     }
 
@@ -292,18 +268,21 @@ public class EnemyAI : MonoBehaviour
     {
         if ((col.gameObject.CompareTag("Wall")) || (col.gameObject.tag == "Darkness"))
         {
+            lOS.isChasing = false;
             speed = idleSpeed;
             StartCoroutine(Idle());
-            if (movingRight == true)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
-                movingRight = false;
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
-                movingRight = true;
-            }
+
+            flip();
+            // if (movingRight == true)
+            // {
+            //     //transform.eulerAngles = new Vector3(0, -180, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
+            //     movingRight = false;
+            // }
+            // else
+            // {
+            //     //transform.eulerAngles = new Vector3(0, 0, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
+            //     movingRight = true;
+            // }
         }
     }
 
@@ -313,13 +292,8 @@ public class EnemyAI : MonoBehaviour
     {
         if((notouchPlayer.gameObject.CompareTag("Player")))
         {
-            canWalk = true;
+            canWalk = true; //Enemy can't push the player
         }
     }
 
 }
-
-
-
-
-
