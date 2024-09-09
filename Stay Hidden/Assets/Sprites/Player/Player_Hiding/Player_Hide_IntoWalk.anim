@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GreenRm_Door
+  m_Name: Player_Hide_IntoWalk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1591978685, guid: bab01378ca8fd8045a542e81132496aa, type: 3}
-    - time: 0.3
-      value: {fileID: 912907877, guid: bab01378ca8fd8045a542e81132496aa, type: 3}
-    - time: 0.6
-      value: {fileID: -1797484140, guid: bab01378ca8fd8045a542e81132496aa, type: 3}
+      value: {fileID: -928232316, guid: 32f94e4838ee9d343b9c1bb95dee5d85, type: 3}
+    - time: 0.083333336
+      value: {fileID: -928232316, guid: 32f94e4838ee9d343b9c1bb95dee5d85, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -45,15 +43,14 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: 1591978685, guid: bab01378ca8fd8045a542e81132496aa, type: 3}
-    - {fileID: 912907877, guid: bab01378ca8fd8045a542e81132496aa, type: 3}
-    - {fileID: -1797484140, guid: bab01378ca8fd8045a542e81132496aa, type: 3}
+    - {fileID: -928232316, guid: 32f94e4838ee9d343b9c1bb95dee5d85, type: 3}
+    - {fileID: -928232316, guid: 32f94e4838ee9d343b9c1bb95dee5d85, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6166667
+    m_StopTime: 0.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
