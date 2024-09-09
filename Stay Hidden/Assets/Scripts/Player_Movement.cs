@@ -10,6 +10,8 @@ public class Player_Movement : MonoBehaviour
     public float jump = 4f;
     public float runSpeedMultiplier = 1.5f;
     public float currentSpeed;
+    public float idleSpeed = 0f;
+
 
     public bool isFacingRight = false;
     public bool canJump = false;
@@ -61,6 +63,9 @@ public class Player_Movement : MonoBehaviour
 
     public bool Squeezing = false;
 
+    public bool canCrouch = true;
+    public bool canTail = true;
+
   //  public class walk_loop {};
    // void Play();
  //  walk_loop audioData;
@@ -75,17 +80,23 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if ((Input.GetMouseButton(0) && canTail == true))
         {
-            currentSpeed = 0f;
             tailControl = true;
             animator.SetBool("Tail", true);
+            canJump = false;
+            currentSpeed = idleSpeed;
+            canCrouch = false;
+            canHide = false;
         }
         else
         {
             currentSpeed = speed;
             tailControl = false;
             animator.SetBool("Tail", false);
+            canJump = true;
+            canCrouch = true;
+            canHide = true;
         }
         if (pause.isPaused == true)
         {
@@ -155,17 +166,24 @@ public class Player_Movement : MonoBehaviour
             animator.SetBool("Hiding", false);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if ((Input.GetKey(KeyCode.S)) && (tailControl == false) && (canCrouch == true))
         {
+            canTail = false;
             currentSpeed = 0f;
             animator.SetBool("Crouch", true);
             canJump = false;
+            canHide = false;
         }
         else
         {
-            currentSpeed = speed;
-            animator.SetBool("Crouch", false);
-            canJump = true;
+            if (tailControl == false)
+            {
+                canTail = true;
+                currentSpeed = speed;
+                animator.SetBool("Crouch", false);
+                canJump = true;
+                canHide = true;
+            }
         }
 
         if(Input.GetKeyUp(KeyCode.LeftControl))

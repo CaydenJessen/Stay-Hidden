@@ -78,7 +78,7 @@ public class Camera_Controller : MonoBehaviour
             } 
             playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 
-            if(Input.GetKey(KeyCode.S))
+            if((Input.GetKey(KeyCode.S) && (pM.canCrouch == true)))
             {
                 playerPosition = new Vector3(playerPosition.x, playerPosition.y - zoomDown, -10);               
             }

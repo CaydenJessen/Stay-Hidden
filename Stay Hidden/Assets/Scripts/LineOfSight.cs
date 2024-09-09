@@ -38,5 +38,13 @@ public class LineOfSight : MonoBehaviour
             Debug.Log("not hit");
             currentState = enemstate.patrol;
         }
+
+
+        if (pH.isHidden == true)
+        {
+            isChasing = false;
+        }
     }
+
+    
 }

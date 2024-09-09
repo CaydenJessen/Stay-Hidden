@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public LineOfSight lOS;
     public Animator animator;
+    public Player_Health pH;
 
     public float speed;
     public float walkSpeed = 3f;
@@ -26,11 +27,13 @@ public class EnemyAI : MonoBehaviour
     public bool lost = true;
     public bool lightAlert = false;
     public bool canWalk = true;
-    public bool pointController;
-
+    public bool wallCollide = false;
+    
     public float oldPos;
     public float newPos;
-
+    
+    public bool pointController;
+    public bool isMichael = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,8 +67,7 @@ public class EnemyAI : MonoBehaviour
                 //StartCoroutine(Confused());
             }
             
-            
-            if(lOS.isChasing == false)
+            if((lOS.isChasing == false) || (pH.isHidden == true))
             {
                 Patrol();
             }
@@ -86,7 +88,6 @@ public class EnemyAI : MonoBehaviour
         {
             isFacingRight = false;
             movingRight = false;
-            //flip();
 
             Vector3 localScale = transform.localScale;
             localScale.x = -1;
@@ -97,7 +98,6 @@ public class EnemyAI : MonoBehaviour
         {
             isFacingRight = true;
             movingRight = true;
-            //flip();
 
             Vector3 localScale = transform.localScale;
             localScale.x = 1;
@@ -146,7 +146,7 @@ public class EnemyAI : MonoBehaviour
         {
             //-------------TYPE 2: PATROL MOVING LEFT TO RIGHT ----------//
             
-            if(movingRight = true)
+            if(movingRight == true)
             {
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
             }
@@ -183,16 +183,31 @@ public class EnemyAI : MonoBehaviour
 
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
-        if(transform.position.x > player.position.x)
+        if((isMichael == false) && (pH.isHidden == false))
         {
-            transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
+            if(transform.position.x > player.position.x)
+            {
+                transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
+            }
+            if (transform.position.x < player.position.x)
+            {
+                transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
+            }
         }
-        if (transform.position.x < player.position.x)
+
+
+        if((isMichael == true) && (wallCollide == false) && (pH.isHidden == false))
         {
-            transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
+            if(transform.position.x > player.position.x)
+            {
+                transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
+            }
+            if (transform.position.x < player.position.x)
+            {
+                transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
+            }   
         }
     }
-
 
     private void OnDrawGizmos()
     {
@@ -268,11 +283,25 @@ public class EnemyAI : MonoBehaviour
     {
         if ((col.gameObject.CompareTag("Wall")) || (col.gameObject.tag == "Darkness"))
         {
-            lOS.isChasing = false;
-            speed = idleSpeed;
-            StartCoroutine(Idle());
+            wallCollide = true;
 
-            flip();
+            if (isMichael == true)
+            {
+                lOS.isChasing = false;
+                speed = idleSpeed;
+                StartCoroutine(Idle());
+                flip();
+            }
+
+            if (isMichael == false)
+            {
+                lOS.isChasing = false;
+                speed = idleSpeed;
+                StartCoroutine(Idle());
+                flip();
+            }
+
+            
             // if (movingRight == true)
             // {
             //     //transform.eulerAngles = new Vector3(0, -180, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
@@ -296,4 +325,12 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+
+    void OnTriggerExit2D(Collider2D nocol)
+    {
+        if ((nocol.gameObject.CompareTag("Wall")) || (nocol.gameObject.tag == "Darkness"))
+        {
+            wallCollide = false;
+        }
+    }
 }
