@@ -10,10 +10,13 @@ public class TailMechanic : MonoBehaviour
     private float cameraZDistance;
     public Transform tailParent;
     public Vector3 initialScale;
+    Vector3 lastMouseCoordinate = Vector3.zero;
+    // public Animator animate;
 
     private void Start()
     {
         cameraZDistance = mainCam.WorldToScreenPoint(transform.position).z;
+       // animate = GetComponent<Animator>();
     }
     void Update()
     {
@@ -53,6 +56,20 @@ public class TailMechanic : MonoBehaviour
         {
             tail.SetActive(false);
         }
+
+        
+  /*  Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
+    Debug.Log(Input.mousePosition - lastMouseCoordinate);
+    if(mouseDelta.x < -0.1 || mouseDelta.y > 0.1)
+    {
+        animate.SetBool("CurveRight", false);
+    }
+    else if(mouseDelta.x > 0.1 || mouseDelta.y < -0.1)
+    {
+        animate.SetBool("CurveRight", true);
+    }
+    lastMouseCoordinate = Input.mousePosition;
+*/
     }
 
 }
