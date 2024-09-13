@@ -166,14 +166,14 @@ public class EnemyAI : MonoBehaviour
     {
         if ((isFacingRight == true) || (movingRight == true))
         {
-            Debug.Log("flipped to right");
+            //Debug.Log("flipped to right");
             lOS.rayDirection = -1f;
         }
         else
         {
             if ((isFacingRight == false) || (movingRight == false))
             {
-                Debug.Log("flipped to left");
+                // Debug.Log("flipped to left");
                 lOS.rayDirection = 1f;
             }
         }
@@ -220,7 +220,7 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Idle() //Set when the enemy is not chasing
     {
-        Debug.Log("Idle");
+        //Debug.Log("Idle");
         yield return new WaitForSeconds(wait);
         speed = walkSpeed;
         Direction();

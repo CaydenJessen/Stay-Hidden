@@ -35,7 +35,7 @@ public class LineOfSight : MonoBehaviour
         {
             Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(-rayDirection, 0f), Color.green);
             isChasing = false;
-            Debug.Log("not hit");
+            //Debug.Log("not hit");
             currentState = enemstate.patrol;
         }
 
