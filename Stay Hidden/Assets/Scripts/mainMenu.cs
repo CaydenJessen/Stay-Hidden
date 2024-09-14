@@ -19,7 +19,7 @@ public class mainMenu : MonoBehaviour
     public void StartGame()
     {
         // Load the game scene
-        SceneManager.LoadScene("Test Level");
+        SceneManager.LoadScene("Level_1_Attic");
           
     }
 

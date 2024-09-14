@@ -14,7 +14,7 @@ public class Buttons : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);   
-        Debug.Log("hey i reset");
+        //Debug.Log("hey i reset");
     }
 
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    public GameObject[] openMechanisms;
-    public GameObject[] closeMechanisms;
+    public Collider2D[] openMechanisms;
+    public Collider2D[] closeMechanisms;
     //public GameObject lever;
     //public GameObject leverControl;
     public bool inRange = false;
@@ -14,7 +14,7 @@ public class Lever : MonoBehaviour
     public Player_Movement pM;
     public Animator animator;
     private void Start()
-    {
+    {    
         animator = GetComponent<Animator>();
     }
     void Update()
@@ -25,8 +25,8 @@ public class Lever : MonoBehaviour
             {
                 for (int i = 0; i < numberOfMechanisms; i++)
                 {
-                    openMechanisms[i].SetActive(false);
-                    closeMechanisms[i].SetActive(true);
+                    openMechanisms[i].enabled = false;
+                    closeMechanisms[i].enabled = true;
                 }
 
                 // leverControl.transform.Rotate(0.0f, 0.0f, -41.0f);
@@ -38,8 +38,8 @@ public class Lever : MonoBehaviour
                 {
                 for (int i = 0; i < numberOfMechanisms; i++)
                 {
-                    openMechanisms[i].SetActive(true);
-                    closeMechanisms[i].SetActive(false);
+                    openMechanisms[i].enabled = true;
+                    closeMechanisms[i].enabled = false;
                 }
                 //leverControl.transform.Rotate(0.0f, 0.0f, 41.0f);
                     status = true;

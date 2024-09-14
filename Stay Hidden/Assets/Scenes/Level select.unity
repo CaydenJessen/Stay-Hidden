@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 346139196}
   - component: {fileID: 346139195}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: main menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1080,7 +1080,7 @@ GameObject:
   - component: {fileID: 633279781}
   - component: {fileID: 633279780}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: basement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1433,7 +1433,7 @@ GameObject:
   - component: {fileID: 1169853360}
   - component: {fileID: 1169853359}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: 1st
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Test Level
+  sceneName: Level_3_Kitchen
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
@@ -1515,7 +1515,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1169853361}
   m_OnClick:
     m_PersistentCalls:
@@ -1719,7 +1719,7 @@ GameObject:
   - component: {fileID: 1276303623}
   - component: {fileID: 1276303622}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: 2nd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Test Level
+  sceneName: Level_2_GreenRm
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
@@ -1801,11 +1801,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1276303624}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1276303622}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1276303624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2050,7 +2062,7 @@ GameObject:
   - component: {fileID: 1645228374}
   - component: {fileID: 1645228373}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2202,7 +2214,7 @@ GameObject:
   - component: {fileID: 1664205678}
   - component: {fileID: 1664205677}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2521,7 +2533,7 @@ GameObject:
   - component: {fileID: 1838907573}
   - component: {fileID: 1838907572}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Attic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2560,7 +2572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Test Level
+  sceneName: Level_1_Attic
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
