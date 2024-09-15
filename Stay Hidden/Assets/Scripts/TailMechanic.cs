@@ -21,7 +21,7 @@ public class TailMechanic : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && pM.canTail == true)
         {
             tail.SetActive(true);
             Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

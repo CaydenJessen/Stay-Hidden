@@ -14,10 +14,7 @@ public class Player_Movement : MonoBehaviour
 
 
     public bool isFacingRight = false;
-    public bool canJump = false;
     public bool touchGround = false;
-    bool isRunning = false;
-    public bool tailControl;
     public Animator animator;
 
     public GameObject Player;
@@ -31,7 +28,6 @@ public class Player_Movement : MonoBehaviour
     public float chargeRate;
     private Coroutine recharge;
     public bool lit;
-    public bool canHide = false;
 
 
     public bool hasItem = false;
@@ -63,8 +59,16 @@ public class Player_Movement : MonoBehaviour
 
     public bool Squeezing = false;
 
+    public bool isRunning = false;
     public bool canCrouch = true;
     public bool canTail = true;
+    public bool canHide = false;
+    public bool canJump = false;
+
+    public bool tailControl;
+    public bool isCrouch = false;
+    public bool isHiding;
+
 
   //  public class walk_loop {};
    // void Play();
@@ -326,13 +330,13 @@ public class Player_Movement : MonoBehaviour
 
     private void HidingMechanic()
     {
-        if((Input.GetKey(KeyCode.LeftControl) && canHide == true) && Squeezing == false)
+        if(((Input.GetKey(KeyCode.LeftControl) && canHide == true) && Squeezing == false) && (pH.inDarkness == false))
         {    
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
             canJump = false;
-           
             isRunning = false;
+            canCrouch = false;
 
             pH.isHidden = true;
 

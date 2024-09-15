@@ -87,7 +87,7 @@ public class Camera_Controller : MonoBehaviour
             //Camera movement with offset
            
         
-            if(player.transform.localScale.x > 0f && Input.GetKey(KeyCode.S) == false)
+            if((player.transform.localScale.x > 0f && Input.GetKey(KeyCode.S) == false) && pM.canCrouch == true)
             {
                 playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y + 2 + yOffset, playerPosition.z);
             }

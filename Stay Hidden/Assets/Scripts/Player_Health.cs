@@ -53,8 +53,6 @@ public class Player_Health : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = health / maxHealth;
-
-        
     }
 
 
