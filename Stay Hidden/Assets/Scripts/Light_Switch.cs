@@ -10,7 +10,7 @@ public class Light_Switch : MonoBehaviour
     public GameObject lightSwitch;
     public int numberOfMechanisms;
 
-    public AlternatingLights AL;
+    //public AlternatingLights AL;
     public Player_Movement pM;
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class Light_Switch : MonoBehaviour
                 {
                     Light[i].SetActive(true);
                     switchOn = true;
-                    AL.lightSetup = false;
+                    //AL.lightSetup = false;
                 }
             }
             else
@@ -42,7 +42,7 @@ public class Light_Switch : MonoBehaviour
                     {
                         Light[i].SetActive(false);
                         switchOn = false;
-                        AL.lightSetup = false;
+                        //AL.lightSetup = false;
                     }
                 }
             }

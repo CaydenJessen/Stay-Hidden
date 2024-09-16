@@ -14,7 +14,6 @@ public class Player_Movement : MonoBehaviour
 
 
     public bool isFacingRight = false;
-    public bool touchGround = false;
     public Animator animator;
 
     public GameObject Player;
@@ -28,7 +27,6 @@ public class Player_Movement : MonoBehaviour
     public float chargeRate;
     private Coroutine recharge;
     public bool lit;
-
 
     public bool hasItem = false;
     public int num = -1;
@@ -69,7 +67,6 @@ public class Player_Movement : MonoBehaviour
     public bool isCrouch = false;
     public bool isHiding;
 
-
   //  public class walk_loop {};
    // void Play();
  //  walk_loop audioData;
@@ -84,7 +81,13 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetMouseButton(0) && canTail == true))
+
+        if ((canTail == false) || (isHiding == false))
+        {
+            animator.SetBool("Tail", false);
+        }
+
+        if (((Input.GetMouseButton(0) && canTail == true)) && (isHiding == false))
         {
             tailControl = true;
             animator.SetBool("Tail", true);
@@ -143,10 +146,10 @@ public class Player_Movement : MonoBehaviour
         //Jump using Raycasting
         if ((Input.GetButtonDown("Jump") && isGrounded() && pH.isAlive == true) && (canJump == true))
         {
+            
             rb.velocity = new Vector2(rb.velocity.x, jump);
             //isRunning = false; //Player stops running when they jump / stops momentum
             animator.SetFloat("yVelocity", Mathf.Abs(rb.velocity.y));
-            
         }
 
         if(isGrounded())
@@ -265,14 +268,11 @@ public class Player_Movement : MonoBehaviour
     {
         if(Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
         {
-            
             return true;
-            
         }
         else
         {
             return false;
-            
         }
     }
 
@@ -327,7 +327,6 @@ public class Player_Movement : MonoBehaviour
 
 
 
-
     private void HidingMechanic()
     {
         if(((Input.GetKey(KeyCode.LeftControl) && canHide == true) && Squeezing == false) && (pH.inDarkness == false))
@@ -337,6 +336,7 @@ public class Player_Movement : MonoBehaviour
             canJump = false;
             isRunning = false;
             canCrouch = false;
+            canTail = false;
 
             pH.isHidden = true;
 
@@ -367,10 +367,6 @@ public class Player_Movement : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
 
-            if (touchGround)
-            {
-                canJump = true;
-            }
         }
         else if((Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
         {
@@ -378,12 +374,6 @@ public class Player_Movement : MonoBehaviour
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
-
-
-            if (touchGround)
-            {
-                canJump = true;
-            }
         }
     }
 
