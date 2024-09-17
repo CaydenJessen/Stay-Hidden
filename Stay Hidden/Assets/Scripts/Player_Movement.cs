@@ -62,6 +62,11 @@ public class Player_Movement : MonoBehaviour
     public bool canTail = true;
     public bool canHide = false;
     public bool canJump = false;
+    float jumpTimeCounter;
+    public float jumpTime;
+    public float riseSpeed;
+
+    public bool isJumping;
 
     public bool tailControl;
     public bool isCrouch = false;
@@ -143,14 +148,39 @@ public class Player_Movement : MonoBehaviour
         //     //isRunning = false; //Player stops running when they jump / stops momentum
         // }
 
+
+
         //Jump using Raycasting
         if ((Input.GetButtonDown("Jump") && isGrounded() && pH.isAlive == true) && (canJump == true))
         {
-            
-            rb.velocity = new Vector2(rb.velocity.x, jump);
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            //rb.velocity = new Vector2(rb.velocity.x, jump);
+            rb.velocity = Vector2.up * jump;
             //isRunning = false; //Player stops running when they jump / stops momentum
             animator.SetFloat("yVelocity", Mathf.Abs(rb.velocity.y));
         }
+
+        if(Input.GetKey(KeyCode.Space) && pH.isAlive == true && isJumping == true && isHiding == false)
+        {
+            if(jumpTimeCounter > 0.15f)
+            {
+                //rb.velocity = new Vector2(rb.velocity.x, jump);
+                rb.velocity = Vector2.up * riseSpeed;
+                jumpTimeCounter -= Time.deltaTime;
+                animator.SetFloat("yVelocity", Mathf.Abs(rb.velocity.y));
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+           isJumping = false;
+        }
+    
 
         if(isGrounded())
         {
@@ -193,7 +223,7 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.LeftControl))
+        if(Input.GetKeyUp(KeyCode.LeftControl) && Squeezing == false)
         {
             animator.SetBool("stopHide", true);
 
@@ -339,6 +369,7 @@ public class Player_Movement : MonoBehaviour
             canTail = false;
 
             pH.isHidden = true;
+            isHiding = true;
 
             stamina -= skillCost * Time.deltaTime; 
             if (stamina < 0)
@@ -355,6 +386,18 @@ public class Player_Movement : MonoBehaviour
             recharge = StartCoroutine(RechargeStamina());
 
         }
+
+        // if(Squeezing == true)
+        // {
+        //     GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
+        //     GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
+        //     pH.isHidden = true;
+        //     animator.SetBool("Hiding", true);
+        // }
+        // else
+        // {
+        //     pH.isHidden = false;
+        // }
         
 
 
@@ -366,6 +409,7 @@ public class Player_Movement : MonoBehaviour
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
+            isHiding = false;
 
         }
         else if((Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
@@ -374,6 +418,7 @@ public class Player_Movement : MonoBehaviour
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
+            isHiding = false;
         }
     }
 
