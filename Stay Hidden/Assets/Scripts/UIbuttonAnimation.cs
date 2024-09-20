@@ -27,7 +27,24 @@ public class UIbuttonAnimation : MonoBehaviour
 		index ++;
 		if (index >= sprites.Length) {
 			if (loop) index = 0;
-			if (destroyOnEnd) Destroy (gameObject);
+			if (destroyOnEnd) Destroy (gameObject) ;
+
 		}
+
+		 if (Input.GetKey(KeyCode.Mouse0))
+		 {
+			Destroy (gameObject);
+			
+			}
+
+		 if (Input.GetKey(KeyCode.Mouse0))
+        {
+          	if (!loop && index == sprites.Length) return;
+		frame ++;
+		if (frame < spritePerFrame) return;
+		image.sprite = sprites [index];
+		frame = 0;
+		index ++;
+        }
 	}
 }

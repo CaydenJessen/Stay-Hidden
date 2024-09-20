@@ -1559,6 +1559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 6189832417793647925, guid: 307b547c7bcabc048b7d0cb43a30fcb3, type: 3}
+      propertyPath: destroyOnEnd
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 307b547c7bcabc048b7d0cb43a30fcb3, type: 3}
