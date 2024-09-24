@@ -742,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 473a3cabafdb27244908f14e837a23a0, type: 2}
     - target: {fileID: 6235455022333297937, guid: db31cdb6e6f36f5468cdbac24c930f5a, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6235455022333297938, guid: db31cdb6e6f36f5468cdbac24c930f5a, type: 3}
       propertyPath: m_Name
@@ -30485,7 +30485,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 473a3cabafdb27244908f14e837a23a0, type: 2}
     - target: {fileID: 6235455022333297937, guid: db31cdb6e6f36f5468cdbac24c930f5a, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6235455022333297938, guid: db31cdb6e6f36f5468cdbac24c930f5a, type: 3}
       propertyPath: m_Name
@@ -31540,7 +31540,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 473a3cabafdb27244908f14e837a23a0, type: 2}
     - target: {fileID: 6235455022333297937, guid: db31cdb6e6f36f5468cdbac24c930f5a, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6235455022333297938, guid: db31cdb6e6f36f5468cdbac24c930f5a, type: 3}
       propertyPath: m_Name
