@@ -16,7 +16,7 @@ public class DoorTrigger : MonoBehaviour
         originalColor = itemRenderer.material.color;
     }
 
-    // Called when the box collides with the trigger
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Box"))
