@@ -16,6 +16,10 @@ TagManager:
   - Squeeze
   - DamageLight
   - Death
+  - MaddieTrigger
+  - Trigger
+  - Box
+  - Door
   layers:
   - Default
   - TransparentFX
