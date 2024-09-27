@@ -67,10 +67,19 @@ public class EnemyAI : MonoBehaviour
                 //StartCoroutine(Confused());
             }
             
+
+            if((lOS.hitPlayer == true) && (lOS.isChasing == false))
+            {
+                lOS.hitPlayer = false;
+                StartCoroutine(Confused());
+            }
+            
             if((lOS.isChasing == false) || (pH.isHidden == true))
             {
                 Patrol();
             }
+
+
         }
 
         CheckPosition();
@@ -226,21 +235,22 @@ public class EnemyAI : MonoBehaviour
         Direction();
     }
 
+    //StopCoroutine(Confused())!!!!!!!!!!!
 
-    // IEnumerator Confused()
-    // {
-    //     speed = idleSpeed;
-    //     yield return new WaitForSeconds(2);
-    //     flip();
-    //     yield return new WaitForSeconds(1);
-    //     flip();
-    //     yield return new WaitForSeconds(1);
-    //     flip();
-    //     lost = false;
-    //     speed = walkSpeed;
-    //     targetPoint = pointA.transform;
-    //     Debug.Log("back to patrol");
-    // }
+    IEnumerator Confused()
+    {
+        speed = idleSpeed;
+        yield return new WaitForSeconds(2);
+        flip();
+        yield return new WaitForSeconds(1);
+        flip();
+        yield return new WaitForSeconds(1);
+        flip();
+        lost = false;
+        speed = walkSpeed;
+        targetPoint = pointA.transform;
+        Debug.Log("back to patrol");
+    }
 
     private void flip() //FLIPS THE ENEMY SPRITE FOR TYPE 1 PATROL
     {
@@ -334,3 +344,4 @@ public class EnemyAI : MonoBehaviour
         }
     }
 }
+

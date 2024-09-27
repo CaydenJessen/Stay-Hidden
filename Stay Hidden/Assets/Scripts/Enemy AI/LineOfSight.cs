@@ -19,6 +19,8 @@ public class LineOfSight : MonoBehaviour
 
     public Player_Health pH;
 
+    public bool hitPlayer = false;
+
     void Update()
     {
 
@@ -30,6 +32,7 @@ public class LineOfSight : MonoBehaviour
             isChasing = true;
             Debug.Log("hit");
             currentState = enemstate.chase;
+            hitPlayer = true;
         }
         else
         {
@@ -45,6 +48,4 @@ public class LineOfSight : MonoBehaviour
             isChasing = false;
         }
     }
-
-    
 }
