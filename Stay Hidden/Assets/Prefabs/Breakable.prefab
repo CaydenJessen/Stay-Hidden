@@ -4900,6 +4900,10 @@ PrefabInstance:
       propertyPath: Particles
       value: 
       objectReference: {fileID: 6237388060606691657}
+    - target: {fileID: 5224952332894245321, guid: 4aaea2e61bd821743b11edcbdecb3602, type: 3}
+      propertyPath: breakSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8065f17c5ad3003448c5960fff88c47a, type: 3}
     - target: {fileID: 5224952332894245322, guid: 4aaea2e61bd821743b11edcbdecb3602, type: 3}
       propertyPath: m_Sprite
       value: 
