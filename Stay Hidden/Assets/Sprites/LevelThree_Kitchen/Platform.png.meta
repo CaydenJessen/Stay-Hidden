@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 922043625b55e15408c0ed6a484758a0
+guid: 53e0187854a6a7b47acc844f64de5d40
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,13 +43,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 11, y: 4, z: 8, w: 7}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -140,86 +140,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Kitchen_Leaver_Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 16
-        width: 19
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1aeb174ce8aacc94eb2b41d2d5b1a7ae
-      internalID: -1967404936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kitchen_Leaver_Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 16
-        width: 27
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e69d9839977b30841b2a86ec19cee266
-      internalID: 1947201403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kitchen_Leaver_Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 16
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdc7d0f9415601c4fa31a304aa4aa0ad
-      internalID: -310270198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Kitchen_Leaver_Sheet_1: 866328548
-      Kitchen_Leaver_Sheet_3: 1947201403
-      Kitchen_Leaver_Sheet_2: -938179079
-      Kitchen_Leaver_Sheet_4: -310270198
-      Kitchen_Leaver_Sheet_0: -1967404936
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
