@@ -30810,6 +30810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kitchen_Knife (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 645024424221030373, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 645024424221030374, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: trigger
       value: 
@@ -32144,11 +32148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667143401323253451, guid: 82e90b59ee883004eb85cffc63a0899a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.39
+      value: -39.16
       objectReference: {fileID: 0}
     - target: {fileID: 5667143401323253451, guid: 82e90b59ee883004eb85cffc63a0899a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.58
+      value: 19.4
       objectReference: {fileID: 0}
     - target: {fileID: 5667143401323253451, guid: 82e90b59ee883004eb85cffc63a0899a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32646,7 +32650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133520006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.04, y: 10.58, z: 0}
+  m_LocalPosition: {x: -18.33, y: 19.82, z: 0}
   m_LocalScale: {x: 0.452743, y: 4.5767303, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
