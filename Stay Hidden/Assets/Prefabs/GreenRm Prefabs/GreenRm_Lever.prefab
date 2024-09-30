@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4366511291236292427}
   - component: {fileID: 4366511291236292426}
   - component: {fileID: 4366511291236292428}
+  - component: {fileID: 4910796836373315489}
+  - component: {fileID: -5771426708365861992}
   m_Layer: 0
   m_Name: GreenRm_Lever
   m_TagString: Untagged
@@ -31,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4366511291236292426
 SpriteRenderer:
@@ -95,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 4366511291236292425}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9132e85682640274385716c9d1a1e83e, type: 2}
+  m_Controller: {fileID: 9100000, guid: f4c2116293758264a8097b589a4d7de7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -105,3 +107,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4910796836373315489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366511291236292425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b23baf929d2924a9fcb37532b1bd13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openMechanisms: []
+  closeMechanisms: []
+  inRange: 0
+  status: 0
+  numberOfMechanisms: 0
+  pM: {fileID: 2425729181041727057, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+  animator: {fileID: 4366511291236292428}
+--- !u!61 &-5771426708365861992
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366511291236292425}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.035034955, y: -0.05185096}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5039123, y: 0.41422364}
+  m_EdgeRadius: 0
