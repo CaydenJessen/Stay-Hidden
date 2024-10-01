@@ -7,12 +7,15 @@ public class FallingKnife : MonoBehaviour
     Rigidbody2D rb;
     BoxCollider2D boxCollider2D;
     public float distance;
-    bool isFalling = false;
-    bool isRising = false;
+    public bool isFalling = false;
+    public bool isRising = false;
     Vector2 P;
     public float shakeAmount = 1.0f; 
     Vector2 startPosition;
+    public Transform target;
+    public float fallTime;
 
+    public float riseSpeed;
         
     private void Start()
     {
@@ -26,10 +29,13 @@ public class FallingKnife : MonoBehaviour
 
     private void Update()
     {
+        if(isFalling == true)
+        {
+            StartCoroutine(Falling());
+        }
         if(isRising == true)
         { 
-            Rising();
-            isRising = false;
+           StartCoroutine(Rising());
         }
         Physics2D.queriesStartInColliders = false;
         if (isFalling == false)
@@ -42,24 +48,22 @@ public class FallingKnife : MonoBehaviour
             {
                 if (hit.transform.tag == "Player")
                 {
-                    StartCoroutine(Falling());
+                    isFalling = true;
                 }
             }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
-     {
-
+    {
         isRising = true;
-
     }
     
 
     IEnumerator Falling()
     {
         transform.position = P;
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < fallTime; i++)
         {
             P.x = startPosition.x + shakeAmount;
             yield return new WaitForSeconds(0.1f);
@@ -70,14 +74,15 @@ public class FallingKnife : MonoBehaviour
 
         }
         rb.gravityScale = 5;
-        isFalling = true;
+        isFalling = false;
     }
 
     IEnumerator Rising()
     {
         yield return new WaitForSeconds(2);
-        transform.position = Vector3.MoveTowards(transform.localPosition, startPosition, 1);
+        float step = riseSpeed * Time.deltaTime;
         rb.gravityScale = 0;
-        isFalling = false;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);  
+        isRising = false;
     }
 }

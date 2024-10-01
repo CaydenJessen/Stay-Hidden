@@ -71,6 +71,9 @@ public class Player_Movement : MonoBehaviour
     public bool tailControl;
     public bool isCrouch = false;
     public bool isHiding;
+    public AudioSource walk;
+    public AudioSource run;
+    public AudioSource hide;
 
   //  public class walk_loop {};
    // void Play();
@@ -232,6 +235,23 @@ public class Player_Movement : MonoBehaviour
         {
             animator.SetBool("stopHide", false);
         }
+ // AUDIOS
+        if(currentSpeed < 10 && currentSpeed > 1)
+        {
+            walk.Play();
+        }
+        else 
+        {
+            walk.Stop();
+        }
+        if(currentSpeed > 10)
+        {
+            run.Play();
+        }
+        else 
+        {
+            run.Stop();
+        }
         
 
         //Sprint detection
@@ -248,14 +268,6 @@ public class Player_Movement : MonoBehaviour
         }
 
         HidingMechanic();
-
-       if (Input.GetKeyDown(KeyCode.D))
-       {
-            Debug.Log("footstep");
-       //     audioData = GetComponent<walk_loop>();
-       //     global::System.Object value = audioData.Play(4);
-            
-        }
     }
 
 

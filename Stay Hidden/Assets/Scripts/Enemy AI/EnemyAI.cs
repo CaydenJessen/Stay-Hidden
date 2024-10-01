@@ -35,6 +35,8 @@ public class EnemyAI : MonoBehaviour
     public bool pointController;
     public bool isMichael = false;
 
+    public bool scared = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -310,8 +312,6 @@ public class EnemyAI : MonoBehaviour
                 StartCoroutine(Idle());
                 flip();
             }
-
-            
             // if (movingRight == true)
             // {
             //     //transform.eulerAngles = new Vector3(0, -180, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
@@ -323,6 +323,22 @@ public class EnemyAI : MonoBehaviour
             //     movingRight = true;
             // }
         }
+
+
+        // if (col.gameObject.CompareTag("Player") && isMichael == true);
+        // {
+        //     scared = true;
+        //     lOS.isChasing = false;
+        //     speed = idleSpeed;
+        //     animator.SetBool("Scared", true);
+        // }
+        // else
+        // {
+        //     animator.SetBool("Scared", false);
+        //     Patrol();
+        // }
+
+
     }
 
 
@@ -342,6 +358,17 @@ public class EnemyAI : MonoBehaviour
         {
             wallCollide = false;
         }
+
+        //   if (nocol.gameObject.CompareTag("Player"));
+        //     {
+        //         if (isMichael == true)
+        //         {
+        //             scared = false;
+        //             lOS.isChasing = true;
+        //             speed = chaseSpeed;
+        //             animator.SetBool("Scared", false);
+        //         }
+        //     }
     }
 }
 
