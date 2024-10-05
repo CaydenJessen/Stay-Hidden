@@ -25,7 +25,8 @@ public class UIbuttonAnimation : MonoBehaviour
 		image.sprite = sprites [index];
 		frame = 0;
 		index ++;
-		if (index >= sprites.Length) {
+		if (index >= sprites.Length)
+		{
 			if (loop) index = 0;
 			if (destroyOnEnd) Destroy (gameObject) ;
 
@@ -35,7 +36,7 @@ public class UIbuttonAnimation : MonoBehaviour
 		 {
 			Destroy (gameObject);
 			
-			}
+		 }
 
 		 if (Input.GetKey(KeyCode.Mouse0))
         {
