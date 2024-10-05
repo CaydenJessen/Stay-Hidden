@@ -71,9 +71,6 @@ public class Player_Movement : MonoBehaviour
     public bool tailControl;
     public bool isCrouch = false;
     public bool isHiding;
-    public AudioSource walk;
-    public AudioSource run;
-    public AudioSource hide;
 
   //  public class walk_loop {};
    // void Play();
@@ -229,28 +226,10 @@ public class Player_Movement : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.LeftControl) && Squeezing == false)
         {
             animator.SetBool("stopHide", true);
-
         }
         else
         {
             animator.SetBool("stopHide", false);
-        }
- // AUDIOS
-        if(currentSpeed < 10 && currentSpeed > 1)
-        {
-            walk.Play();
-        }
-        else 
-        {
-            walk.Stop();
-        }
-        if(currentSpeed > 10)
-        {
-            run.Play();
-        }
-        else 
-        {
-            run.Stop();
         }
         
 
@@ -268,6 +247,14 @@ public class Player_Movement : MonoBehaviour
         }
 
         HidingMechanic();
+
+       if (Input.GetKeyDown(KeyCode.D))
+       {
+            Debug.Log("footstep");
+       //     audioData = GetComponent<walk_loop>();
+       //     global::System.Object value = audioData.Play(4);
+            
+        }
     }
 
 
@@ -375,6 +362,8 @@ public class Player_Movement : MonoBehaviour
         {    
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
+            
+
             canJump = false;
             isRunning = false;
             canCrouch = false;
@@ -489,10 +478,21 @@ public class Player_Movement : MonoBehaviour
         {
             Squeezing = false;
             pH.isHidden = false;
+            isHiding = false;
+            StartCoroutine(AfterSqueeze());
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
         }
     }
+
+    private IEnumerator AfterSqueeze()
+    {
+        canHide = false;
+        yield return new WaitForSeconds (1f);
+        canHide = true;
+    }
+
+
 
     private IEnumerator RechargeStamina()
     {
