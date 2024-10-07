@@ -21,8 +21,7 @@ public class Player_Health : MonoBehaviour
     public bool inLight = false;
 
     public bool isHidden = false;
-    public LineOfSight LOS;
-    public EnemyAI ea;
+    //public LineOfSight LOS;
 
     public Image healthBar;
 
@@ -123,7 +122,7 @@ public class Player_Health : MonoBehaviour
 
             lastHealTime = Time.time;
 
-            LOS.isChasing = false;
+            //LOS.isChasing = false;
         }
         
         //Death Pit//

@@ -99,7 +99,7 @@ public class Player_Movement : MonoBehaviour
             canJump = false;
             currentSpeed = idleSpeed;
             canCrouch = false;
-            canHide = false;
+            //canHide = false;
         }
         else
         {
@@ -108,7 +108,7 @@ public class Player_Movement : MonoBehaviour
             animator.SetBool("Tail", false);
             canJump = true;
             canCrouch = true;
-            canHide = true;
+            //canHide = true;
         }
         if (pause.isPaused == true)
         {
@@ -209,7 +209,7 @@ public class Player_Movement : MonoBehaviour
             currentSpeed = 0f;
             animator.SetBool("Crouch", true);
             canJump = false;
-            canHide = false;
+            //canHide = false;
         }
         else
         {
@@ -219,7 +219,7 @@ public class Player_Movement : MonoBehaviour
                 currentSpeed = speed;
                 animator.SetBool("Crouch", false);
                 canJump = true;
-                canHide = true;
+                //canHide = true;
             }
         }
 
@@ -327,7 +327,24 @@ public class Player_Movement : MonoBehaviour
             animator.SetBool("Land", false);
         }
 
+        if((onGround.gameObject.CompareTag("Moving Platform")))
+        {
+            canHide = false;
+        }
     }
+
+
+        private void OnCollisionExit2D(Collision2D offGround)
+        {
+            if((offGround.gameObject.CompareTag("Moving Platform")))
+            {
+                canHide = true;
+            }
+        }
+
+
+
+
 
     //     if (onGround.gameObject.CompareTag("Moving Platform"))
     //     {
