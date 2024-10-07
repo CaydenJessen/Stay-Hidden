@@ -10,12 +10,11 @@ public class Buttons : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject[] objects;
     public bool on = true;
+    public float clickDelay;
  
     public void LoadScene()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneName);  
-        //Debug.Log("hey i reset");
+        StartCoroutine(Load());
     }
 
 
@@ -51,7 +50,12 @@ public class Buttons : MonoBehaviour
 
     }
        
-   
+   private IEnumerator Load()
+   {
+    yield return new WaitForSeconds (clickDelay);
+    Time.timeScale = 1f;
+    SceneManager.LoadScene(sceneName); 
+   }
 
 
 }

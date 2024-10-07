@@ -32,11 +32,11 @@ public class UIbuttonAnimation : MonoBehaviour
 
 		}
 
-		 if (Input.GetKey(KeyCode.Mouse0))
-		 {
-			Destroy (gameObject);
+		//  if (Input.GetKey(KeyCode.Mouse0))
+		//  {
+		// 	Destroy (gameObject);
 			
-		 }
+		//  }
 
 		 if (Input.GetKey(KeyCode.Mouse0))
         {

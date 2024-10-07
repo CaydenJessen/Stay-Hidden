@@ -303,6 +303,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
+  clickDelay: 0
 --- !u!1 &437477311606501281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1183,7 @@ RectTransform:
   - {fileID: 437477312225054012}
   - {fileID: 437477312439814281}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1722,6 +1723,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 437477312225054011}
   objects: []
   on: 1
+  clickDelay: 0
 --- !u!1 &437477312541833485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,6 +2102,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 437477312439814280}
   objects: []
   on: 1
+  clickDelay: 0
 --- !u!1 &437477312629772678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,6 +3183,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
+  clickDelay: 0
 --- !u!1 &437477313027181069
 GameObject:
   m_ObjectHideFlags: 0
