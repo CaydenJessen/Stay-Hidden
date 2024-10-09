@@ -306,6 +306,7 @@ MonoBehaviour:
   damage: 1
   attackCooldown: 2
   pH: {fileID: 0}
+  hitPlayer: 0
 --- !u!1 &5667143401221595288
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +370,7 @@ Transform:
   - {fileID: 5667143400106667934}
   - {fileID: 5667143401382566552}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5667143401382566550
 GameObject:
@@ -386,6 +387,7 @@ GameObject:
   - component: {fileID: 5667143401382566548}
   - component: {fileID: 5667143401382566549}
   - component: {fileID: 5667143401382566559}
+  - component: {fileID: 6498175905376582250}
   m_Layer: 6
   m_Name: Butler sprite
   m_TagString: Enemy
@@ -497,27 +499,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 5667143401221595288}
   pointB: {fileID: 5667143400106667935}
+  player: {fileID: 0}
+  lOS: {fileID: 5667143400845701359}
+  animator: {fileID: 5667143401382566554}
+  pH: {fileID: 0}
+  speed: 0
   walkSpeed: 3
   targetSize: 0.5
-  speed: 0
-  wait: 1
-  player: {fileID: 0}
   chaseSpeed: 5
-  lOS: {fileID: 5667143400845701359}
   isFacingRight: 0
-  isFacingLeft: 0
-  chase: 0
-  lost: 0
-  animator: {fileID: 5667143401382566554}
-  canWalk: 1
-  distance: 0
   movingRight: 1
-  groundDetection: {fileID: 0}
-  wallDetection: {fileID: 0}
-  wallLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  wait: 1
+  lost: 0
+  lightAlert: 0
+  canWalk: 1
+  wallCollide: 0
+  oldPos: 0
+  newPos: 0
   pointController: 1
+  isMichael: 0
+  scared: 0
 --- !u!50 &5667143401382566548
 Rigidbody2D:
   serializedVersion: 4
@@ -580,3 +581,26 @@ MonoBehaviour:
   damage: 1
   playerHealth: {fileID: 2425729181041727067, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
   attackCooldown: 2
+--- !u!114 &6498175905376582250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667143401382566550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0848bf9891a48448b79e4c8dc00b73f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: {fileID: 0}
+  run: {fileID: 0}
+  jump: {fileID: 0}
+  land: {fileID: 0}
+  hide: {fileID: 0}
+  breakShelf: {fileID: 0}
+  door: {fileID: 0}
+  enemyStep: {fileID: 0}
+  hurt: {fileID: 0}
+  PM: {fileID: 0}
+  PH: {fileID: 0}

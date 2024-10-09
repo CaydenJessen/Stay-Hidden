@@ -250,7 +250,7 @@ public class Player_Movement : MonoBehaviour
 
        if (Input.GetKeyDown(KeyCode.D))
        {
-            Debug.Log("footstep");
+            //Debug.Log("footstep");
        //     audioData = GetComponent<walk_loop>();
        //     global::System.Object value = audioData.Play(4);
             
