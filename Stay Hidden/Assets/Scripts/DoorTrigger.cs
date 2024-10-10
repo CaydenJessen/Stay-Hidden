@@ -6,7 +6,7 @@ public class DoorTrigger : MonoBehaviour
     public GameObject door;
     public float doorOpenSpeed = 3f;
 
-    private bool isDoorOpening = false;
+    public bool isDoorOpening = false;
     private Color originalColor;
     private Renderer itemRenderer;
 

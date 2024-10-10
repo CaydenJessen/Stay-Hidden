@@ -21,6 +21,12 @@ public class Camera_Controller : MonoBehaviour
 
     public float yOffset; //Camera Height
 
+    public GameObject cutDoor;
+    private Vector3 doorPosition;
+    public float cutDoorSpeed;
+    public DoorTrigger dT;
+    public bool CAMERAMOOOVE = false;
+
     private void Start()
     {
         cam.orthographicSize = 5f;
@@ -29,7 +35,7 @@ public class Camera_Controller : MonoBehaviour
     void Update()
     {
 
-        if (pH.isAlive == true)
+        if ((pH.isAlive == true) && (dT.isDoorOpening == false))
         {
             //Simple Camera Movement with no offset:
             //transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
@@ -97,9 +103,16 @@ public class Camera_Controller : MonoBehaviour
             }
 
             transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
-
         }
        
+        if (dT.isDoorOpening)
+        {
+            CAMERAMOOOVE = true;
+            doorPosition = new Vector3(cutDoor.transform.position.x, cutDoor.transform.position.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, doorPosition, cutDoorSpeed * Time.deltaTime);
+        }
+
+        
         
     }
 }
