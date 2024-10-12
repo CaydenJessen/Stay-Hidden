@@ -5598,7 +5598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a4401f9e4d73b4a9bc9b2fdf82a51c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activatedColor: {r: 1, g: 0, b: 0, a: 1}
+  activatedColor: {r: 1, g: 1, b: 1, a: 0}
   door: {fileID: 0}
   doorOpenSpeed: 3
   isDoorOpening: 0
@@ -5644,7 +5644,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
