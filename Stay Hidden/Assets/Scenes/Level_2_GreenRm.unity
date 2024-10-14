@@ -4865,6 +4865,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 208458994}
     m_Modifications:
+    - target: {fileID: 6754701347859689162, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
+    - target: {fileID: 6754701348598284725, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
     - target: {fileID: 6754701349528785808, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5883,6 +5891,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 208458994}
     m_Modifications:
+    - target: {fileID: 6754701347859689162, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
+    - target: {fileID: 6754701348598284725, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
     - target: {fileID: 6754701349528785808, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7451,6 +7467,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 930907475}
+    - target: {fileID: 2425729181041727067, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
+      propertyPath: lightDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2425729182408340849, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
       propertyPath: mainCam
       value: 
@@ -7518,6 +7538,10 @@ PrefabInstance:
       propertyPath: EA
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7574133631631044944, guid: bfdd5f653a5b1a143a2aaeb2f2cda73e, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
     - target: {fileID: 7574133632468812704, guid: bfdd5f653a5b1a143a2aaeb2f2cda73e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -22521,6 +22545,10 @@ PrefabInstance:
       propertyPath: EA
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7574133631631044944, guid: bfdd5f653a5b1a143a2aaeb2f2cda73e, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
     - target: {fileID: 7574133632468812704, guid: bfdd5f653a5b1a143a2aaeb2f2cda73e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -39477,6 +39505,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 208458994}
     m_Modifications:
+    - target: {fileID: 7574133631631044944, guid: bfdd5f653a5b1a143a2aaeb2f2cda73e, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
     - target: {fileID: 7574133632468812704, guid: bfdd5f653a5b1a143a2aaeb2f2cda73e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -39629,6 +39661,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 208458994}
     m_Modifications:
+    - target: {fileID: 6754701347859689162, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
+    - target: {fileID: 6754701348598284725, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
+      propertyPath: pH
+      value: 
+      objectReference: {fileID: 980518174}
     - target: {fileID: 6754701349528785808, guid: cc5d7fc783b30e74cb59bd7f0a9ebbe8, type: 3}
       propertyPath: m_RootOrder
       value: -1

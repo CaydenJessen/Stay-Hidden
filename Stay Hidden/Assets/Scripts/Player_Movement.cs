@@ -72,10 +72,10 @@ public class Player_Movement : MonoBehaviour
     public bool isCrouch = false;
     public bool isHiding;
 
-  //  public class walk_loop {};
-   // void Play();
- //  walk_loop audioData;
-  // public walk_loop AudioData { get => audioData; set => audioData = value; }
+    //  public class walk_loop {};
+    // void Play();
+    //  walk_loop audioData;
+    // public walk_loop AudioData { get => audioData; set => audioData = value; }
    
     void Start()
     {
@@ -103,7 +103,7 @@ public class Player_Movement : MonoBehaviour
         }
         else
         {
-            currentSpeed = speed;
+            //currentSpeed = speed;
             tailControl = false;
             animator.SetBool("Tail", false);
             canJump = true;
@@ -123,6 +123,18 @@ public class Player_Movement : MonoBehaviour
         {
             view.SetActive(false);
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            StartCoroutine(InputDelay());
+        }
+
+        IEnumerator InputDelay()
+        {
+            currentSpeed = idleSpeed;
+            yield return new WaitForSeconds (5f);
+        }
+
 
 
         //Store horizontal value
