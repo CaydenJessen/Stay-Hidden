@@ -12,7 +12,7 @@ public class GroundedCollider : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D other)
     {
-        if((other.tag == "Ground") || (other.tag == "Moving Platform"))
+        if((other.tag == "Ground") || (other.tag == "Moving Platform") || (other.tag == "Box"))
         {
             anim.SetBool("Grounded", true);
         }
@@ -20,7 +20,7 @@ public class GroundedCollider : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D other)
     {
-        if((other.tag == "Ground") || (other.tag == "Moving Platform"))
+        if((other.tag == "Ground") || (other.tag == "Moving Platform") || (other.tag == "Box"))
         {
             anim.SetBool("Grounded", false);
         }
