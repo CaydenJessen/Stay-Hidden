@@ -30,6 +30,9 @@ public class MamaAI : MonoBehaviour
     
     public float oldPos;
     public float newPos;
+
+    public GameObject Maid;
+    public bool mamaChase = false;
     
 
     // Start is called before the first frame update
@@ -40,6 +43,7 @@ public class MamaAI : MonoBehaviour
         anim = GetComponent<Animator>();
         targetPoint = pointB.transform;
         oldPos = transform.position.x;
+        Maid.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,6 +54,7 @@ public class MamaAI : MonoBehaviour
             animator.SetFloat("Speed", speed);
             if (lOS.isChasing == true)
             {
+                mamaChase = true;
                 lost = false;
                 Debug.Log("chase is true");
                 Chase();
@@ -118,6 +123,9 @@ public class MamaAI : MonoBehaviour
     {
         //----------TYPE 1: PATROL BETWEEN 2 POINTS-------------//
         {
+            mamaChase = false;
+            speed = walkSpeed;
+
             Vector2 point = targetPoint.position - transform.position;
             if (targetPoint == pointB.transform)
             {
@@ -170,6 +178,7 @@ public class MamaAI : MonoBehaviour
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
         speed = idleSpeed;
+        Maid.SetActive(true);
     }
 
     private void OnDrawGizmos()

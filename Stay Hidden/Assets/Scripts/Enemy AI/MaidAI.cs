@@ -10,6 +10,7 @@ public class MaidAI : MonoBehaviour
     public LineOfSight lOS;
     public Animator animator;
     public Player_Health pH;
+    public MamaAI Mama;
 
     public float speed;
     public float idleSpeed = 0f;
@@ -25,7 +26,8 @@ public class MaidAI : MonoBehaviour
     
     public float oldPos;
     public float newPos;
-    
+
+    public bool CHASINGNOW = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +44,8 @@ public class MaidAI : MonoBehaviour
         if(canWalk == true)
         {
             animator.SetFloat("Speed", speed);
-            if (lOS.isChasing == true)
+            //if (lOS.isChasing == true)
+            if(Mama.mamaChase == true)
             {
                 lost = false;
                 Debug.Log("chase is true");
@@ -125,6 +128,7 @@ public class MaidAI : MonoBehaviour
 
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
+        CHASINGNOW = true;
         if(transform.position.x > player.position.x)
         {
             transform.position += Vector3.left * chaseSpeed * Time.deltaTime;

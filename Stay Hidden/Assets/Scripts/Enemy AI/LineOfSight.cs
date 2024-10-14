@@ -9,7 +9,7 @@ public class LineOfSight : MonoBehaviour
     public float rayDirection = 1f;
     public float lineOfSightDistance = 2f;
     public GameObject ray;
-    public EnemyAI EA;
+    //public EnemyAI EA;
 
     public enum enemstate{patrol, chase};
     public enemstate currentState;
