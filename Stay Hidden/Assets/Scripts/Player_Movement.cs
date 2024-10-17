@@ -161,15 +161,12 @@ public class Player_Movement : MonoBehaviour
         // }
 
 
-
         //Jump using Raycasting
         if ((Input.GetButtonDown("Jump") && isGrounded() && pH.isAlive == true) && (canJump == true))
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
-            //rb.velocity = new Vector2(rb.velocity.x, jump);
             rb.velocity = Vector2.up * jump;
-            //isRunning = false; //Player stops running when they jump / stops momentum
             animator.SetFloat("yVelocity", Mathf.Abs(rb.velocity.y));
         }
 
@@ -177,7 +174,6 @@ public class Player_Movement : MonoBehaviour
         {
             if(jumpTimeCounter > 0.15f)
             {
-                //rb.velocity = new Vector2(rb.velocity.x, jump);
                 rb.velocity = Vector2.up * riseSpeed;
                 jumpTimeCounter -= Time.deltaTime;
                 animator.SetFloat("yVelocity", Mathf.Abs(rb.velocity.y));
@@ -320,7 +316,6 @@ public class Player_Movement : MonoBehaviour
     public void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
-
     }
 
 
@@ -392,7 +387,6 @@ public class Player_Movement : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
             
-
             canJump = false;
             isRunning = false;
             canCrouch = false;
@@ -408,7 +402,6 @@ public class Player_Movement : MonoBehaviour
             }
             staminaBar.fillAmount = stamina / maxStamina;
 
-            
             if(recharge != null)
             {
                 StopCoroutine(recharge);
@@ -532,8 +525,6 @@ public class Player_Movement : MonoBehaviour
             stamina += chargeRate / 10f;
             staminaBar.fillAmount = stamina / maxStamina;
             yield return new WaitForSeconds (0.1f);
-            
-
         }
 
        if (stamina > maxStamina)

@@ -31,11 +31,6 @@ public class EnemyAI : MonoBehaviour
     
     public float oldPos;
     public float newPos;
-    
-    public bool pointController;
-    public bool isMichael = false;
-
-    public bool scared = false;
 
     // Start is called before the first frame update
     void Start()
@@ -68,29 +63,25 @@ public class EnemyAI : MonoBehaviour
                 targetPoint = pointA.transform;
                 //StartCoroutine(Confused());
             }
-            
+
 
             if((lOS.hitPlayer == true) && (lOS.isChasing == false))
             {
                 lOS.hitPlayer = false;
-                StartCoroutine(Confused());
+                // StartCoroutine(Confused());
             }
             
             if((lOS.isChasing == false) || (pH.isHidden == true))
             {
                 Patrol();
             }
-
-
         }
 
         CheckPosition();
     }
 
 
-
-//CHECK IF MOVING LEFT OR RIGHT BASED ON X POSITION OF THE ENEMY
-//This method works but conflicts with the methods below
+    //CHECK IF MOVING LEFT OR RIGHT BASED ON X POSITION OF THE ENEMY
     void CheckPosition()
     {
         newPos = transform.position.x;
@@ -121,80 +112,53 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-
     void Patrol()
     {
-        //----------TYPE 1: PATROL BETWEEN 2 POINTS-------------//
-        if(pointController == true)
+        Vector2 point = targetPoint.position - transform.position;
+        if (targetPoint == pointB.transform)
         {
-            Vector2 point = targetPoint.position - transform.position;
-            if (targetPoint == pointB.transform)
-            {
-                var step = speed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
-            }
-            else if (targetPoint == pointA.transform)
-            {
-                var step = speed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
-            }
-            if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
-            {
-                speed = idleSpeed;
-                StartCoroutine(Idle());
-                targetPoint = pointA.transform;
-
-            }
-            if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
-            {
-                speed = idleSpeed;
-                StartCoroutine(Idle());
-                targetPoint = pointB.transform;
-            }
+            var step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
         }
-        //END OF TYPE 1: PATROL BETWEEN 2 POINTS//
-        else
+        else if (targetPoint == pointA.transform)
         {
-            //-------------TYPE 2: PATROL MOVING LEFT TO RIGHT ----------//
-            
-            if(movingRight == true)
-            {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.Translate(Vector2.left* speed * Time.deltaTime);
-            }
-            
-
-            //-------------END OF TYPE 2: PATROL MOVING LEFT TO RIGHT ----------//
+            var step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
+        }
+        if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
+        {
+            speed = idleSpeed;
+            StartCoroutine(Idle());
+            targetPoint = pointA.transform;
+        }
+        if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
+        {
+            speed = idleSpeed;
+            StartCoroutine(Idle());
+            targetPoint = pointB.transform;
         }
     }
-
 
 
     void Direction() //FLIPS THE DIRECTION OF THE LINE OF SIGHT RAYCAST
     {
         if ((isFacingRight == true) || (movingRight == true))
         {
-            //Debug.Log("flipped to right");
             lOS.rayDirection = -1f;
         }
         else
         {
             if ((isFacingRight == false) || (movingRight == false))
             {
-                // Debug.Log("flipped to left");
                 lOS.rayDirection = 1f;
             }
         }
     }
 
 
-
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
-        if((isMichael == false) && (pH.isHidden == false))
+        if(pH.isHidden == false)
         {
             if(transform.position.x > player.position.x)
             {
@@ -204,21 +168,9 @@ public class EnemyAI : MonoBehaviour
             {
                 transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
             }
-        }
-
-
-        if((isMichael == true) && (wallCollide == false) && (pH.isHidden == false))
-        {
-            if(transform.position.x > player.position.x)
-            {
-                transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
-            }
-            if (transform.position.x < player.position.x)
-            {
-                transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
-            }   
         }
     }
+
 
     private void OnDrawGizmos()
     {
@@ -254,13 +206,12 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("back to patrol");
     }
 
-    private void flip() //FLIPS THE ENEMY SPRITE FOR TYPE 1 PATROL
+    private void flip() //FLIPS THE ENEMY SPRITE
     {
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
     }
-
 
 
     private void OnCollisionEnter2D(Collision2D touchPlayer)
@@ -276,17 +227,6 @@ public class EnemyAI : MonoBehaviour
             Patrol();
 
             flip();
-
-            // if (movingRight == true)
-            // {
-            //     //transform.eulerAngles = new Vector3(0, -180, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
-            //     movingRight = false;
-            // }
-            // else
-            // {
-            //     //transform.eulerAngles = new Vector3(0, 0, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
-            //     movingRight = true;
-            // }
         }
     }
 
@@ -296,51 +236,12 @@ public class EnemyAI : MonoBehaviour
         if ((col.gameObject.CompareTag("Wall")) || (col.gameObject.tag == "Darkness"))
         {
             wallCollide = true;
-
-            if (isMichael == true)
-            {
-                lOS.isChasing = false;
-                speed = idleSpeed;
-                StartCoroutine(Idle());
-                flip();
-            }
-
-            if (isMichael == false)
-            {
-                lOS.isChasing = false;
-                speed = idleSpeed;
-                StartCoroutine(Idle());
-                flip();
-            }
-            // if (movingRight == true)
-            // {
-            //     //transform.eulerAngles = new Vector3(0, -180, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
-            //     movingRight = false;
-            // }
-            // else
-            // {
-            //     //transform.eulerAngles = new Vector3(0, 0, 0); //FLIPS THE ENEMY SPRITE FOR TYPE 2 PATROL
-            //     movingRight = true;
-            // }
+            lOS.isChasing = false;
+            speed = idleSpeed;
+            StartCoroutine(Idle());
+            flip();
         }
-
-
-        // if (col.gameObject.CompareTag("Player") && isMichael == true);
-        // {
-        //     scared = true;
-        //     lOS.isChasing = false;
-        //     speed = idleSpeed;
-        //     animator.SetBool("Scared", true);
-        // }
-        // else
-        // {
-        //     animator.SetBool("Scared", false);
-        //     Patrol();
-        // }
-
-
     }
-
 
 
     private void OnCollisionExit2D(Collision2D notouchPlayer)
@@ -358,17 +259,5 @@ public class EnemyAI : MonoBehaviour
         {
             wallCollide = false;
         }
-
-        //   if (nocol.gameObject.CompareTag("Player"));
-        //     {
-        //         if (isMichael == true)
-        //         {
-        //             scared = false;
-        //             lOS.isChasing = true;
-        //             speed = chaseSpeed;
-        //             animator.SetBool("Scared", false);
-        //         }
-        //     }
     }
 }
-

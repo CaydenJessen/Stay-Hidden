@@ -62,6 +62,7 @@ public class Player_Health : MonoBehaviour
             isHidden = true;
         }
 
+        //Spotted Icon above Players head
         Spotted();
 
         if (health <= 0)
@@ -75,9 +76,6 @@ public class Player_Health : MonoBehaviour
         {
             isAlive = true;
         }
-
-
-
     }
 
     public void TakeDamage (float amount)
@@ -110,7 +108,7 @@ public class Player_Health : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision) 
     {
-        //Darkness Regeneration//
+        //Darkness Regeneration Timer//
         if (Time.time - lastHealTime < healthRegenCooldown) return;
 
         if (collision.gameObject.CompareTag("Darkness"))
@@ -118,11 +116,12 @@ public class Player_Health : MonoBehaviour
             isHidden = true;
             inDarkness = true;
 
-            Healing();
+            if (health < maxHealth)
+            {
+                health += healthRegeneration;
+            }
 
             lastHealTime = Time.time;
-
-            //LOS.isChasing = false;
         }
         
         //Death Pit//
