@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 437477311580120615}
   - component: {fileID: 437477311580120614}
   - component: {fileID: 437477311580120613}
-  - component: {fileID: 437477311580120612}
+  - component: {fileID: 8695509900336646239}
   m_Layer: 5
   m_Name: reset
   m_TagString: Untagged
@@ -275,9 +275,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 437477311580120612}
-        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 8695509900336646239}
+        m_TargetAssemblyTypeName: Restart_Level, Assembly-CSharp
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -287,7 +287,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &437477311580120612
+--- !u!114 &8695509900336646239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,14 +296,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 437477311580120610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
+  m_Script: {fileID: 11500000, guid: e35fae59987a8a149b1702bfcb3cdd6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Test Level
-  pauseMenu: {fileID: 0}
-  objects: []
-  on: 1
-  clickDelay: 0
 --- !u!1 &437477311606501281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &437477312225054012
 RectTransform:
   m_ObjectHideFlags: 0
