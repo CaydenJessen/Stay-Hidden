@@ -30,8 +30,7 @@ public class LineOfSight : MonoBehaviour
             currentState = enemstate.chase;
             hitPlayer = true;
         }
-        
-        if(hit.collider.tag == null)
+        else
         {
             Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(-rayDirection, 0f), Color.green);
             isChasing = false;

@@ -60,11 +60,6 @@ public class MamaAI : MonoBehaviour
                 Chase();
             }
 
-            if(lOS.isChasing == false)
-            {
-                mamaChase = false;
-            }
-
 
             else if(lost == true)
             {
@@ -128,7 +123,6 @@ public class MamaAI : MonoBehaviour
 
     void Patrol()
     {
-        //----------TYPE 1: PATROL BETWEEN 2 POINTS-------------//
         {
             mamaChase = false;
             speed = walkSpeed;
@@ -158,7 +152,6 @@ public class MamaAI : MonoBehaviour
                 targetPoint = pointB.transform;
             }
         }
-        //END OF TYPE 1: PATROL BETWEEN 2 POINTS//
     }
 
 
