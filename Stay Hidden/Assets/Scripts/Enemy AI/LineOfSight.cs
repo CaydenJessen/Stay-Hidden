@@ -30,11 +30,13 @@ public class LineOfSight : MonoBehaviour
             currentState = enemstate.chase;
             hitPlayer = true;
         }
-        else
+        
+        if(hit.collider.tag == null)
         {
             Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(-rayDirection, 0f), Color.green);
             isChasing = false;
             currentState = enemstate.patrol;
+            hitPlayer = false;
         }
 
         if (pH.isHidden == true)

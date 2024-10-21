@@ -60,6 +60,12 @@ public class MamaAI : MonoBehaviour
                 Chase();
             }
 
+            if(lOS.isChasing == false)
+            {
+                mamaChase = false;
+            }
+
+
             else if(lost == true)
             {
                 mamaChase = false;
@@ -247,7 +253,6 @@ public class MamaAI : MonoBehaviour
         if ((col.gameObject.CompareTag("Wall")) || (col.gameObject.tag == "Darkness"))
         {
             wallCollide = true;
-
 
             lOS.isChasing = false;
             speed = idleSpeed;

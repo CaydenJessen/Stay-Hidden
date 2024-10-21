@@ -125,7 +125,6 @@ public class MaidAI : MonoBehaviour
     }
 
 
-
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
         CHASINGNOW = true;
