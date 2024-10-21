@@ -62,6 +62,7 @@ public class MamaAI : MonoBehaviour
 
             else if(lost == true)
             {
+                mamaChase = false;
                 lost = false;
                 lOS.isChasing = false;
                 Debug.Log("target lost");
@@ -73,7 +74,7 @@ public class MamaAI : MonoBehaviour
             if((lOS.hitPlayer == true) && (lOS.isChasing == false))
             {
                 lOS.hitPlayer = false;
-                StartCoroutine(Confused());
+                // StartCoroutine(Confused());
             }
             
             if((lOS.isChasing == false) || (pH.isHidden == true))
@@ -200,20 +201,20 @@ public class MamaAI : MonoBehaviour
 
     //StopCoroutine(Confused())!!!!!!!!!!!
 
-    IEnumerator Confused()
-    {
-        speed = idleSpeed;
-        yield return new WaitForSeconds(2);
-        flip();
-        yield return new WaitForSeconds(1);
-        flip();
-        yield return new WaitForSeconds(1);
-        flip();
-        lost = false;
-        speed = walkSpeed;
-        targetPoint = pointA.transform;
-        Debug.Log("back to patrol");
-    }
+    // IEnumerator Confused()
+    // {
+    //     speed = idleSpeed;
+    //     yield return new WaitForSeconds(2);
+    //     flip();
+    //     yield return new WaitForSeconds(1);
+    //     flip();
+    //     yield return new WaitForSeconds(1);
+    //     flip();
+    //     lost = false;
+    //     speed = walkSpeed;
+    //     targetPoint = pointA.transform;
+    //     Debug.Log("back to patrol");
+    // }
 
     private void flip() //FLIPS THE ENEMY SPRITE FOR TYPE 1 PATROL
     {
@@ -274,4 +275,3 @@ public class MamaAI : MonoBehaviour
         }
     }
 }
-

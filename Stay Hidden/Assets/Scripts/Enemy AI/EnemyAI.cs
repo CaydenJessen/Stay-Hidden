@@ -191,20 +191,20 @@ public class EnemyAI : MonoBehaviour
 
     //StopCoroutine(Confused())!!!!!!!!!!!
 
-    IEnumerator Confused()
-    {
-        speed = idleSpeed;
-        yield return new WaitForSeconds(2);
-        flip();
-        yield return new WaitForSeconds(1);
-        flip();
-        yield return new WaitForSeconds(1);
-        flip();
-        lost = false;
-        speed = walkSpeed;
-        targetPoint = pointA.transform;
-        Debug.Log("back to patrol");
-    }
+    // IEnumerator Confused()
+    // {
+    //     speed = idleSpeed;
+    //     yield return new WaitForSeconds(2);
+    //     flip();
+    //     yield return new WaitForSeconds(1);
+    //     flip();
+    //     yield return new WaitForSeconds(1);
+    //     flip();
+    //     lost = false;
+    //     speed = walkSpeed;
+    //     targetPoint = pointA.transform;
+    //     Debug.Log("back to patrol");
+    // }
 
     private void flip() //FLIPS THE ENEMY SPRITE
     {
