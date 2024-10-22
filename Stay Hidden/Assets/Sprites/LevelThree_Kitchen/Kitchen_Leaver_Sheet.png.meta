@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -145,10 +145,10 @@ TextureImporter:
       name: Kitchen_Leaver_Sheet_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 16
-        width: 19
-        height: 26
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,13 +163,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kitchen_Leaver_Sheet_3
+      name: Kitchen_Leaver_Sheet_1
       rect:
         serializedVersion: 2
-        x: 151
-        y: 16
-        width: 27
-        height: 17
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e69d9839977b30841b2a86ec19cee266
-      internalID: 1947201403
+      spriteID: 9a52d4c41a08fce4d93b7d74145c97d2
+      internalID: 866328548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kitchen_Leaver_Sheet_4
+      name: Kitchen_Leaver_Sheet_2
       rect:
         serializedVersion: 2
-        x: 86
-        y: 16
-        width: 22
-        height: 25
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,8 +198,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdc7d0f9415601c4fa31a304aa4aa0ad
-      internalID: -310270198
+      spriteID: 836ab32908a66a24b9f3c07d85e4a020
+      internalID: -938179079
       vertices: []
       indices: 
       edges: []
@@ -216,9 +216,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Kitchen_Leaver_Sheet_1: 866328548
-      Kitchen_Leaver_Sheet_3: 1947201403
       Kitchen_Leaver_Sheet_2: -938179079
-      Kitchen_Leaver_Sheet_4: -310270198
       Kitchen_Leaver_Sheet_0: -1967404936
   spritePackingTag: 
   pSDRemoveMatte: 0
