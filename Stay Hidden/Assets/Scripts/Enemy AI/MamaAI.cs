@@ -13,6 +13,7 @@ public class MamaAI : MonoBehaviour
     public LineOfSight lOS;
     public Animator animator;
     public Player_Health pH;
+    public MamaTrigger mT;
 
     public float speed;
     public float walkSpeed = 3f;
@@ -52,7 +53,7 @@ public class MamaAI : MonoBehaviour
         if(canWalk == true)
         {
             animator.SetFloat("Speed", speed);
-            if (lOS.isChasing == true)
+            if ((lOS.isChasing == true) && (mT.seePlayer == true))
             {
                 mamaChase = true;
                 lost = false;
@@ -78,7 +79,7 @@ public class MamaAI : MonoBehaviour
                 // StartCoroutine(Confused());
             }
             
-            if((lOS.isChasing == false) || (pH.isHidden == true))
+            if((lOS.isChasing == false) || (pH.isHidden == true) || (mT.seePlayer == false))
             {
                 Patrol();
             }
