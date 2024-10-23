@@ -14,6 +14,8 @@ public class Deposit : MonoBehaviour
     private int count = 0;
     public bool inRange = false;
 
+    private string[] levelNames = { "Level_1_Attic", "Level_2_GreenRm", "Level_3_Kitchen", "Level_5_Basement" };
+
     private void Update()
     {
         if(deposited == 0)
@@ -67,6 +69,21 @@ public class Deposit : MonoBehaviour
     IEnumerator Victory()
     {
         yield return new WaitForSeconds(3);
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+       
+        int currentIndex = System.Array.IndexOf(levelNames, currentSceneName);
+
+        if (currentIndex >= 0 && currentIndex < levelNames.Length - 1)
+        {
+            
+            string nextSceneName = levelNames[currentIndex + 1];
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
         SceneManager.LoadScene("Game_Won");
-    }
+        }
+    }   
 }

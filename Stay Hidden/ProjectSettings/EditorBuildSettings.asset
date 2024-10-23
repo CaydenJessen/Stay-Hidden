@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_3_Kitchen.unity
     guid: 430e9f017473a534ea223b8be72c23a4
+  - enabled: 0
+    path: Assets/Scenes/Level_4_LivingRm.unity
+    guid: ac786e3fade7bb048a160dfbd63901d8
+  - enabled: 1
+    path: Assets/Scenes/Level_5_Basement.unity
+    guid: 36ca424bd01f7cb468e1771b3fd87455
   m_configObjects: {}
