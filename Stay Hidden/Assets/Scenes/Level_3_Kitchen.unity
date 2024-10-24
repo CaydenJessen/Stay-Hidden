@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 1092328}
   - component: {fileID: 1092327}
   m_Layer: 0
-  m_Name: item
+  m_Name: item(do not delete)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12706,6 +12706,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1034194618, guid: d1a4fe643f9094149b262ddbcaf61d0d, type: 3}
+      propertyPath: sceneName
+      value: Level_5_Basement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293449518, guid: d1a4fe643f9094149b262ddbcaf61d0d, type: 3}
+      propertyPath: sceneName
+      value: Level_3_Kitchen
+      objectReference: {fileID: 0}
     - target: {fileID: 437477311535607179, guid: d1a4fe643f9094149b262ddbcaf61d0d, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -12875,6 +12883,11 @@ MonoBehaviour:
   objects: []
   on: 1
   clickDelay: 0
+--- !u!1 &471370374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 830614811, guid: d1a4fe643f9094149b262ddbcaf61d0d, type: 3}
+  m_PrefabInstance: {fileID: 471370371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &477884331
 GameObject:
   m_ObjectHideFlags: 0
@@ -96595,6 +96608,10 @@ PrefabInstance:
       propertyPath: number
       value: 
       objectReference: {fileID: 1698797378}
+    - target: {fileID: 6168689467974439383, guid: 958c34c17457f544493faa0504313624, type: 3}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 471370374}
     - target: {fileID: 6168689467974439383, guid: 958c34c17457f544493faa0504313624, type: 3}
       propertyPath: item.Array.data[0]
       value: 

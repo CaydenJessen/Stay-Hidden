@@ -8,13 +8,13 @@ public class Deposit : MonoBehaviour
     public ParticleSystem Particles;
     public GameObject[] item;
     public Transform[] depositePosition;
-    public Player_Movement iTM;
-    public Player_Movement number;
+    public Player_Movement PM;
     public int deposited = 5;
     private int count = 0;
     public bool inRange = false;
+    public GameObject nextLevel;
 
-    private string[] levelNames = { "Level_1_Attic", "Level_2_GreenRm", "Level_3_Kitchen", "Level_5_Basement" };
+    //private string[] levelNames = { "Level_1_Attic", "Level_2_GreenRm", "Level_3_Kitchen", "Level_5_Basement" };
 
     private void Update()
     {
@@ -27,13 +27,13 @@ public class Deposit : MonoBehaviour
         {
             if (inRange == true)
             {
-                if (iTM.hasItem == true && deposited > 0 && number.num >= 0)
+                if (PM.hasItem == true && deposited > 0 && PM.num >= 0)
                 {
                     Particles.Play();
                     Instantiate(item[count], depositePosition[count].position, depositePosition[count].rotation);
                     deposited--;
                     count++;
-                    number.num--;
+                    PM.num--;
                 }
             }
 
@@ -69,21 +69,23 @@ public class Deposit : MonoBehaviour
     IEnumerator Victory()
     {
         yield return new WaitForSeconds(3);
+        nextLevel.SetActive(true);
+        PM.currentSpeed = 0f;
 
-        string currentSceneName = SceneManager.GetActiveScene().name;
+        //string currentSceneName = SceneManager.GetActiveScene().name;
 
        
-        int currentIndex = System.Array.IndexOf(levelNames, currentSceneName);
+        //int currentIndex = System.Array.IndexOf(levelNames, currentSceneName);
 
-        if (currentIndex >= 0 && currentIndex < levelNames.Length - 1)
-        {
+        //if (currentIndex >= 0 && currentIndex < levelNames.Length - 1)
+        //{
             
-            string nextSceneName = levelNames[currentIndex + 1];
-            SceneManager.LoadScene(nextSceneName);
-        }
-        else
-        {
-        SceneManager.LoadScene("Game_Won");
-        }
+        //    string nextSceneName = levelNames[currentIndex + 1];
+        //    SceneManager.LoadScene(nextSceneName);
+        //}
+        //else
+        //{
+        //SceneManager.LoadScene("Game_Won");
+        //}
     }   
 }
