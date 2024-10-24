@@ -53,7 +53,8 @@ public class MamaAI : MonoBehaviour
         if(canWalk == true)
         {
             animator.SetFloat("Speed", speed);
-            if ((lOS.isChasing == true) && (mT.seePlayer == true))
+            //if ((lOS.isChasing == true) && (mT.seePlayer == true))
+            if ((lOS.isChasing == true))
             {
                 mamaChase = true;
                 lost = false;
