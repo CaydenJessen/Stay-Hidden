@@ -44,13 +44,17 @@ public class Lever : MonoBehaviour
                 //leverControl.transform.Rotate(0.0f, 0.0f, 41.0f);
                     status = true;
                 animator.SetBool("LeverOn", true);
-                pM.view.SetActive(true);
             }
-            else
-            {
-                pM.view.SetActive(false);
-            }
+           
          
+        }
+        if (inRange == true)
+        {
+            pM.viewing = true;
+        }
+        else
+        {
+            pM.viewing = false;
         }
 
 

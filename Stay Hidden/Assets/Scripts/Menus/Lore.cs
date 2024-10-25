@@ -52,7 +52,7 @@ public class Lore : MonoBehaviour
          if (paper.gameObject.CompareTag("Player"))
         {
             inRange = true;
-            interactable.GetComponent<Renderer>().material.color = Color.blue;
+            //interactable.GetComponent<Renderer>().material.color = Color.blue;
 
         }
 
@@ -63,7 +63,7 @@ public class Lore : MonoBehaviour
         if (paper.gameObject.CompareTag("Player"))
         {
             inRange = false;
-            interactable.GetComponent<Renderer>().material.color = Color.white;
+            //interactable.GetComponent<Renderer>().material.color = Color.white;
         }
     }
 

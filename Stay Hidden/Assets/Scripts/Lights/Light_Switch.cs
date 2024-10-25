@@ -47,14 +47,15 @@ public class Light_Switch : MonoBehaviour
                 }
             }
         }
-          if(inRange == true)
-         {
+
+        if (inRange == true)
+        {
             pM.viewing = true;
-         }
-         else
-         {
-             pM.viewing = false;
-         }
+        }
+        else
+        {
+            pM.viewing = false;
+        }
 
     }
 
