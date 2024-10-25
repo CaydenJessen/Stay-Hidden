@@ -14,6 +14,8 @@ public class MamaAI : MonoBehaviour
     public Animator animator;
     public Player_Health pH;
     public MamaTrigger mT;
+    public MamaWall mW;
+
 
     public float speed;
     public float walkSpeed = 3f;
@@ -54,14 +56,13 @@ public class MamaAI : MonoBehaviour
         {
             animator.SetFloat("Speed", speed);
             //if ((lOS.isChasing == true) && (mT.seePlayer == true))
-            if ((lOS.isChasing == true))
+            if ((lOS.isChasing == true) && (mW.hitWall == false))
             {
                 mamaChase = true;
                 lost = false;
                 Debug.Log("chase is true");
                 Chase();
             }
-
 
             else if(lost == true)
             {
@@ -80,7 +81,7 @@ public class MamaAI : MonoBehaviour
                 // StartCoroutine(Confused());
             }
             
-            if((lOS.isChasing == false) || (pH.isHidden == true) || (mT.seePlayer == false))
+            if((lOS.isChasing == false) || (pH.isHidden == true) || (mamaChase == false))
             {
                 Patrol();
             }
@@ -164,6 +165,7 @@ public class MamaAI : MonoBehaviour
         {
             //Debug.Log("flipped to right");
             lOS.rayDirection = -1f;
+            mW.rayDirection = -1f;
         }
         else
         {
@@ -171,6 +173,7 @@ public class MamaAI : MonoBehaviour
             {
                 // Debug.Log("flipped to left");
                 lOS.rayDirection = 1f;
+                mW.rayDirection = 1f;
             }
         }
     }
