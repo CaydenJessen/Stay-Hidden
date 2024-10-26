@@ -456,12 +456,12 @@ public class Player_Movement : MonoBehaviour
             lit = true;
         }
 
-        if (col.gameObject.tag == "Item")
-        {
-            Debug.Log("Item Taken");
-            hasItem = true;
-            num++;
-        }
+        // if (col.gameObject.tag == "Item")
+        // {
+        //     Debug.Log("Item Taken");
+        //     hasItem = true;
+        //     num++;
+        // }
         if (col.gameObject.tag == "Cam Sizer")
         {
             camResize = true;
