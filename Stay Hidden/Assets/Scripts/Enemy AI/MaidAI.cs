@@ -29,6 +29,11 @@ public class MaidAI : MonoBehaviour
 
     public bool CHASINGNOW = false;
 
+    public Transform MaidTrans;
+    public Transform MamaTrans;
+
+    public bool reset = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,9 +70,15 @@ public class MaidAI : MonoBehaviour
             {
                 lOS.hitPlayer = false;
                 StartCoroutine(Confused());
+                
             }
 
-
+            if(Mama.mamaChase == false)
+            {
+                reset = true;
+                Reset();
+            }
+            
         }
 
         CheckPosition();
@@ -139,6 +150,15 @@ public class MaidAI : MonoBehaviour
     }
    
 
+
+    void Reset()
+    {
+        if (Mama.mamaChase = false)
+        {
+            MaidTrans.position = MamaTrans.position;
+        }
+    }
+
     IEnumerator Idle() //Set when the enemy is not chasing
     {
         //Debug.Log("Idle");
@@ -191,7 +211,6 @@ public class MaidAI : MonoBehaviour
         if ((col.gameObject.CompareTag("Wall")) || (col.gameObject.tag == "Darkness"))
         {
             wallCollide = true;
-
 
             lOS.isChasing = false;
             speed = idleSpeed;

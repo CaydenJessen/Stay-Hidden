@@ -15,6 +15,7 @@ public class MamaAI : MonoBehaviour
     public Player_Health pH;
     public MamaTrigger mT;
     public MamaWall mW;
+    public MamaWall mWTwo;
 
 
     public float speed;
@@ -56,6 +57,7 @@ public class MamaAI : MonoBehaviour
         {
             animator.SetFloat("Speed", speed);
             //if ((lOS.isChasing == true) && (mT.seePlayer == true))
+            //if ((lOS.isChasing == true) && ((mW.hitWall == false) || (mWTwo.hitWall == false)))
             if ((lOS.isChasing == true) && (mW.hitWall == false))
             {
                 mamaChase = true;
