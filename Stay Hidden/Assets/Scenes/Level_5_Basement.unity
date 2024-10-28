@@ -722,23 +722,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1502828998165925369, guid: 3689c9fcf80a20343bb691c824d3fa6b, type: 3}
   m_PrefabInstance: {fileID: 1073974508}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &177504501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437477311421490893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Level_5_Basement
-  pauseMenu: {fileID: 437477312399871444}
-  objects: []
-  on: 1
-  clickDelay: 0
 --- !u!1 &190256006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8909532901758273504, guid: f3087b661cfcd5241a370551320d479a, type: 3}
@@ -14403,7 +14386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level_1_Attic
+  sceneName: Level_5_Basement
   pauseMenu: {fileID: 437477312399871444}
   objects: []
   on: 1
@@ -32912,7 +32895,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 177504501}
+      - m_Target: {fileID: 908288407}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 1
@@ -32958,7 +32941,6 @@ GameObject:
   - component: {fileID: 437477311421490889}
   - component: {fileID: 437477311421490890}
   - component: {fileID: 908288407}
-  - component: {fileID: 177504501}
   m_Layer: 5
   m_Name: reset
   m_TagString: Untagged
@@ -35364,7 +35346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level_1_Attic
+  sceneName: Level_5_Basement
   pauseMenu: {fileID: 437477312399871444}
   objects: []
   on: 1
@@ -36973,7 +36955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level_1_Attic
+  sceneName: Level_5_Basement
   pauseMenu: {fileID: 437477312399871444}
   objects:
   - {fileID: 202872047175261868}
