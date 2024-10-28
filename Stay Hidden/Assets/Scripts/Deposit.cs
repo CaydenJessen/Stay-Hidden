@@ -10,7 +10,7 @@ public class Deposit : MonoBehaviour
     public Transform[] depositePosition;
     public Player_Movement PM;
     public int deposited = 5;
-    private int count = 0;
+    public int count = 0;
     public bool inRange = false;
     public GameObject nextLevel;
 

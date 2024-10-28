@@ -37,6 +37,20 @@ public class GrannyAI : MonoBehaviour
     public float damage;
 
     public bool transformOne = false;
+    public bool transformTwo = false;
+    public bool transformThree = false;
+    public bool transformFour = false;
+    public bool transformFive = false;
+
+
+    public Deposit dep;
+
+    public float damageIncrease = 1;
+
+    public EnemyDamage eD;
+
+    public LineOfSight LOS;
+    public float vision;
 
     // Start is called before the first frame update
     void Start()
@@ -181,23 +195,60 @@ public class GrannyAI : MonoBehaviour
 
     void Transform() 
     {
-        if ((pM.num == 0) && (transformOne == false))
+        //SECOND FORM
+        if ((pM.num + dep.count == 0) && (transformOne == false))
         {
             transformOne = true;
-            walkSpeed = walkSpeed + 2f;
-            chaseSpeed = chaseSpeed + 2f;
-            //ANIMATION TO TRANSFORM INTO New FORM
+            walkSpeed = walkSpeed + 1f;
+            chaseSpeed = chaseSpeed + 1f;
+            eD.damage = eD.damage + damageIncrease;
+            LOS.lineOfSightDistance = LOS.lineOfSightDistance + vision;
+            //CHANGE SPRITE TO NEXT FORM
         }
 
+        //THIRD FORM
+        if ((pM.num + dep.count == 1) && (transformTwo == false))
+        
+        {
+            transformTwo = true;
+            walkSpeed = walkSpeed + 1f;
+            chaseSpeed = chaseSpeed + 1f;
+            eD.damage = eD.damage + damageIncrease;
+            LOS.lineOfSightDistance = LOS.lineOfSightDistance + vision;
+            //CHANGE SPRITE TO NEXT FORM
+        }
 
-        // //FINAL FORM!!!!
-        // if ((pM.num == 0) && (transformOne == false))
-        // {
-        //     transformOne = true;
-        //     walkSpeed = walkSpeed + 2f; //Walk speed = 5
-        //     chaseSpeed = chaseSpeed + 2f; //Chase speed = 7
-        //     //ANIMATION TO TRANSFORM INTO NeW FORM
-        // }
+        //FOURTH FORM
+        if ((pM.num + dep.count == 2) && (transformThree == false))
+        {
+            transformThree = true;
+            walkSpeed = walkSpeed + 1f;
+            chaseSpeed = chaseSpeed + 1f;
+            eD.damage = eD.damage + damageIncrease;
+            LOS.lineOfSightDistance = LOS.lineOfSightDistance + vision;
+            //CHANGE SPRITE TO NEXT FORM
+        }
+
+        //TRANSFORMING STATE (NOT MOVING)!!!!
+        if ((pM.num + dep.count == 3) && (transformFour == false))
+        {
+            transformFour = true;
+            walkSpeed = 0f;
+            chaseSpeed = 0f;
+            //CHANGE SPRITE TO NEXT FORM
+        }
+
+        //FINAL FORM!!!!
+        if ((pM.num + dep.count == 4) && (transformFive == false))
+        {
+            transformFive = true;
+            walkSpeed = 5f; //Walk speed = 5
+            chaseSpeed = 7f; //Chase speed = 7
+            eD.damage = eD.damage + damageIncrease;
+            LOS.lineOfSightDistance = LOS.lineOfSightDistance + vision;
+            speed = walkSpeed;
+            //ANIMATION TO TRANSFORM INTO FINAL FORM !!!!
+        }
     }
 
     private void OnDrawGizmos()
