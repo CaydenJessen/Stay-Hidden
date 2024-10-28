@@ -2425,6 +2425,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 437477312382453402, guid: d1a4fe643f9094149b262ddbcaf61d0d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 437477312382453402, guid: d1a4fe643f9094149b262ddbcaf61d0d, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 437477312382453402, guid: d1a4fe643f9094149b262ddbcaf61d0d, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 437477312382453404, guid: d1a4fe643f9094149b262ddbcaf61d0d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3202,6 +3214,7 @@ MonoBehaviour:
   - {fileID: 1690579920}
   PM: {fileID: 0}
   deposited: 5
+  count: 0
   inRange: 0
   nextLevel: {fileID: 0}
 --- !u!50 &838855622
