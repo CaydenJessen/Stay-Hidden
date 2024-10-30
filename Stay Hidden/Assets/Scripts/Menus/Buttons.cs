@@ -33,6 +33,11 @@ public class Buttons : MonoBehaviour
                 {
                     objects[i].SetActive(false);
                     on = false;
+
+                    if(gameObject.tag == "Paper")
+                    {
+                        Time.timeScale = 1f;
+                    }
                 }
            
         }

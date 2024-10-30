@@ -15,7 +15,8 @@ public class Player_Health : MonoBehaviour
     public float healthRegenCooldown = 2f; //Time between health gain
     float lastHealTime;
     public float damageCooldown = 2f;
-    float lastDamageTime;
+    public float lastHealth;
+    //float lastDamageTime;
 
 
     public bool inLight = false;
@@ -46,12 +47,18 @@ public class Player_Health : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        lastHealth = health;
     }
 
     // Update is called once per frame
     void Update()
     {
         healthBar.fillAmount = health / maxHealth;
+        
+        if(lastHealth > health)
+        {
+            StartCoroutine(Hurt());
+        }
     }
 
 
@@ -167,12 +174,13 @@ public class Player_Health : MonoBehaviour
         SceneManager.LoadScene("Game_Lost");
     }
 
-    // IEnumerator Hurt()
-    // {
-    //     flashRed.SetActive(true);
-    //     yield return new WaitForSeconds(0.25f);
-    //     flashRed.SetActive(false);
-    // }
+     IEnumerator Hurt()
+     {
+         flashRed.SetActive(true);
+         yield return new WaitForSeconds(0.25f);
+         flashRed.SetActive(false);
+         lastHealth = health;
+    }
 
     public void Spotted()
     {   
