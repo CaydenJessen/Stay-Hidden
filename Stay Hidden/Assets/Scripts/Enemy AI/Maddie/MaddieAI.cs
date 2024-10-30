@@ -92,14 +92,23 @@ public class MaddieAI : MonoBehaviour
 
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
-        if(transform.position.x > player.position.x)
+        if ((pH.isHidden == false) && (deSpawn == false))
         {
-            transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
+            if(transform.position.x > player.position.x)
+            {
+                transform.position += Vector3.left * chaseSpeed * Time.deltaTime;
+            }
+            if (transform.position.x < player.position.x)
+            {
+                transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
+            }
         }
-        if (transform.position.x < player.position.x)
+
+        if (pH.isHidden == true)
         {
-            transform.position += Vector3.right * chaseSpeed * Time.deltaTime;
+            StartCoroutine(Confused());
         }
+        
     }
 
    
@@ -153,20 +162,17 @@ public class MaddieAI : MonoBehaviour
 
 
 
-
-
-    // IEnumerator Confused()
-    // {
-    //     speed = idleSpeed;
-    //     yield return new WaitForSeconds(2);
-    //     flip();
-    //     yield return new WaitForSeconds(1);
-    //     flip();
-    //     yield return new WaitForSeconds(1);
-    //     flip();
-    //     lost = false;
-    //     speed = walkSpeed;
-    //     targetPoint = pointA.transform;
-    //     Debug.Log("back to patrol");
-    // }
+    IEnumerator Confused()
+    {
+        speed = idleSpeed;
+        yield return new WaitForSeconds(2);
+        flip();
+        yield return new WaitForSeconds(1);
+        flip();
+        yield return new WaitForSeconds(1);
+        flip();
+        
+        deSpawn = true;
+        Maddie.SetActive(false);
+    }
 }

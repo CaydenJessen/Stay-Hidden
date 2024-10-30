@@ -21,6 +21,7 @@ TagManager:
   - Box
   - Door
   - FloorButton
+  - Paper
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - Maid
   - Invisible Wall
   - Mama
-  - 
+  - Enemy Barrier
   - 
   - 
   - 
