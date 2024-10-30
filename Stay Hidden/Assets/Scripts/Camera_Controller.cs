@@ -91,9 +91,9 @@ public class Camera_Controller : MonoBehaviour
                 playerPosition = new Vector3(playerPosition.x, playerPosition.y - zoomDown, -10);
             }
 
-            
-            //Camera movement with offset
             CamFollow();
+            //Camera movement with offset
+
 
             if (dT.isDoorOpening /*|| door.cutScene == true*/)
             {
@@ -110,7 +110,7 @@ public class Camera_Controller : MonoBehaviour
 
     private void CamFollow()
     {
-        cam.orthographicSize = 5f;
+        
         if ((player.transform.localScale.x > 0f && Input.GetKey(KeyCode.S) == false) && pM.canCrouch == true)
         {
             playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y + 2 + yOffset, playerPosition.z);
