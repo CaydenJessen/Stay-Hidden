@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     public Animator door;
     public Lever lever;
     public GameObject DoorCollider;
+    public DoorTrigger dT;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class Door : MonoBehaviour
         {
             door.SetBool("DoorOpen", true);
             DoorCollider.SetActive(false);
+            dT.isDoorOpening = true;
         }
         else if(lever.status == false)
         {
