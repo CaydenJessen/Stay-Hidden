@@ -13,6 +13,7 @@ public class Camera_Controller : MonoBehaviour
     public Camera cam;
     public Player_Health pH;
     public Player_Movement pM;
+    //public Door door;
     public float zoomOut;
     public float zoomIn;
     public float zoomSpeed = 4f;
@@ -26,6 +27,7 @@ public class Camera_Controller : MonoBehaviour
     public float cutDoorSpeed;
     public DoorTrigger dT;
     public bool CAMERAMOOOVE = false;
+    public float cutLength = 2f;
 
     private void Start()
     {
@@ -39,25 +41,25 @@ public class Camera_Controller : MonoBehaviour
         {
             //Simple Camera Movement with no offset:
             //transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-            if(pH.isHidden == true)
+            if (pH.isHidden == true)
             {
-               
-                 if(cam.orthographicSize >= zoomIn + 0.1f)
+
+                if (cam.orthographicSize >= zoomIn + 0.1f)
                 {
-                    cam.orthographicSize -= zoomSpeed* Time.deltaTime;
+                    cam.orthographicSize -= zoomSpeed * Time.deltaTime;
                 }
                 else
                 {
                     cam.orthographicSize = zoomIn;
                 }
-               
+
             }
-            else if(pM.camResize == true )
+            else if (pM.camResize == true)
             {
-                
-                 if(cam.orthographicSize <= zoomOut - 0.1f)
+
+                if (cam.orthographicSize <= zoomOut - 0.1f)
                 {
-                    cam.orthographicSize += zoomSpeed* Time.deltaTime;
+                    cam.orthographicSize += zoomSpeed * Time.deltaTime;
                 }
                 else
                 {
@@ -66,13 +68,13 @@ public class Camera_Controller : MonoBehaviour
             }
             else
             {
-                if(cam.orthographicSize > camSize + 0.1f)
+                if (cam.orthographicSize > camSize + 0.1f)
                 {
-                    cam.orthographicSize -= zoomSpeed* Time.deltaTime;
+                    cam.orthographicSize -= zoomSpeed * Time.deltaTime;
                 }
-                else if(cam.orthographicSize < camSize - 0.1f)
+                else if (cam.orthographicSize < camSize - 0.1f)
                 {
-                    cam.orthographicSize += zoomSpeed* Time.deltaTime;
+                    cam.orthographicSize += zoomSpeed * Time.deltaTime;
                 }
                 else
                 {
@@ -80,39 +82,54 @@ public class Camera_Controller : MonoBehaviour
 
                 }
 
-                
-            } 
+
+            }
             playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 
-            if((Input.GetKey(KeyCode.S) && (pM.canCrouch == true)))
+            if ((Input.GetKey(KeyCode.S) && (pM.canCrouch == true)))
             {
-                playerPosition = new Vector3(playerPosition.x, playerPosition.y - zoomDown, -10);               
+                playerPosition = new Vector3(playerPosition.x, playerPosition.y - zoomDown, -10);
             }
-           
 
+            
             //Camera movement with offset
-           
-        
-            if((player.transform.localScale.x > 0f && Input.GetKey(KeyCode.S) == false) && pM.canCrouch == true)
+            CamFollow();
+
+            if (dT.isDoorOpening /*|| door.cutScene == true*/)
             {
-                playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y + 2 + yOffset, playerPosition.z);
-            }
-            else if (player.transform.localScale.x < 0f && Input.GetKey(KeyCode.S) == false)
-            {
-                playerPosition = new Vector3(playerPosition.x + offset, playerPosition.y + 2 + yOffset, playerPosition.z);
+                DoorCutscene();
+
             }
 
-            transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
-        }
-       
-        if (dT.isDoorOpening)
-        {
-            CAMERAMOOOVE = true;
-            doorPosition = new Vector3(cutDoor.transform.position.x, cutDoor.transform.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, doorPosition, cutDoorSpeed * Time.deltaTime);
-        }
 
+
+        }
         
         
     }
+
+    private void CamFollow()
+    {
+        cam.orthographicSize = 5f;
+        if ((player.transform.localScale.x > 0f && Input.GetKey(KeyCode.S) == false) && pM.canCrouch == true)
+        {
+            playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y + 2 + yOffset, playerPosition.z);
+        }
+        else if (player.transform.localScale.x < 0f && Input.GetKey(KeyCode.S) == false)
+        {
+            playerPosition = new Vector3(playerPosition.x + offset, playerPosition.y + 2 + yOffset, playerPosition.z);
+        }
+
+        transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
+    }
+
+    private void DoorCutscene()
+    {
+            CAMERAMOOOVE = true;
+            doorPosition = new Vector3(cutDoor.transform.position.x, cutDoor.transform.position.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, doorPosition, cutDoorSpeed * Time.deltaTime);
+
+    }
+
+
 }

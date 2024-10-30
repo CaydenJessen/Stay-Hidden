@@ -7,7 +7,8 @@ public class Door : MonoBehaviour
     public Animator door;
     public Lever lever;
     public GameObject DoorCollider;
-    public DoorTrigger dT;
+    //public bool cutScene = false;
+    //public Camera_Controller CC;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +20,25 @@ public class Door : MonoBehaviour
     {
         if(lever.status==true)
         {
+            //StartCoroutine(Wait());          
             door.SetBool("DoorOpen", true);
             DoorCollider.SetActive(false);
-            dT.isDoorOpening = true;
+            
         }
         else if(lever.status == false)
         {
+            
             door.SetBool("DoorOpen", false);
             DoorCollider.SetActive(true);
         }
     }
+
+    //private IEnumerator Wait()
+    //{
+    //    cutScene = true;
+    //    yield return new WaitForSeconds(CC.cutLength);
+    //    cutScene = false;
+    //    //StopCoroutine(Wait());
+    //}
+
 }
