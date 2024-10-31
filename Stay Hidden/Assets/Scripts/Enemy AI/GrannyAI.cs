@@ -68,6 +68,8 @@ public class GrannyAI : MonoBehaviour
     public LineOfSight LOS;
     public float vision;
 
+    public Animator animate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -220,6 +222,7 @@ public class GrannyAI : MonoBehaviour
         if ((pM.num + dep.count == 0) && (transformOne == false))
         {
             transformOne = true;
+            animate.SetBool("T1", true);
             walkSpeed = walkSpeed + 1f;
             chaseSpeed = chaseSpeed + 1f;
             eD.damage = eD.damage + damageIncrease;
@@ -232,6 +235,7 @@ public class GrannyAI : MonoBehaviour
         
         {
             transformTwo = true;
+            animate.SetBool("T2", true);
             walkSpeed = walkSpeed + 1f;
             chaseSpeed = chaseSpeed + 1f;
             eD.damage = eD.damage + damageIncrease;
@@ -243,6 +247,7 @@ public class GrannyAI : MonoBehaviour
         if ((pM.num + dep.count == 2) && (transformThree == false))
         {
             transformThree = true;
+            animate.SetBool("T3", true);
             walkSpeed = walkSpeed + 1f;
             chaseSpeed = chaseSpeed + 1f;
             eD.damage = eD.damage + damageIncrease;
@@ -254,6 +259,7 @@ public class GrannyAI : MonoBehaviour
         if ((pM.num + dep.count == 3) && (transformFour == false))
         {
             transformFour = true;
+            animate.SetBool("T4", true);
             walkSpeed = 0f;
             chaseSpeed = 0f;
             //CHANGE SPRITE TO NEXT FORM
@@ -263,6 +269,7 @@ public class GrannyAI : MonoBehaviour
         if ((pM.num + dep.count == 4) && (transformFive == false))
         {
             transformFive = true;
+            animate.SetBool("T5", true);
             walkSpeed = 5f; //Walk speed = 5
             chaseSpeed = 7f; //Chase speed = 7
             eD.damage = eD.damage + damageIncrease;
