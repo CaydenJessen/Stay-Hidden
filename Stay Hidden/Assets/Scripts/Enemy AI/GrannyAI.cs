@@ -43,6 +43,22 @@ public class GrannyAI : MonoBehaviour
     public bool transformFive = false;
 
 
+    public GameObject LightOne;
+    public GameObject LightTwo;
+    public GameObject LightThree;
+    public GameObject LightFour;
+    public GameObject LightFive;
+
+    public GrannyLights glOne;
+    public GrannyLights glTwo;
+    public GrannyLights glThree;
+    public GrannyLights glFour;
+    public GrannyLights glFive;
+
+    private Transform lightPoint;
+
+
+
     public Deposit dep;
 
     public float damageIncrease = 1;
@@ -68,7 +84,7 @@ public class GrannyAI : MonoBehaviour
         if(canWalk == true)
         {
             animator.SetFloat("Speed", speed);
-            if (lOS.isChasing == true || lightAlert == true)
+            if (lOS.isChasing == true)
             {
                 lost = false;
                 Debug.Log("chase is true");
@@ -84,17 +100,22 @@ public class GrannyAI : MonoBehaviour
                 //StartCoroutine(Confused());
             }
 
-
             if((lOS.hitPlayer == true) && (lOS.isChasing == false))
             {
                 lOS.hitPlayer = false;
                 // StartCoroutine(Confused());
             }
             
-            if((lOS.isChasing == false) || (pH.isHidden == true))
+            if(((lOS.isChasing == false) || (pH.isHidden == true)) && (pH.inLight == false))
             {
                 Patrol();
             }
+        
+            if (pH.inLight == true)
+            {
+                Lights();
+            }
+            
         }
 
         CheckPosition();
@@ -339,4 +360,52 @@ public class GrannyAI : MonoBehaviour
             wallCollide = false;
         }
     }
+
+
+    void Lights() //Moves the enemy to the direction of the player if the enemy is chasing
+    {
+        if((lOS.isChasing == false) && (pH.inLight == true))
+        {
+            if(glOne.ligthCollide == true)
+            {
+                lightPoint = LightOne.transform;
+            }
+
+            if(glTwo.ligthCollide == true)
+            {
+                lightPoint = LightTwo.transform;
+            }
+
+            if(glThree.ligthCollide == true)
+            {
+                lightPoint = LightThree.transform;
+            }
+
+            if(glFour.ligthCollide == true)
+            {
+                lightPoint = LightFour.transform;
+            }
+
+            if(glFive.ligthCollide == true)
+            {
+                lightPoint = LightFive.transform;
+            }
+
+
+            Vector2 point = lightPoint.position - transform.position;
+            if (Vector2.Distance(transform.position, lightPoint.position) < targetSize)
+            {
+                speed = idleSpeed;
+                StartCoroutine(Idle());
+            }
+            else
+            {
+                var step = speed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, step);
+            }
+        }
+    }
+
+
+
 }

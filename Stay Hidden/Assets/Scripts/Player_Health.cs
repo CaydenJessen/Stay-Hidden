@@ -128,6 +128,11 @@ public class Player_Health : MonoBehaviour
 
             lastHealTime = Time.time;
         }
+
+        if (collision.gameObject.CompareTag("Light"))
+        {
+            inLight = true;
+        }
         
         //Death Pit//
         if (collision.gameObject.CompareTag("Death"))
@@ -157,6 +162,11 @@ public class Player_Health : MonoBehaviour
         {
             isHidden = false;
             inDarkness = false;
+        }
+
+        if (collision.gameObject.CompareTag("Light"))
+        {
+            inLight = false;
         }
     }
 
