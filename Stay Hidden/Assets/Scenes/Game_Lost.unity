@@ -1002,7 +1002,7 @@ GameObject:
   - component: {fileID: 1087286034}
   - component: {fileID: 1087286037}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: mainMenu
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 1142382573}
   - component: {fileID: 1142382572}
   m_Layer: 5
-  m_Name: rr
+  m_Name: Text 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1231,7 +1231,7 @@ GameObject:
   - component: {fileID: 1638426669}
   - component: {fileID: 1638426672}
   m_Layer: 5
-  m_Name: Button
+  m_Name: TryAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Test Level
+  sceneName: Level select
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 1999344515}
   - component: {fileID: 1999344514}
   m_Layer: 5
-  m_Name: rr (1)
+  m_Name: Text(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
