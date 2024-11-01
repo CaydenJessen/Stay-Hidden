@@ -1838,7 +1838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645024424221030373, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Damaging Environment
       objectReference: {fileID: 0}
     - target: {fileID: 645024424221030374, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: target
@@ -15082,7 +15082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645024424221030373, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Damaging Environment
       objectReference: {fileID: 0}
     - target: {fileID: 645024424221030374, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: target
@@ -94503,7 +94503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645024424221030373, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Damaging Environment
       objectReference: {fileID: 0}
     - target: {fileID: 645024424221030374, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: target
@@ -96794,7 +96794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645024424221030373, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Damaging Environment
       objectReference: {fileID: 0}
     - target: {fileID: 645024424221030374, guid: e480e4b751832cb45999bfbc1da6da26, type: 3}
       propertyPath: target
