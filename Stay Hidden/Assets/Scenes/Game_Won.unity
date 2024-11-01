@@ -273,6 +273,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
+  clickDelay: 0
 --- !u!114 &461529178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.19263965, g: 0.09834461, b: 0.3207547, a: 1}
+  m_Color: {r: 0.4784314, g: 0.14117648, b: 0.21568629, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -684,7 +685,7 @@ RectTransform:
   m_GameObject: {fileID: 1285054234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.92046, y: 0.92046, z: 0.92046}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 461529181}
@@ -1081,7 +1082,7 @@ RectTransform:
   m_GameObject: {fileID: 2068678776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.80556, y: 0.80556, z: 0.80556}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2134173253}
@@ -1121,8 +1122,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278321772
-  m_fontColor: {r: 0.4245283, g: 0.006007465, b: 0.006007465, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1299,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.735849, g: 0.46911368, b: 0.2950338, a: 1}
+  m_Color: {r: 0.5, g: 0.14937103, b: 0.2257822, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1340,6 +1341,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
+  clickDelay: 0
 --- !u!1001 &8527902897392467325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1354,7 +1356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 942206213823704050, guid: 56622d049030b4f4a8045e4b7cdb7559, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2102696809479161209, guid: 56622d049030b4f4a8045e4b7cdb7559, type: 3}
       propertyPath: m_text
