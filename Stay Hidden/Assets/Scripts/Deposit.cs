@@ -69,6 +69,13 @@ public class Deposit : MonoBehaviour
     IEnumerator Victory()
     {
         yield return new WaitForSeconds(3);
+
+        if (SceneManager.GetActiveScene().name == "Level_5_Basement")
+        {
+            SceneManager.LoadScene("Game_Won");
+        }
+        else
+        {
         nextLevel.SetActive(true);
         PM.currentSpeed = 0f;
 
@@ -87,5 +94,6 @@ public class Deposit : MonoBehaviour
         //{
         //SceneManager.LoadScene("Game_Won");
         //}
+        }
     }   
 }

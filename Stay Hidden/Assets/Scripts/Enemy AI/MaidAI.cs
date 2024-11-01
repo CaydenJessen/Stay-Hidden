@@ -153,7 +153,7 @@ public class MaidAI : MonoBehaviour
 
     void Reset()
     {
-        if (Mama.mamaChase = false)
+        if (Mama.mamaChase == false)
         {
             MaidTrans.position = MamaTrans.position;
         }

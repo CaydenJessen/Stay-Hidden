@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1354aece054f794cbeeaf36c64d924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Test Level
+  sceneName: Level select
   pauseMenu: {fileID: 0}
   objects: []
   on: 1
@@ -1360,7 +1360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102696809479161209, guid: 56622d049030b4f4a8045e4b7cdb7559, type: 3}
       propertyPath: m_text
-      value: You are on step closer to home
+      value: Time to reunite with your family.
       objectReference: {fileID: 0}
     - target: {fileID: 2102696809479161209, guid: 56622d049030b4f4a8045e4b7cdb7559, type: 3}
       propertyPath: m_fontAsset
