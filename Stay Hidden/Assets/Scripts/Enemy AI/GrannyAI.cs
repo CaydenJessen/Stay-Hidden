@@ -55,7 +55,7 @@ public class GrannyAI : MonoBehaviour
     public GrannyLights glFour;
     public GrannyLights glFive;
 
-    private Transform lightPoint;
+    public Transform lightPoint;
 
 
 
@@ -203,7 +203,7 @@ public class GrannyAI : MonoBehaviour
 
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
-        if(pH.isHidden == false)
+        if(pH.isHidden == false) 
         {
             if(transform.position.x > player.position.x)
             {
@@ -296,6 +296,7 @@ public class GrannyAI : MonoBehaviour
         Direction();
     }
 
+
     //StopCoroutine(Confused())!!!!!!!!!!!
 
     // IEnumerator Confused()
@@ -369,48 +370,54 @@ public class GrannyAI : MonoBehaviour
     }
 
 
+
+
     void Lights() //Moves the enemy to the direction of the player if the enemy is chasing
     {
-        if((lOS.isChasing == false) && (pH.inLight == true))
-        {
-            if(glOne.ligthCollide == true)
-            {
-                lightPoint = LightOne.transform;
-            }
+        //JERRY RIG IT!!!!!
+        lOS.isChasing = true;
 
-            if(glTwo.ligthCollide == true)
-            {
-                lightPoint = LightTwo.transform;
-            }
+        //DO IT PROPERLY
+        // if((lOS.isChasing == false) && (pH.inLight == true))
+        // {
+        //     if(glOne.ligthCollide == true)
+        //     {
+        //         lightPoint = LightOne.transform;
+        //     }
 
-            if(glThree.ligthCollide == true)
-            {
-                lightPoint = LightThree.transform;
-            }
+        //     if(glTwo.ligthCollide == true)
+        //     {
+        //         lightPoint = LightTwo.transform;
+        //     }
 
-            if(glFour.ligthCollide == true)
-            {
-                lightPoint = LightFour.transform;
-            }
+        //     if(glThree.ligthCollide == true)
+        //     {
+        //         lightPoint = LightThree.transform;
+        //     }
 
-            if(glFive.ligthCollide == true)
-            {
-                lightPoint = LightFive.transform;
-            }
+        //     if(glFour.ligthCollide == true)
+        //     {
+        //         lightPoint = LightFour.transform;
+        //     }
+
+        //     if(glFive.ligthCollide == true)
+        //     {
+        //         lightPoint = LightFive.transform;
+        //     }
 
 
-            Vector2 point = lightPoint.position - transform.position;
-            if (Vector2.Distance(transform.position, lightPoint.position) < targetSize)
-            {
-                speed = idleSpeed;
-                StartCoroutine(Idle());
-            }
-            else
-            {
-                var step = speed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, step);
-            }
-        }
+        //     Vector2 point = lightPoint.position - transform.position;
+        //     if (Vector2.Distance(transform.position, lightPoint.position) < targetSize)
+        //     {
+        //         speed = idleSpeed;
+        //         StartCoroutine(Idle());
+        //     }
+        //     else
+        //     {
+        //         var step = speed * Time.deltaTime;
+        //         transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, step);
+        //     }
+        // }
     }
 
 

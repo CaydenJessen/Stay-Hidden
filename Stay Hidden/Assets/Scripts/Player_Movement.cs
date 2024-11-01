@@ -324,7 +324,7 @@ public class Player_Movement : MonoBehaviour
     // Animation
     private void OnCollisionEnter2D(Collision2D onGround)
     {
-        if ((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy"))||(onGround.gameObject.CompareTag("Moving Platform")) || (onGround.gameObject.CompareTag("Box")))
+        if ((onGround.gameObject.CompareTag("Ground")) || (onGround.gameObject.CompareTag("Enemy"))||(onGround.gameObject.CompareTag("Moving Platform")) || (onGround.gameObject.CompareTag("Box") || (onGround.gameObject.CompareTag("Damaging Environment"))))
         {
             animator.SetBool("Land", true);
         }
