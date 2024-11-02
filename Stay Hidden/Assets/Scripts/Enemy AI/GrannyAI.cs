@@ -108,9 +108,10 @@ public class GrannyAI : MonoBehaviour
                 // StartCoroutine(Confused());
             }
             
-            if(((lOS.isChasing == false) || (pH.isHidden == true)) && (pH.inLight == false))
+            if(((lOS.isChasing == false) || (pH.isHidden == true) || (pM.Disengage == true)) && (pH.inLight == false))
             {
                 Patrol();
+                lOS.isChasing = false;
             }
         
             if (pH.inLight == true)

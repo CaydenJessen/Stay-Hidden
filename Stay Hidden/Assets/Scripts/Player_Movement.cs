@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
+public GrannyAI gAI;
+
     private float horizontal;
     public float speed = 8f;
     public float jump = 4f;
@@ -72,6 +74,8 @@ public class Player_Movement : MonoBehaviour
     public bool tailControl;
     public bool isCrouch = false;
     public bool isHiding;
+
+    public bool Disengage = false;
 
     //  public class walk_loop {};
     // void Play();
@@ -482,6 +486,10 @@ public class Player_Movement : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
         }
+        if ((collision.gameObject.CompareTag("Disengage")))
+        {
+            Disengage = true;
+        }
     }
 
 
@@ -505,6 +513,10 @@ public class Player_Movement : MonoBehaviour
             StartCoroutine(AfterSqueeze());
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
+        }
+        if (col.gameObject.tag == "Disengage")
+        {
+            Disengage = false;
         }
     }
 
@@ -534,5 +546,24 @@ public class Player_Movement : MonoBehaviour
             staminaBar.fillAmount = stamina/maxStamina;
         }
     }
+
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy")) 
+        {
+            gAI.canWalk = false;
+        }
+    }
+
+    private void OnCollisionexit2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy")) 
+        {
+            gAI.canWalk = true;
+        }
+    }
+    
 
 }
