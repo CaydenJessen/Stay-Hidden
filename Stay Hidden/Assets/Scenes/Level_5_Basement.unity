@@ -1044,6 +1044,7 @@ GameObject:
   - component: {fileID: 97918573}
   - component: {fileID: 97918572}
   - component: {fileID: 97918571}
+  - component: {fileID: 97918575}
   m_Layer: 0
   m_Name: Floorbutton (1)
   m_TagString: FloorButton
@@ -1131,7 +1132,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 688000109, guid: c98080c1ee9e6b44cb384a835e638771, type: 3}
   m_Color: {r: 0.9254902, g: 0.19215687, b: 0.19932951, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1150,13 +1151,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97918570}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.44665146, y: 7.209097, z: 0}
-  m_LocalScale: {x: 0.38185465, y: 0.24015442, z: 1.1679}
+  m_LocalPosition: {x: 0.37, y: 7.21, z: 0}
+  m_LocalScale: {x: 0.32335454, y: 0.43827233, z: 1.1679}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 655109260}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &97918575
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97918570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27d26b95fdb34c64198ed82e661468d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &120069771
 GameObject:
   m_ObjectHideFlags: 0
@@ -51569,11 +51590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2425729181041727066, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.15
+      value: -23.76
       objectReference: {fileID: 0}
     - target: {fileID: 2425729181041727066, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.41
+      value: 26.06
       objectReference: {fileID: 0}
     - target: {fileID: 2425729181041727066, guid: ae4559c564a81ac46bf8770189410f2f, type: 3}
       propertyPath: m_LocalPosition.z
