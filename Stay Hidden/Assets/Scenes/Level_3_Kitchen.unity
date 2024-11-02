@@ -94104,7 +94104,6 @@ GameObject:
   - component: {fileID: 1477908636}
   - component: {fileID: 1477908635}
   - component: {fileID: 1477908634}
-  - component: {fileID: 1477908641}
   - component: {fileID: 1477908638}
   - component: {fileID: 1477908640}
   m_Layer: 0
@@ -94266,22 +94265,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1477908641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477908633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a4401f9e4d73b4a9bc9b2fdf82a51c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activatedColor: {r: 1, g: 0, b: 0, a: 1}
-  door: {fileID: 1954701874}
-  doorOpenSpeed: 1
-  isDoorOpening: 0
 --- !u!1001 &1480158538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98234,6 +98217,7 @@ MonoBehaviour:
   dT: {fileID: 1477908634}
   CAMERAMOOOVE: 0
   cutLength: 2
+  ACTIVATE: 0
 --- !u!81 &1848474644
 AudioListener:
   m_ObjectHideFlags: 0

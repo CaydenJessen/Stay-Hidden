@@ -29,6 +29,9 @@ public class Camera_Controller : MonoBehaviour
     public bool CAMERAMOOOVE = false;
     public float cutLength = 2f;
 
+
+    public bool ACTIVATE = false;
+
     private void Start()
     {
         cam.orthographicSize = 5f;
@@ -95,14 +98,22 @@ public class Camera_Controller : MonoBehaviour
             //Camera movement with offset
 
 
-            if (dT.isDoorOpening /*|| door.cutScene == true*/)
-            {
-                DoorCutscene();
+            // // if (dT.isDoorOpening /*|| door.cutScene == true*/)
+            // if (dT.isDoorOpening == true)
+            // {
+            //     DoorCutscene();
+            //     ACTIVATE = true;
+            // }
 
-            }
 
 
+        }
 
+
+        if ((pH.isAlive == true) && (dT.isDoorOpening == true))
+        {
+            DoorCutscene();
+            ACTIVATE = true;
         }
         
         
@@ -123,11 +134,13 @@ public class Camera_Controller : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
     }
 
+
+
     private void DoorCutscene()
     {
-            CAMERAMOOOVE = true;
-            doorPosition = new Vector3(cutDoor.transform.position.x, cutDoor.transform.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, doorPosition, cutDoorSpeed * Time.deltaTime);
+        CAMERAMOOOVE = true;
+        doorPosition = new Vector3(cutDoor.transform.position.x, cutDoor.transform.position.y, transform.position.z);
+        transform.position = Vector3.Lerp(transform.position, doorPosition, cutDoorSpeed * Time.deltaTime);
 
     }
 
