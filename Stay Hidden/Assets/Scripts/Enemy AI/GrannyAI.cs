@@ -277,8 +277,8 @@ public class GrannyAI : MonoBehaviour
         //FINAL FORM!!!!
         if ((/*pM.num +*/ dep.deposited == 1) && (transformFive == false))
         {
-            GetComponent<BoxCollider2D>().size = new Vector2(2.580919f, 1.331993f);
-            GetComponent<BoxCollider2D>().offset = new Vector2(0.1062403f, -0.8568106f);
+            //GetComponent<BoxCollider2D>().size = new Vector2(2.580919f, 1.331993f);
+            //GetComponent<BoxCollider2D>().offset = new Vector2(0.1062403f, -0.8568106f);
             transform.position += new Vector3(0, 2, 0);
             transformFive = true;
             animate.SetBool("T5", true);

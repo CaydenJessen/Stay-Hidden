@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
-
+    public EnemyDamage eD;
     public float health;
     public float maxHealth = 10f;
     public float healthRegeneration = 1f; //Amount of health gained
@@ -115,6 +115,12 @@ public class Player_Health : MonoBehaviour
     }
 
 
+    public float Damage = 1f;
+    public float attackCooldown = 2f;
+
+    float lastAttackTime;
+    public bool HITCOLLIDER = false;
+
     private void OnTriggerStay2D(Collider2D collision) 
     {
         //Darkness Regeneration Timer//
@@ -157,6 +163,21 @@ public class Player_Health : MonoBehaviour
             }
         }
 
+
+        //TEMPORARY FIX FOR GRANNYS DAMAGE//////////////////////////////////////////////////////////////////////////
+        if (Time.time - lastAttackTime < attackCooldown) return;
+
+        if(collision.gameObject.CompareTag("Granny Collider")) 
+        {
+            HITCOLLIDER = true;
+            if (isHidden == false)
+            {
+                Damage = eD.damage;
+                TakeDamage(Damage);
+
+                lastAttackTime = Time.time;
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) 
@@ -173,6 +194,29 @@ public class Player_Health : MonoBehaviour
             inLight = false;
         }
     }
+
+
+
+
+        public float knifeDamage = 2f;
+        public float knifeCooldown = 2f;
+
+        float lastKnifeTime;
+
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if (Time.time - lastKnifeTime < knifeCooldown) return;
+
+            if(collision.gameObject.CompareTag("Damaging Environment")) 
+            {
+                if (isHidden == false)
+                {
+                    TakeDamage(knifeDamage);
+
+                    lastKnifeTime = Time.time;
+                }
+            }
+        }
 
 
     public void Healing ()
@@ -224,31 +268,40 @@ public class Player_Health : MonoBehaviour
 
 
 
-    //----------------TEMPORARY FIX AS EnemyDamage.cs IS NOT WORKING---------------////
-    //----------------DELETE THIS FIX IF IT IS EnemyDamage.cs IS FIXED---------------////
-    public float damage = 1f;
-    public float attackCooldown = 2f;
-
-    float lastAttackTime;
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        // Check if we took damage recently
-        if (Time.time - lastAttackTime < attackCooldown) return;
 
 
-        if(collision.gameObject.CompareTag("Damaging Environment")) 
-        {
-            if (isHidden == false)
-            {
-                TakeDamage(damage);
 
-                // Note when the player took damage
-                lastAttackTime = Time.time;
-            }
 
-        }
-    }
+    
+
+    // ----------------TEMPORARY FIX AS EnemyDamage.cs IS NOT WORKING---------------////
+    // ----------------DELETE THIS FIX IF IT IS EnemyDamage.cs IS FIXED---------------////
+    // public float Damage = 1f;
+    // public float attackCooldown = 2f;
+
+    // float lastAttackTime;
+    // public bool HITCOLLIDER = false;
+
+    // private void OnTriggerStay2D(Collider2D collision)
+    // {
+    //     Check if we took damage recently
+    //     if (Time.time - lastAttackTime < attackCooldown) return;
+
+
+    //     if(collision.gameObject.CompareTag("Granny Collider")) 
+    //     {
+    //         HITCOLLIDER = true;
+    //         if (isHidden == false)
+    //         {
+    //             Damage = eD.damage;
+    //             TakeDamage(Damage);
+
+    //             Note when the player took damage
+    //             lastAttackTime = Time.time;
+    //         }
+
+    //     }
+    // }
 
 //----------------END OF FIX---------------////
 

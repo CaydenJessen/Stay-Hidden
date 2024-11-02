@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
-public GrannyAI gAI;
-
+    
     private float horizontal;
     public float speed = 8f;
     public float jump = 4f;
@@ -544,24 +543,6 @@ public GrannyAI gAI;
         {
             stamina = maxStamina;
             staminaBar.fillAmount = stamina/maxStamina;
-        }
-    }
-
-
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Enemy")) 
-        {
-            gAI.canWalk = false;
-        }
-    }
-
-    private void OnCollisionexit2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Enemy")) 
-        {
-            gAI.canWalk = true;
         }
     }
     
