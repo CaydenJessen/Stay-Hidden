@@ -11,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     public float runSpeedMultiplier = 1.5f;
     public float currentSpeed;
     public float idleSpeed = 0f;
+    public float rechargeWait = 2f;
 
 
     public bool isFacingRight = false;
@@ -518,7 +519,7 @@ public class Player_Movement : MonoBehaviour
 
     private IEnumerator RechargeStamina()
     {
-        yield return new WaitForSeconds (2f);
+        yield return new WaitForSeconds (rechargeWait);
 
         while(stamina < maxStamina)
         {

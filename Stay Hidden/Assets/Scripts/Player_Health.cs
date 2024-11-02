@@ -42,12 +42,16 @@ public class Player_Health : MonoBehaviour
     public float lightCooldown = 1f;
     float lastLightTime;
 
+    public string sceneName;
+
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
         lastHealth = health;
+        Scene currentScene = SceneManager.GetActiveScene ();
+        string sceneName = currentScene.name;
     }
 
     // Update is called once per frame
@@ -202,7 +206,7 @@ public class Player_Health : MonoBehaviour
         {
             pupil.transform.localScale = new Vector3(-1, 1, 1);
         }
-        if (inLight == true && isHidden == false && inDarkness == false)
+        if (/*inLight == true && isHidden == false && inDarkness == false*/sceneName == "Level_5_Basement")
         {
             alertIcon.SetActive(true);
             Vector3 difference = enemy.position - transform.position;

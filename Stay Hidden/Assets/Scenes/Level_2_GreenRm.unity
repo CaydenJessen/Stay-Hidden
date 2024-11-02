@@ -4477,7 +4477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576900601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.31, y: -16.09, z: -0.26826793}
+  m_LocalPosition: {x: -6.55, y: -10.34, z: -0.26826793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7503,7 +7503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809250553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -76.79, y: -13.01, z: -0.26826793}
+  m_LocalPosition: {x: -74.8, y: -13.07, z: -0.26826793}
   m_LocalScale: {x: 1.8895432, y: 1.0808065, z: 1.1957065}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8765,7 +8765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938287552}
   - component: {fileID: 938287553}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Zoom trigger
   m_TagString: Cam Sizer
   m_Icon: {fileID: 0}
@@ -8800,7 +8800,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2009869, y: 2.3438616}
+  m_Offset: {x: 1.5934973, y: 4.745103}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8811,7 +8811,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.002586, y: 6.385069}
+  m_Size: {x: 11.217566, y: 11.556974}
   m_EdgeRadius: 0
 --- !u!1 &941606389
 GameObject:
@@ -38728,7 +38728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499364473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.29, z: 0}
+  m_LocalPosition: {x: 0, y: -6.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39300,7 +39300,7 @@ MonoBehaviour:
   camSize: 3.5
   yOffset: -1
   cutDoor: {fileID: 1197391359}
-  cutDoorSpeed: 3
+  cutDoorSpeed: 0.5
   dT: {fileID: 1140721473}
   CAMERAMOOOVE: 0
   cutLength: 2

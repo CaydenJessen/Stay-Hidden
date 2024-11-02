@@ -220,7 +220,9 @@ public class GrannyAI : MonoBehaviour
     {
         //SECOND FORM
         if ((pM.num + dep.count == 0) && (transformOne == false))
-        {
+        {   
+            GetComponent<BoxCollider2D>().size = new Vector2(1.085399f, 1.396734f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.1483226f, -0.3906736f);
             transformOne = true;
             animate.SetBool("T1", true);
             walkSpeed = walkSpeed + 1f;
@@ -234,6 +236,8 @@ public class GrannyAI : MonoBehaviour
         if ((pM.num + dep.count == 1) && (transformTwo == false))
         
         {
+            GetComponent<BoxCollider2D>().size = new Vector2(1.085399f, 1.396734f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.1483226f, -0.3906736f);
             transformTwo = true;
             animate.SetBool("T2", true);
             walkSpeed = walkSpeed + 1f;
@@ -246,6 +250,8 @@ public class GrannyAI : MonoBehaviour
         //FOURTH FORM
         if ((pM.num + dep.count == 2) && (transformThree == false))
         {
+            GetComponent<BoxCollider2D>().size = new Vector2(1.085399f, 1.396734f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.1483226f, -0.3906736f);
             transformThree = true;
             animate.SetBool("T3", true);
             walkSpeed = walkSpeed + 1f;
@@ -258,6 +264,8 @@ public class GrannyAI : MonoBehaviour
         //TRANSFORMING STATE (NOT MOVING)!!!!
         if ((pM.num + dep.count == 3) && (transformFour == false))
         {
+            GetComponent<BoxCollider2D>().size = new Vector2(1.085399f, 1.396734f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.1483226f, -0.3906736f);
             transformFour = true;
             animate.SetBool("T4", true);
             walkSpeed = 0f;
@@ -268,6 +276,9 @@ public class GrannyAI : MonoBehaviour
         //FINAL FORM!!!!
         if ((pM.num + dep.count == 4) && (transformFive == false))
         {
+            GetComponent<BoxCollider2D>().size = new Vector2(2.580919f, 1.331993f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.1062403f, -0.8568106f);
+            transform.position += new Vector3(0, 2, 0);
             transformFive = true;
             animate.SetBool("T5", true);
             walkSpeed = 5f; //Walk speed = 5
