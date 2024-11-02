@@ -108,6 +108,11 @@ public class MaddieAI : MonoBehaviour
         {
             StartCoroutine(Confused());
         }
+
+        if (pH.inDarkness == true)
+        {
+            StartCoroutine(Confused());
+        }
         
     }
 
