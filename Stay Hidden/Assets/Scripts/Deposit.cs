@@ -13,6 +13,7 @@ public class Deposit : MonoBehaviour
     public int count = 0;
     public bool inRange = false;
     public GameObject nextLevel;
+    public int waitTime;
 
     //private string[] levelNames = { "Level_1_Attic", "Level_2_GreenRm", "Level_3_Kitchen", "Level_5_Basement" };
 
@@ -68,7 +69,7 @@ public class Deposit : MonoBehaviour
     }
     IEnumerator Victory()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(waitTime);
 
         if (SceneManager.GetActiveScene().name == "Level_5_Basement")
         {

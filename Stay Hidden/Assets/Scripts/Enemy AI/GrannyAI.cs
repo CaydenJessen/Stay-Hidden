@@ -219,21 +219,21 @@ public class GrannyAI : MonoBehaviour
     void Transform() 
     {
         //SECOND FORM
-        if ((pM.num + dep.count == 0) && (transformOne == false))
+        if ((/*pM.num + dep.deposited == 5*/pM.num == 0) && (transformOne == false))
         {   
             GetComponent<BoxCollider2D>().size = new Vector2(1.085399f, 1.396734f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.1483226f, -0.3906736f);
             transformOne = true;
             animate.SetBool("T1", true);
             walkSpeed = walkSpeed + 1f;
-            chaseSpeed = chaseSpeed + 1f;
-            eD.damage = eD.damage + damageIncrease;
+            chaseSpeed = chaseSpeed + 0.5f;
+            //eD.damage = eD.damage + damageIncrease;
             LOS.lineOfSightDistance = LOS.lineOfSightDistance + vision;
             //CHANGE SPRITE TO NEXT FORM
         }
 
         //THIRD FORM
-        if ((pM.num + dep.count == 1) && (transformTwo == false))
+        if ((/*pM.num +*/ dep.deposited == 4) && (transformTwo == false))
         
         {
             GetComponent<BoxCollider2D>().size = new Vector2(1.085399f, 1.396734f);
@@ -241,14 +241,14 @@ public class GrannyAI : MonoBehaviour
             transformTwo = true;
             animate.SetBool("T2", true);
             walkSpeed = walkSpeed + 1f;
-            chaseSpeed = chaseSpeed + 1f;
+            chaseSpeed = chaseSpeed + 0.5f;
             eD.damage = eD.damage + damageIncrease;
             LOS.lineOfSightDistance = LOS.lineOfSightDistance + vision;
             //CHANGE SPRITE TO NEXT FORM
         }
 
         //FOURTH FORM
-        if ((pM.num + dep.count == 2) && (transformThree == false))
+        if ((/*pM.num +*/ dep.deposited == 3) && (transformThree == false))
         {
             GetComponent<BoxCollider2D>().size = new Vector2(1.085399f, 1.396734f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.1483226f, -0.3906736f);
@@ -262,7 +262,7 @@ public class GrannyAI : MonoBehaviour
         }
 
         //TRANSFORMING STATE (NOT MOVING)!!!!
-        if ((pM.num + dep.count == 3) && (transformFour == false))
+        if ((/*pM.num +*/ dep.deposited == 2) && (transformFour == false))
         {
             GetComponent<BoxCollider2D>().size = new Vector2(1.085399f, 1.396734f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.1483226f, -0.3906736f);
@@ -274,15 +274,15 @@ public class GrannyAI : MonoBehaviour
         }
 
         //FINAL FORM!!!!
-        if ((pM.num + dep.count == 4) && (transformFive == false))
+        if ((/*pM.num +*/ dep.deposited == 1) && (transformFive == false))
         {
             GetComponent<BoxCollider2D>().size = new Vector2(2.580919f, 1.331993f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.1062403f, -0.8568106f);
             transform.position += new Vector3(0, 2, 0);
             transformFive = true;
             animate.SetBool("T5", true);
-            walkSpeed = 5f; //Walk speed = 5
-            chaseSpeed = 7f; //Chase speed = 7
+            walkSpeed = 7f; //Walk speed = 5
+            chaseSpeed = 9f; //Chase speed = 7
             eD.damage = eD.damage + damageIncrease;
             LOS.lineOfSightDistance = LOS.lineOfSightDistance + vision;
             speed = walkSpeed;
