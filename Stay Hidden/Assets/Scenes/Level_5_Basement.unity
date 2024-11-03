@@ -4925,6 +4925,7 @@ MonoBehaviour:
   glFour: {fileID: 1057183565}
   glFive: {fileID: 2105339354}
   lightPoint: {fileID: 0}
+  boxcol: {fileID: 763644916}
   dep: {fileID: 1150678042}
   damageIncrease: 1
   eD: {fileID: 616651302}
@@ -28048,6 +28049,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: da47db2a6bc04c048b1b3d0d381e17e9, type: 3}
+--- !u!61 &763644916 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2740086946208600814, guid: f3087b661cfcd5241a370551320d479a, type: 3}
+  m_PrefabInstance: {fileID: 1216681653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &765376470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4306837930016704226, guid: 9aaf77f629b54514db2cc6a7d31d34e2, type: 3}
@@ -49628,7 +49634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1540622604
 BoxCollider2D:
   m_ObjectHideFlags: 0

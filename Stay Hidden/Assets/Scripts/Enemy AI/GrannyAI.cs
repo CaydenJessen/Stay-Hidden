@@ -58,7 +58,7 @@ public class GrannyAI : MonoBehaviour
     public Transform lightPoint;
 
 
-
+    public BoxCollider2D boxcol;
     public Deposit dep;
 
     public float damageIncrease = 1;
@@ -277,8 +277,10 @@ public class GrannyAI : MonoBehaviour
         //FINAL FORM!!!!
         if ((/*pM.num +*/ dep.deposited == 1) && (transformFive == false))
         {
-            //GetComponent<BoxCollider2D>().size = new Vector2(2.580919f, 1.331993f);
-            //GetComponent<BoxCollider2D>().offset = new Vector2(0.1062403f, -0.8568106f);
+            GetComponent<BoxCollider2D>().size = new Vector2(2.580919f, 1.331993f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.1062403f, -0.8568106f);
+            boxcol.size = new Vector2(0.8173989f, 0.4722527f);
+            boxcol.offset = new Vector2(-0.09130035f, -0.6225366f);
             transform.position += new Vector3(0, 2, 0);
             transformFive = true;
             animate.SetBool("T5", true);
