@@ -90,7 +90,6 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if ((canTail == false) || (isHiding == false))
         {
             animator.SetBool("Tail", false);
@@ -545,6 +544,6 @@ public class Player_Movement : MonoBehaviour
             staminaBar.fillAmount = stamina/maxStamina;
         }
     }
-    
+
 
 }
