@@ -7,6 +7,8 @@ public class DoorTrigger : MonoBehaviour
     public float doorOpenSpeed = 3f;
 
     public bool isDoorOpening = false;
+
+    public bool doorOpen = false;
     private Color originalColor;
     private Renderer itemRenderer;
 
@@ -31,6 +33,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (isDoorOpening)
         {
+            doorOpen = true;
             door.transform.position += Vector3.up * doorOpenSpeed * Time.deltaTime;
 
             if (door.transform.position.y >= 5f)

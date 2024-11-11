@@ -234,7 +234,7 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.LeftControl) && Squeezing == false)
+        if((Input.GetMouseButtonUp(1)) && Squeezing == false)
         {
             animator.SetBool("stopHide", true);
         }
@@ -385,7 +385,7 @@ public class Player_Movement : MonoBehaviour
 
     private void HidingMechanic()
     {
-        if(((Input.GetKey(KeyCode.LeftControl) && canHide == true) && Squeezing == false) && (pH.inDarkness == false))
+        if(((Input.GetMouseButton(1) && canHide == true) && Squeezing == false) && (pH.inDarkness == false))
         {    
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
@@ -429,7 +429,7 @@ public class Player_Movement : MonoBehaviour
 
 
         //--------------PLAYER IS ABLE TO JUMP INFINITELY BUG---------------
-        if((Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == false && canHide == true || stamina == 0 && isFacingRight == false && canHide == true || lit == true && isFacingRight == false && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
+        if(((Input.GetMouseButtonUp(1)) && isFacingRight == false && canHide == true || stamina == 0 && isFacingRight == false && canHide == true || lit == true && isFacingRight == false && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(1.862f, 1.862f , 1.862f);
@@ -438,7 +438,7 @@ public class Player_Movement : MonoBehaviour
             isHiding = false;
 
         }
-        else if((Input.GetKeyUp(KeyCode.LeftControl) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
+        else if(((Input.GetMouseButtonUp(1)) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
         {
             pH.isHidden = false;
             Player.transform.localScale = new Vector3(-1.862f, 1.862f , 1.862f);
