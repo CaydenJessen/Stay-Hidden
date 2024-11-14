@@ -22,7 +22,7 @@ public class LineOfSight : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, new Vector2(-rayDirection, 0f), lineOfSightDistance);
         
-        if (hit.collider.tag == "Player" && pH.isHidden == false )
+        if ((hit.collider.tag == "Player" && pH.isHidden == false) && (pH.inDarkness == false) )
         {
             Debug.DrawRay(ray.transform.position, hit.distance * new Vector2(-rayDirection, 0f), Color.red);  
             isChasing = true;
@@ -38,7 +38,7 @@ public class LineOfSight : MonoBehaviour
             hitPlayer = false;
         }
 
-        if (pH.isHidden == true)
+        if ((pH.isHidden == true) || (pH.inDarkness == true))
         {
             isChasing = false;
         }

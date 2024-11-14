@@ -71,7 +71,7 @@ public class EnemyAI : MonoBehaviour
                 // StartCoroutine(Confused());
             }
             
-            if((lOS.isChasing == false) || (pH.isHidden == true))
+            if((lOS.isChasing == false) || (pH.isHidden == true) || (pH.inDarkness == true))
             {
                 Patrol();
             }
@@ -158,7 +158,7 @@ public class EnemyAI : MonoBehaviour
 
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
-        if(pH.isHidden == false)
+        if((pH.isHidden == false) || (pH.inDarkness == false))
         {
             if(transform.position.x > player.position.x)
             {

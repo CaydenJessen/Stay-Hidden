@@ -68,10 +68,10 @@ public class Player_Health : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(inDarkness == true)
-        {
-            isHidden = true;
-        }
+        // if(inDarkness == true)
+        // {
+        //     isHidden = true;
+        // }
 
         //Spotted Icon above Players head
         Spotted();
@@ -128,7 +128,7 @@ public class Player_Health : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Darkness"))
         {
-            isHidden = true;
+            //isHidden = true;
             inDarkness = true;
 
             if (health < maxHealth)
@@ -185,7 +185,7 @@ public class Player_Health : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Darkness"))
         {
-            isHidden = false;
+            //isHidden = false;
             inDarkness = false;
         }
 
