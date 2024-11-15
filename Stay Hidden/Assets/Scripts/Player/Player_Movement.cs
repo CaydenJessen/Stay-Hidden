@@ -90,33 +90,7 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((canTail == false) || (isHiding == false))
-        {
-            animator.SetBool("Tail", false);
-        }
-
-        if (((Input.GetMouseButton(0) && canTail == true)) && (isHiding == false))
-        {
-            tailControl = true;
-            animator.SetBool("Tail", true);
-            canJump = false;
-            currentSpeed = idleSpeed;
-            canCrouch = false;
-            //canHide = false;
-        }
-        else
-        {
-            //currentSpeed = speed;
-            tailControl = false;
-            animator.SetBool("Tail", false);
-            canJump = true;
-            canCrouch = true;
-            //canHide = true;
-        }
-        if (pause.isPaused == true)
-        {
-            tailControl = false;
-        }
+        
 
         if (viewing == true)
         {
@@ -268,6 +242,36 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    public void TailControl()
+    {
+        if ((canTail == false || isHiding == false) && pause.isPaused == false)
+        {
+            animator.SetBool("Tail", false);
+        }
+
+        if (((Input.GetMouseButton(0) && canTail == true)) && (isHiding == false))
+        {
+            tailControl = true;
+            animator.SetBool("Tail", true);
+            canJump = false;
+            currentSpeed = idleSpeed;
+            canCrouch = false;
+            //canHide = false;
+        }
+        else
+        {
+            //currentSpeed = speed;
+            tailControl = false;
+            animator.SetBool("Tail", false);
+            canJump = true;
+            canCrouch = true;
+            //canHide = true;
+        }
+        if (pause.isPaused == true)
+        {
+            tailControl = false;
+        }
+    }
 
     private void FixedUpdate()
     {
