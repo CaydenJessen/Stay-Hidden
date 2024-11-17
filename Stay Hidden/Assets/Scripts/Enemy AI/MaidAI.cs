@@ -11,6 +11,7 @@ public class MaidAI : MonoBehaviour
     public Animator animator;
     public Player_Health pH;
     public MamaAI Mama;
+    public MamaTrigger mT;
 
     public float speed;
     public float idleSpeed = 0f;
@@ -32,6 +33,8 @@ public class MaidAI : MonoBehaviour
     public Transform MaidTrans;
     public Transform MamaTrans;
 
+    public GameObject maidObject;
+
     public bool reset = false;
 
     // Start is called before the first frame update
@@ -49,7 +52,6 @@ public class MaidAI : MonoBehaviour
         if(canWalk == true)
         {
             animator.SetFloat("Speed", speed);
-            //if (lOS.isChasing == true)
             if(Mama.mamaChase == true)
             {
                 lost = false;
@@ -60,17 +62,14 @@ public class MaidAI : MonoBehaviour
             else if(lost == true)
             {
                 lost = false;
-                lOS.isChasing = false;
                 Debug.Log("target lost");
                 //StartCoroutine(Confused());
             }
             
 
-            if((lOS.hitPlayer == true) && (lOS.isChasing == false))
+            if((lOS.hitPlayer == true))
             {
-                lOS.hitPlayer = false;
                 StartCoroutine(Confused());
-                
             }
 
             if(Mama.mamaChase == false)
@@ -135,9 +134,18 @@ public class MaidAI : MonoBehaviour
         }
     }
 
+    public bool resetPos = false;
 
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
+        maidObject.SetActive(true);
+
+        if (resetPos == false)
+        {
+            MaidTrans.position = MamaTrans.position;
+            resetPos = true;
+        }
+
         CHASINGNOW = true;
         if(transform.position.x > player.position.x)
         {
@@ -156,6 +164,9 @@ public class MaidAI : MonoBehaviour
         if (Mama.mamaChase == false)
         {
             MaidTrans.position = MamaTrans.position;
+            maidObject.SetActive(false);
+            mT.checkConfuse = false;
+            resetPos = false;
         }
     }
 
@@ -199,7 +210,8 @@ public class MaidAI : MonoBehaviour
 
         if ((touchPlayer.gameObject.tag == "Wall") || (touchPlayer.gameObject.tag == "Enemy"))
         {
-            lOS.isChasing = false;
+            Mama.mamaChase = false;
+            mT.seePlayer = false;
 
             flip();
         }
@@ -212,7 +224,9 @@ public class MaidAI : MonoBehaviour
         {
             wallCollide = true;
 
-            lOS.isChasing = false;
+            Mama.mamaChase = false;
+            mT.seePlayer = false;
+
             speed = idleSpeed;
             StartCoroutine(Idle());
             flip();

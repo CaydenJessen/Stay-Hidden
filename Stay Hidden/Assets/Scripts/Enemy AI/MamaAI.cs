@@ -10,12 +10,11 @@ public class MamaAI : MonoBehaviour
     private Animator anim;
     private Transform targetPoint;
     public Transform player;
-    public LineOfSight lOS;
     public Animator animator;
     public Player_Health pH;
     public MamaTrigger mT;
-    public MamaWall mW;
-    public MamaWall mWTwo;
+    public MaidAI MaidAI;
+
 
 
     public float speed;
@@ -37,7 +36,6 @@ public class MamaAI : MonoBehaviour
 
     public GameObject Maid;
     public bool mamaChase = false;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +45,7 @@ public class MamaAI : MonoBehaviour
         anim = GetComponent<Animator>();
         targetPoint = pointB.transform;
         oldPos = transform.position.x;
-        Maid.SetActive(false);
+        //Maid.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,34 +54,31 @@ public class MamaAI : MonoBehaviour
         if(canWalk == true)
         {
             animator.SetFloat("Speed", speed);
-            //if ((lOS.isChasing == true) && (mT.seePlayer == true))
-            //if ((lOS.isChasing == true) && ((mW.hitWall == false) || (mWTwo.hitWall == false)))
-            if ((lOS.isChasing == true) && (mW.hitWall == false))
+
+            if ((mT.seePlayer == true) && (pH.isHidden == false))
             {
-                mamaChase = true;
-                lost = false;
-                Debug.Log("chase is true");
-                Chase();
+                while (MaidAI.wallCollide == false)
+                {
+                    mamaChase = true;
+                    lost = false;
+                    Debug.Log("chase is true");
+                    Chase();
+                }
+
             }
 
             else if(lost == true)
             {
                 mamaChase = false;
                 lost = false;
-                lOS.isChasing = false;
                 Debug.Log("target lost");
                 targetPoint = pointA.transform;
                 //StartCoroutine(Confused());
             }
-            
 
-            if((lOS.hitPlayer == true) && (lOS.isChasing == false))
-            {
-                lOS.hitPlayer = false;
-                // StartCoroutine(Confused());
-            }
+
             
-            if((lOS.isChasing == false) || (pH.isHidden == true) || (mamaChase == false))
+            if((mT.seePlayer == false) || (pH.isHidden == true) || (mamaChase == false))
             {
                 Patrol();
             }
@@ -120,8 +115,6 @@ public class MamaAI : MonoBehaviour
             
         }
         oldPos = newPos;
-        
-        Direction();
     }
 
 
@@ -160,28 +153,6 @@ public class MamaAI : MonoBehaviour
     }
 
 
-
-    void Direction() //FLIPS THE DIRECTION OF THE LINE OF SIGHT RAYCAST
-    {
-        if ((isFacingRight == true) || (movingRight == true))
-        {
-            //Debug.Log("flipped to right");
-            lOS.rayDirection = -1f;
-            mW.rayDirection = -1f;
-        }
-        else
-        {
-            if ((isFacingRight == false) || (movingRight == false))
-            {
-                // Debug.Log("flipped to left");
-                lOS.rayDirection = 1f;
-                mW.rayDirection = 1f;
-            }
-        }
-    }
-
-
-
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
         speed = idleSpeed;
@@ -202,7 +173,6 @@ public class MamaAI : MonoBehaviour
         //Debug.Log("Idle");
         yield return new WaitForSeconds(wait);
         speed = walkSpeed;
-        Direction();
     }
 
     //StopCoroutine(Confused())!!!!!!!!!!!
@@ -240,7 +210,7 @@ public class MamaAI : MonoBehaviour
 
         if ((touchPlayer.gameObject.tag == "Wall") || (touchPlayer.gameObject.tag == "Enemy"))
         {
-            lOS.isChasing = false;
+            mT.seePlayer = false;
             Patrol();
 
             flip();
@@ -254,7 +224,7 @@ public class MamaAI : MonoBehaviour
         {
             wallCollide = true;
 
-            lOS.isChasing = false;
+            mT.seePlayer = false;
             speed = idleSpeed;
             StartCoroutine(Idle());
             flip();

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MamaTrigger : MonoBehaviour
 {
     public bool seePlayer = false;
-    public LineOfSight LOS;
+    public bool checkConfuse = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,6 @@ public class MamaTrigger : MonoBehaviour
         if(collision.gameObject.CompareTag("Player")) 
         {
             seePlayer = true;
-            
         }
     }
 
