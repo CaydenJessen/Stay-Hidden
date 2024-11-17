@@ -232,6 +232,8 @@ public class Player_Movement : MonoBehaviour
         }
 
         HidingMechanic();
+        TailControl();
+        
 
        if (Input.GetKeyDown(KeyCode.D))
        {
