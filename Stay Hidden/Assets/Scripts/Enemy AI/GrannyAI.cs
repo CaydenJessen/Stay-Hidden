@@ -108,7 +108,7 @@ public class GrannyAI : MonoBehaviour
                 // StartCoroutine(Confused());
             }
             
-            if(((lOS.isChasing == false) || (pH.isHidden == true) || (pM.Disengage == true)) && (pH.inLight == false))
+            if(((lOS.isChasing == false) || (pH.isHidden == true) || (pH.inDarkness == true) || (pM.Disengage == true)) && (pH.inLight == false))
             {
                 Patrol();
                 lOS.isChasing = false;
@@ -160,29 +160,33 @@ public class GrannyAI : MonoBehaviour
 
     void Patrol()
     {
-        Vector2 point = targetPoint.position - transform.position;
-        if (targetPoint == pointB.transform)
+        if ((transformFour == false) ||  ((transformFour == true)&&(transformFive == true)))
         {
-            var step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
+            Vector2 point = targetPoint.position - transform.position;
+            if (targetPoint == pointB.transform)
+            {
+                var step = speed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, step);
+            }
+            else if (targetPoint == pointA.transform)
+            {
+                var step = speed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
+            }
+            if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
+            {
+                speed = idleSpeed;
+                StartCoroutine(Idle());
+                targetPoint = pointA.transform;
+            }
+            if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
+            {
+                speed = idleSpeed;
+                StartCoroutine(Idle());
+                targetPoint = pointB.transform;
+            }
         }
-        else if (targetPoint == pointA.transform)
-        {
-            var step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
-        }
-        if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointB.transform)
-        {
-            speed = idleSpeed;
-            StartCoroutine(Idle());
-            targetPoint = pointA.transform;
-        }
-        if (Vector2.Distance(transform.position, targetPoint.position) < targetSize && targetPoint == pointA.transform)
-        {
-            speed = idleSpeed;
-            StartCoroutine(Idle());
-            targetPoint = pointB.transform;
-        }
+        
     }
 
 
@@ -204,7 +208,7 @@ public class GrannyAI : MonoBehaviour
 
     void Chase() //Moves the enemy to the direction of the player if the enemy is chasing
     {
-        if(pH.isHidden == false) 
+        if(((pH.isHidden == false) && (pH.inDarkness == false)) && ((transformFour == false) || ((transformFour == true)&&(transformFive == true))))
         {
             if(transform.position.x > player.position.x)
             {
