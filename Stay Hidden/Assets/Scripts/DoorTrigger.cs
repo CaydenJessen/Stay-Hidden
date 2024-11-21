@@ -11,6 +11,7 @@ public class DoorTrigger : MonoBehaviour
     public bool doorOpen = false;
     private Color originalColor;
     private Renderer itemRenderer;
+    public Player_Movement pM;
 
     private void Start()
     {
@@ -36,9 +37,14 @@ public class DoorTrigger : MonoBehaviour
             doorOpen = true;
             door.transform.position += Vector3.up * doorOpenSpeed * Time.deltaTime;
 
+            pM.currentSpeed = 0f;
+            pM.speed = 0f;
+
             if (door.transform.position.y >= 5f)
             {
                 isDoorOpening = false;
+                pM.speed = 8f;
+
             }
         }
     }
