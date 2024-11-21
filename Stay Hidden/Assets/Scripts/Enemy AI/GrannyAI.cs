@@ -127,7 +127,7 @@ public class GrannyAI : MonoBehaviour
     }
 
 
-    //CHECK IF MOVING LEFT OR RIGHT BASED ON X POSITION OF THE ENEMY
+    //CHECK IF MOVING LEFT OR RIGHT BASED ON 'X' POSITION OF THE ENEMY
     void CheckPosition()
     {
         newPos = transform.position.x;
