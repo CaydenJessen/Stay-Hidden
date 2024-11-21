@@ -76,6 +76,8 @@ public class Player_Movement : MonoBehaviour
 
     public bool Disengage = false;
 
+    public bool INPUTHIDING = false;
+
     //  public class walk_loop {};
     // void Play();
     //  walk_loop audioData;
@@ -90,7 +92,6 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
         if (viewing == true)
         {
@@ -105,14 +106,6 @@ public class Player_Movement : MonoBehaviour
         {
             StartCoroutine(InputDelay());
         }
-
-        IEnumerator InputDelay()
-        {
-            currentSpeed = idleSpeed;
-            yield return new WaitForSeconds (5f);
-        }
-
-
 
         //Store horizontal value
         horizontal = Input.GetAxis("Horizontal");
@@ -211,6 +204,7 @@ public class Player_Movement : MonoBehaviour
         if((Input.GetMouseButtonUp(1)) && Squeezing == false)
         {
             animator.SetBool("stopHide", true);
+            StartCoroutine(InputDelay());
         }
         else
         {
@@ -361,37 +355,9 @@ public class Player_Movement : MonoBehaviour
 
 
 
-
-    //     if (onGround.gameObject.CompareTag("Moving Platform"))
-    //     {
-    //         canHide = false;
-    //         canJump = true;
-    //         touchGround = true;
-    //     }
-
-
-    // }
-    // private void OnCollisionExit2D(Collision2D offGround)
-    // {
-    //     if((offGround.gameObject.CompareTag("Ground")) || (offGround.gameObject.CompareTag("Enemy")))
-    //     {
-    //         canJump = false;
-    //         touchGround = false;
-
-    //     }
-    //     if (offGround.gameObject.CompareTag("Moving Platform"))
-    //     {
-    //         canHide = true;
-    //         canJump = false;
-    //         touchGround = false;
-    //     }
-    // }
-
-
-
     private void HidingMechanic()
     {
-        if(((Input.GetMouseButton(1) && canHide == true) && Squeezing == false) && (pH.inDarkness == false))
+        if((((Input.GetMouseButton(1) && canHide == true) && Squeezing == false) && (pH.inDarkness == false)) && (INPUTHIDING == false))
         {    
             GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
@@ -419,20 +385,6 @@ public class Player_Movement : MonoBehaviour
 
         }
 
-        // if(Squeezing == true)
-        // {
-        //     GetComponent<BoxCollider2D>().size = new Vector2(colliderX, colliderY);
-        //     GetComponent<BoxCollider2D>().offset = new Vector2(offsetX, offsetY);
-        //     pH.isHidden = true;
-        //     animator.SetBool("Hiding", true);
-        // }
-        // else
-        // {
-        //     pH.isHidden = false;
-        // }
-        
-
-
 
         //--------------PLAYER IS ABLE TO JUMP INFINITELY BUG---------------
         if(((Input.GetMouseButtonUp(1)) && isFacingRight == false && canHide == true || stamina == 0 && isFacingRight == false && canHide == true || lit == true && isFacingRight == false && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
@@ -442,6 +394,7 @@ public class Player_Movement : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
             isHiding = false;
+            //StartCoroutine(InputDelay());
 
         }
         else if(((Input.GetMouseButtonUp(1)) && isFacingRight == true && canHide == true || stamina == 0 && isFacingRight == true && canHide == true || lit == true && isFacingRight == true && canHide == true && (pH.inDarkness == false)) && Squeezing == false)
@@ -451,8 +404,33 @@ public class Player_Movement : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(originalColliderX, originalColliderY);
             GetComponent<BoxCollider2D>().offset = new Vector2(originalOffsetX, originalOffsetY);
             isHiding = false;
+            //StartCoroutine(InputDelay());
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -476,6 +454,7 @@ public class Player_Movement : MonoBehaviour
             camResize = true;
         }
     }
+
 
 
     private void OnTriggerStay2D(Collider2D collision) 
@@ -524,14 +503,22 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+
+    private IEnumerator InputDelay()
+    {
+        INPUTHIDING = true;
+        yield return new WaitForSeconds (0.7f);
+        INPUTHIDING = false;
+    }
+
+
+
     private IEnumerator AfterSqueeze()
     {
         canHide = false;
         yield return new WaitForSeconds (1f);
         canHide = true;
     }
-
-
 
     private IEnumerator RechargeStamina()
     {
