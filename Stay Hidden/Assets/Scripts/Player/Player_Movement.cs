@@ -172,7 +172,7 @@ public class Player_Movement : MonoBehaviour
             animator.SetBool("Jump", true);
         }
 
-        if((pH.isHidden == true) && (pH.inDarkness == false))
+        if(((pH.isHidden == true) && (pH.inDarkness == false)) || (Squeezing == true))
         {
             animator.SetBool("Hiding", true);
         }
