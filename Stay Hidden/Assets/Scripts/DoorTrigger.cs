@@ -43,7 +43,7 @@ public class DoorTrigger : MonoBehaviour
             if (door.transform.position.y >= 5f)
             {
                 isDoorOpening = false;
-                pM.speed = 8f;
+                pM.speed = 4f;
 
             }
         }
